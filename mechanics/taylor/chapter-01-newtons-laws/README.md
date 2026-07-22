@@ -112,17 +112,17 @@ It becomes inadequate when:
 
 ### Position
 
-$$
+```math
 \mathbf r(t)
 =
 x(t)\hat{\mathbf x}
 +y(t)\hat{\mathbf y}
 +z(t)\hat{\mathbf z}.
-$$
+```
 
 ### Velocity and acceleration
 
-$$
+```math
 \mathbf v
 =
 \frac{d\mathbf r}{dt},
@@ -132,17 +132,17 @@ $$
 \frac{d\mathbf v}{dt}
 =
 \frac{d^2\mathbf r}{dt^2}.
-$$
+```
 
 In Cartesian coordinates,
 
-$$
+```math
 \mathbf v
 =
 \dot x\hat{\mathbf x}
 +\dot y\hat{\mathbf y}
 +\dot z\hat{\mathbf z}.
-$$
+```
 
 ### Why Cartesian differentiation is simple
 
@@ -150,11 +150,11 @@ $$
 
 ### Scalar product
 
-$$
+```math
 \mathbf a\cdot\mathbf b
 =
 ab\cos\theta.
-$$
+```
 
 Geometric meaning:
 
@@ -165,10 +165,10 @@ Important uses:
 
 ### Vector product
 
-$$
+```math
 \mathbf a\times\mathbf b
 =
-$$
+```
 
 Geometric meaning:
 
@@ -216,11 +216,11 @@ How could force be measured operationally?
 
 ### Net force
 
-$$
+```math
 \mathbf F_{\mathrm{net}}
 =
 \sum_i \mathbf F_i.
-$$
+```
 
 ### Force-identification checklist
 
@@ -257,21 +257,21 @@ State it in my own words:
 
 ### Newton's second law
 
-$$
+```math
 \mathbf F_{\mathrm{net}}
 =
 m\mathbf a.
-$$
+```
 
 For constant mass,
 
-$$
+```math
 \mathbf F_{\mathrm{net}}
 =
 \frac{d\mathbf p}{dt},
 \qquad
 \mathbf p=m\mathbf v.
-$$
+```
 
 ### Why the first law is not redundant
 
@@ -282,11 +282,11 @@ $\mathbf a=0$, but this statement is only valid in an inertial frame.
 
 My definition:
 
-$$
+```math
 \mathbf F_{\mathrm{net}}=0
 \quad\Longrightarrow\quad
 \mathbf v=\text{constant}.
-$$
+```
 
 Examples of approximately inertial frames:
 
@@ -299,25 +299,25 @@ Examples of noninertial frames:
 
 ### Newton's second law as a differential equation
 
-$$
+```math
 m\ddot{\mathbf r}(t)
 =
 \mathbf F(\mathbf r,\dot{\mathbf r},t).
-$$
+```
 
 The unknown is:
 
-$$
+```math
 \mathbf r(t).
-$$
+```
 
 A second-order equation normally requires:
 
-$$
+```math
 \mathbf r(0)=\mathbf r_0,
 \qquad
 \dot{\mathbf r}(0)=\mathbf v_0.
-$$
+```
 
 ### My takeaway
 
@@ -330,11 +330,11 @@ $$
 
 ### Newton's third law
 
-$$
+```math
 \mathbf F_{12}
 =
 -\mathbf F_{21}.
-$$
+```
 
 Define carefully:
 
@@ -354,29 +354,29 @@ A third-law pair:
 
 For a system of particles,
 
-$$
+```math
 \mathbf P
 =
 \sum_\alpha \mathbf p_\alpha.
-$$
+```
 
 The central result is
 
-$$
+```math
 \boxed{
 \frac{d\mathbf P}{dt}
 =
 \mathbf F_{\mathrm{ext}}
 }.
-$$
+```
 
 For an isolated system,
 
-$$
+```math
 \mathbf F_{\mathrm{ext}}=0
 \quad\Longrightarrow\quad
 \boxed{\mathbf P=\text{constant}}.
-$$
+```
 
 ### System boundary
 
@@ -397,13 +397,13 @@ Example:
 
 ### Component equations
 
-$$
+```math
 F_x=m\ddot x,
 \qquad
 F_y=m\ddot y,
 \qquad
 F_z=m\ddot z.
-$$
+```
 
 ### Problem-solving workflow
 
@@ -443,29 +443,29 @@ Choose:
 
 Normal equation:
 
-$$
+```math
 N-mg\cos\theta=0.
-$$
+```
 
 Equations within the board:
 
-$$
+```math
 m\ddot x=
-$$
+```
 
-$$
+```math
 m\ddot y=
-$$
+```
 
 Trajectory:
 
-$$
+```math
 x(t)=
-$$
+```
 
-$$
+```math
 y(t)=
-$$
+```
 
 ### Checks
 
@@ -481,69 +481,69 @@ $$
 
 ### Coordinate definitions
 
-$$
+```math
 x=r\cos\phi,
 \qquad
 y=r\sin\phi.
-$$
+```
 
-$$
+```math
 \mathbf r=r\hat{\mathbf r}.
-$$
+```
 
 ### Polar basis vectors
 
-$$
+```math
 \hat{\mathbf r}
 =
 \cos\phi\,\hat{\mathbf x}
 +
 \sin\phi\,\hat{\mathbf y},
-$$
+```
 
-$$
+```math
 \hat{\boldsymbol\phi}
 =
 -\sin\phi\,\hat{\mathbf x}
 +
 \cos\phi\,\hat{\mathbf y}.
-$$
+```
 
 ### Why polar coordinates are different
 
 Unlike Cartesian basis vectors,
 
-$$
+```math
 \hat{\mathbf r}
 \quad\text{and}\quad
 \hat{\boldsymbol\phi}
-$$
+```
 
 change direction as the particle moves.
 
 ### Basis-vector derivatives
 
-$$
+```math
 \boxed{
 \dot{\hat{\mathbf r}}
 =
 \dot\phi\,\hat{\boldsymbol\phi}
 }
-$$
+```
 
-$$
+```math
 \boxed{
 \dot{\hat{\boldsymbol\phi}}
 =
 -\dot\phi\,\hat{\mathbf r}
 }
-$$
+```
 
 Explain the signs geometrically:
 
 ### Velocity
 
-$$
+```math
 \boxed{
 \mathbf v
 =
@@ -551,7 +551,7 @@ $$
 +
 r\dot\phi\,\hat{\boldsymbol\phi}
 }
-$$
+```
 
 Interpret:
 
@@ -560,7 +560,7 @@ Interpret:
 
 ### Acceleration
 
-$$
+```math
 \boxed{
 \mathbf a
 =
@@ -569,7 +569,7 @@ $$
 \left(r\ddot\phi+2\dot r\dot\phi\right)
 \hat{\boldsymbol\phi}
 }
-$$
+```
 
 ### Interpretation of the terms
 
@@ -582,17 +582,17 @@ $$
 
 ### Newton's second law in polar form
 
-$$
+```math
 F_r
 =
 m\left(\ddot r-r\dot\phi^2\right),
-$$
+```
 
-$$
+```math
 F_\phi
 =
 m\left(r\ddot\phi+2\dot r\dot\phi\right).
-$$
+```
 
 ### Special cases
 
@@ -600,21 +600,21 @@ $$
 
 Set
 
-$$
+```math
 \dot\phi=0.
-$$
+```
 
 Then:
 
-$$
+```math
 \mathbf a=
-$$
+```
 
 #### Uniform circular motion
 
 Set
 
-$$
+```math
 r=R,
 \qquad
 \dot r=\ddot r=0,
@@ -622,53 +622,53 @@ r=R,
 \dot\phi=\omega,
 \qquad
 \ddot\phi=0.
-$$
+```
 
 Then:
 
-$$
+```math
 \mathbf a=
-$$
+```
 
 #### Circular motion with angular acceleration
 
 Set
 
-$$
+```math
 r=R,
 \qquad
 \dot r=\ddot r=0.
-$$
+```
 
 Then:
 
-$$
+```math
 \mathbf a=
-$$
+```
 
 ### Fixed-radius skateboard equation
 
 For $r=R$,
 
-$$
+```math
 F_\phi=-mg\sin\phi.
-$$
+```
 
 Newton's second law gives
 
-$$
+```math
 mR\ddot\phi=-mg\sin\phi,
-$$
+```
 
 so
 
-$$
+```math
 \boxed{
 \ddot\phi
 =
 -\frac{g}{R}\sin\phi
 }.
-$$
+```
 
 Why is this nonlinear?
 
@@ -676,59 +676,59 @@ Why is this nonlinear?
 
 For small $\phi$ in radians,
 
-$$
+```math
 \sin\phi\approx\phi.
-$$
+```
 
 Therefore,
 
-$$
+```math
 \ddot\phi+\frac{g}{R}\phi=0.
-$$
+```
 
 Define
 
-$$
+```math
 \omega_0^2=\frac{g}{R}.
-$$
+```
 
 Then
 
-$$
+```math
 \phi(t)
 =
 A\cos(\omega_0t)
 +
 B\sin(\omega_0t).
-$$
+```
 
 The approximate period is
 
-$$
+```math
 \boxed{
 T
 =
 2\pi\sqrt{\frac{R}{g}}
 }.
-$$
+```
 
 ### Exact versus approximate motion
 
 Exact:
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\sin\phi.
-$$
+```
 
 Approximate:
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\phi.
-$$
+```
 
 What changes as the initial angle increases?
 
@@ -748,51 +748,51 @@ understanding, not merely exercises.
 
 ### Starting equation
 
-$$
+```math
 m\ddot x=F_0.
-$$
+```
 
 ### First integration
 
-$$
+```math
 \dot x(t)
 =
 \frac{F_0}{m}t+C_1.
-$$
+```
 
 ### Second integration
 
-$$
+```math
 x(t)
 =
 \frac{F_0}{2m}t^2+C_1t+C_2.
-$$
+```
 
 Apply
 
-$$
+```math
 x(0)=x_0,
 \qquad
 \dot x(0)=v_0.
-$$
+```
 
 Then
 
-$$
+```math
 C_1=v_0,
 \qquad
 C_2=x_0.
-$$
+```
 
 Therefore,
 
-$$
+```math
 \boxed{
 x(t)
 =
 x_0+v_0t+\frac{F_0}{2m}t^2
 }.
-$$
+```
 
 ### Why this matters
 
@@ -812,36 +812,36 @@ $$
 
 Define
 
-$$
+```math
 \mathbf P
 =
 \sum_{\alpha=1}^{N}
 \mathbf p_\alpha.
-$$
+```
 
 For particle $\alpha$,
 
-$$
+```math
 \dot{\mathbf p}_\alpha
 =
 \sum_{\beta\ne\alpha}
 \mathbf F_{\alpha\beta}
 +
 \mathbf F_\alpha^{\mathrm{ext}}.
-$$
+```
 
 Differentiate the total momentum:
 
-$$
+```math
 \frac{d\mathbf P}{dt}
 =
 \sum_\alpha
 \dot{\mathbf p}_\alpha.
-$$
+```
 
 Substitute the equations of motion:
 
-$$
+```math
 \frac{d\mathbf P}{dt}
 =
 \sum_\alpha
@@ -850,55 +850,55 @@ $$
 +
 \sum_\alpha
 \mathbf F_\alpha^{\mathrm{ext}}.
-$$
+```
 
 Each internal interaction appears twice:
 
-$$
+```math
 \mathbf F_{\alpha\beta}
 +
 \mathbf F_{\beta\alpha}
 =
 0
-$$
+```
 
 by Newton's third law. Therefore,
 
-$$
+```math
 \sum_\alpha
 \sum_{\beta\ne\alpha}
 \mathbf F_{\alpha\beta}
 =
 0.
-$$
+```
 
 Hence,
 
-$$
+```math
 \boxed{
 \frac{d\mathbf P}{dt}
 =
 \sum_\alpha
 \mathbf F_\alpha^{\mathrm{ext}}
 }.
-$$
+```
 
 For an isolated system,
 
-$$
+```math
 \sum_\alpha
 \mathbf F_\alpha^{\mathrm{ext}}
 =
 0,
-$$
+```
 
 so
 
-$$
+```math
 \boxed{
 \mathbf P=\text{constant}
 }.
-$$
+```
 
 ### Questions to answer
 
@@ -919,35 +919,35 @@ $$
 
 Begin with
 
-$$
+```math
 \hat{\mathbf r}
 =
 \cos\phi\,\hat{\mathbf x}
 +
 \sin\phi\,\hat{\mathbf y},
-$$
+```
 
-$$
+```math
 \hat{\boldsymbol\phi}
 =
 -\sin\phi\,\hat{\mathbf x}
 +
 \cos\phi\,\hat{\mathbf y}.
-$$
+```
 
 Differentiate $\hat{\mathbf r}$:
 
-$$
+```math
 \dot{\hat{\mathbf r}}
 =
 -\sin\phi\,\dot\phi\,\hat{\mathbf x}
 +
 \cos\phi\,\dot\phi\,\hat{\mathbf y}.
-$$
+```
 
 Factor out $\dot\phi$:
 
-$$
+```math
 \dot{\hat{\mathbf r}}
 =
 \dot\phi
@@ -956,37 +956,37 @@ $$
 +
 \cos\phi\,\hat{\mathbf y}
 \right).
-$$
+```
 
 Therefore,
 
-$$
+```math
 \boxed{
 \dot{\hat{\mathbf r}}
 =
 \dot\phi\,\hat{\boldsymbol\phi}
 }.
-$$
+```
 
 Now differentiate $\hat{\boldsymbol\phi}$:
 
-$$
+```math
 \dot{\hat{\boldsymbol\phi}}
 =
 -\cos\phi\,\dot\phi\,\hat{\mathbf x}
 -
 \sin\phi\,\dot\phi\,\hat{\mathbf y}.
-$$
+```
 
 Thus,
 
-$$
+```math
 \boxed{
 \dot{\hat{\boldsymbol\phi}}
 =
 -\dot\phi\,\hat{\mathbf r}
 }.
-$$
+```
 
 ### Geometric interpretation
 
@@ -1007,31 +1007,31 @@ $$
 
 Begin with
 
-$$
+```math
 \mathbf r=r\hat{\mathbf r}.
-$$
+```
 
 Differentiate:
 
-$$
+```math
 \mathbf v
 =
 \dot r\,\hat{\mathbf r}
 +
 r\dot{\hat{\mathbf r}}.
-$$
+```
 
 Using
 
-$$
+```math
 \dot{\hat{\mathbf r}}
 =
 \dot\phi\,\hat{\boldsymbol\phi},
-$$
+```
 
 we obtain
 
-$$
+```math
 \boxed{
 \mathbf v
 =
@@ -1039,11 +1039,11 @@ $$
 +
 r\dot\phi\,\hat{\boldsymbol\phi}
 }.
-$$
+```
 
 Differentiate again:
 
-$$
+```math
 \mathbf a
 =
 \frac{d}{dt}
@@ -1052,11 +1052,11 @@ $$
 +
 r\dot\phi\,\hat{\boldsymbol\phi}
 \right).
-$$
+```
 
 Apply the product rule:
 
-$$
+```math
 \mathbf a
 =
 \ddot r\,\hat{\mathbf r}
@@ -1068,11 +1068,11 @@ $$
 r\ddot\phi\,\hat{\boldsymbol\phi}
 +
 r\dot\phi\,\dot{\hat{\boldsymbol\phi}}.
-$$
+```
 
 Substitute
 
-$$
+```math
 \dot{\hat{\mathbf r}}
 =
 \dot\phi\,\hat{\boldsymbol\phi},
@@ -1080,11 +1080,11 @@ $$
 \dot{\hat{\boldsymbol\phi}}
 =
 -\dot\phi\,\hat{\mathbf r}.
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf a
 =
 \ddot r\,\hat{\mathbf r}
@@ -1096,11 +1096,11 @@ $$
 r\ddot\phi\,\hat{\boldsymbol\phi}
 -
 r\dot\phi^2\,\hat{\mathbf r}.
-$$
+```
 
 Collect terms:
 
-$$
+```math
 \boxed{
 \mathbf a
 =
@@ -1109,7 +1109,7 @@ $$
 \left(r\ddot\phi+2\dot r\dot\phi\right)
 \hat{\boldsymbol\phi}
 }.
-$$
+```
 
 ### Interpret every term
 
@@ -1124,7 +1124,7 @@ $$
 
 For uniform circular motion,
 
-$$
+```math
 r=R,
 \qquad
 \dot r=\ddot r=0,
@@ -1132,17 +1132,17 @@ r=R,
 \dot\phi=\omega,
 \qquad
 \ddot\phi=0,
-$$
+```
 
 so
 
-$$
+```math
 \boxed{
 \mathbf a
 =
 -R\omega^2\hat{\mathbf r}
 }.
-$$
+```
 
 ### Reproduce from memory
 
@@ -1157,27 +1157,27 @@ $$
 
 For fixed radius $R$,
 
-$$
+```math
 a_\phi=R\ddot\phi.
-$$
+```
 
 The tangential component of gravity is
 
-$$
+```math
 F_\phi=-mg\sin\phi.
-$$
+```
 
 Newton's second law gives
 
-$$
+```math
 mR\ddot\phi
 =
 -mg\sin\phi.
-$$
+```
 
 Therefore,
 
-$$
+```math
 \boxed{
 \ddot\phi
 +
@@ -1185,70 +1185,70 @@ $$
 =
 0
 }.
-$$
+```
 
 This equation is nonlinear because the unknown $\phi$ appears inside
 the nonlinear function $\sin\phi$.
 
 For small angles measured in radians,
 
-$$
+```math
 \sin\phi\approx\phi.
-$$
+```
 
 Then
 
-$$
+```math
 \ddot\phi
 +
 \frac{g}{R}\phi
 =
 0.
-$$
+```
 
 Define
 
-$$
+```math
 \omega_0^2=\frac{g}{R}.
-$$
+```
 
 The solution is
 
-$$
+```math
 \phi(t)
 =
 A\cos(\omega_0t)
 +
 B\sin(\omega_0t).
-$$
+```
 
 For
 
-$$
+```math
 \phi(0)=\phi_0,
 \qquad
 \dot\phi(0)=0,
-$$
+```
 
 we obtain
 
-$$
+```math
 \boxed{
 \phi(t)
 =
 \phi_0\cos(\omega_0t)
 }.
-$$
+```
 
 The approximate period is
 
-$$
+```math
 \boxed{
 T
 =
 2\pi\sqrt{\frac{R}{g}}
 }.
-$$
+```
 
 ### Questions to answer
 
@@ -1272,31 +1272,31 @@ $$
 
 ### Exact model
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\sin\phi.
-$$
+```
 
 ### Approximate model
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\phi.
-$$
+```
 
 ### Initial conditions
 
-$$
+```math
 \phi(0)=\phi_0,
 \qquad
 \dot\phi(0)=0.
-$$
+```
 
 ### Angles to investigate
 
-$$
+```math
 \phi_0
 \in
 \left\{
@@ -1305,7 +1305,7 @@ $$
 45^\circ,\,
 90^\circ
 \right\}.
-$$
+```
 
 ### Outputs
 

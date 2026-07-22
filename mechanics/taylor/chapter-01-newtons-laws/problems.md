@@ -62,9 +62,9 @@ constants in its general solution.
 ### Checklist
 
 - [ ] Solve an equation of the form
-  $$
+  ```math
   \dot f=f.
-  $$
+  ```
 - [ ] Identify the arbitrary constant.
 - [ ] Explain why one initial condition determines the solution.
 - [ ] Contrast this with a second-order equation of motion.
@@ -90,15 +90,15 @@ while accelerating frames do not.
 
 For a frame moving at constant velocity,
 
-$$
+```math
 x'=x-vt.
-$$
+```
 
 For an accelerating frame,
 
-$$
+```math
 x''=x-\frac12at^2.
-$$
+```
 
 ### Questions
 
@@ -129,38 +129,38 @@ $N$-particle system.
 
 ### Starting equations
 
-$$
+```math
 \dot{\mathbf p}_1
 =
 \mathbf F_{12}+\mathbf F_{13}+\mathbf F_1^{\mathrm{ext}},
-$$
+```
 
-$$
+```math
 \dot{\mathbf p}_2
 =
 \mathbf F_{21}+\mathbf F_{23}+\mathbf F_2^{\mathrm{ext}},
-$$
+```
 
-$$
+```math
 \dot{\mathbf p}_3
 =
 \mathbf F_{31}+\mathbf F_{32}+\mathbf F_3^{\mathrm{ext}}.
-$$
+```
 
 ### Checklist
 
 - [ ] Add the three equations.
 - [ ] Group each third-law force pair.
 - [ ] Use
-  $$
+  ```math
   \mathbf F_{ij}=-\mathbf F_{ji}.
-  $$
+  ```
 - [ ] Derive
-  $$
+  ```math
   \frac{d\mathbf P}{dt}
   =
   \mathbf F_{\mathrm{ext}}.
-  $$
+  ```
 - [ ] State when total momentum is conserved.
 - [ ] Explain why the system boundary matters.
 
@@ -168,9 +168,9 @@ $$
 
 #### Total momentum
 
-$$
+```math
 \mathbf P=
-$$
+```
 
 #### Sum of the equations of motion
 
@@ -200,17 +200,17 @@ the equations of motion.
 
 Perpendicular to the board,
 
-$$
+```math
 N-mg\cos\theta=0.
-$$
+```
 
 Within the board,
 
-$$
+```math
 m\ddot x=F_x,
 \qquad
 m\ddot y=F_y.
-$$
+```
 
 ### Tasks
 
@@ -247,21 +247,21 @@ Derive the time dependence of the polar-coordinate basis vectors.
 
 ### Begin with
 
-$$
+```math
 \hat{\mathbf r}
 =
 \cos\phi\,\hat{\mathbf x}
 +
 \sin\phi\,\hat{\mathbf y},
-$$
+```
 
-$$
+```math
 \hat{\boldsymbol\phi}
 =
 -\sin\phi\,\hat{\mathbf x}
 +
 \cos\phi\,\hat{\mathbf y}.
-$$
+```
 
 ### Checklist
 
@@ -269,17 +269,17 @@ $$
 - [ ] Differentiate $\hat{\mathbf r}$.
 - [ ] Differentiate $\hat{\boldsymbol\phi}$.
 - [ ] Show that
-  $$
+  ```math
   \dot{\hat{\mathbf r}}
   =
   \dot\phi\,\hat{\boldsymbol\phi}.
-  $$
+  ```
 - [ ] Show that
-  $$
+  ```math
   \dot{\hat{\boldsymbol\phi}}
   =
   -\dot\phi\,\hat{\mathbf r}.
-  $$
+  ```
 - [ ] Explain both signs geometrically.
 - [ ] Draw the basis vectors at two nearby angles.
 
@@ -299,7 +299,7 @@ Apply the polar-coordinate form of Newton's second law.
 
 ### Given conditions
 
-$$
+```math
 r=R,
 \qquad
 \dot r=0,
@@ -309,7 +309,7 @@ r=R,
 \dot\phi=\omega,
 \qquad
 \ddot\phi=0.
-$$
+```
 
 ### Checklist
 
@@ -317,9 +317,9 @@ $$
 - [ ] Identify the direction of the string tension.
 - [ ] Apply Newton's second law in the radial direction.
 - [ ] Derive
-  $$
+  ```math
   T=mR\omega^2.
-  $$
+  ```
 - [ ] Explain the sign convention.
 - [ ] Check the units.
 
@@ -345,31 +345,31 @@ Compare the nonlinear equation of motion with its linear approximation.
 
 ### Exact equation
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\sin\phi.
-$$
+```
 
 ### Small-angle equation
 
-$$
+```math
 \ddot\phi
 =
 -\frac{g}{R}\phi.
-$$
+```
 
 ### Initial conditions
 
-$$
+```math
 \phi(0)=\phi_0,
 \qquad
 \dot\phi(0)=0.
-$$
+```
 
 ### Suggested initial angles
 
-$$
+```math
 \phi_0
 \in
 \left\{
@@ -378,7 +378,7 @@ $$
 45^\circ,\,
 90^\circ
 \right\}.
-$$
+```
 
 ### Computational tasks
 
@@ -401,19 +401,19 @@ code/problem-1-50-skateboard.ipynb
 
 Define
 
-$$
+```math
 \omega_\phi=\dot\phi.
-$$
+```
 
 Then
 
-$$
+```math
 \dot\phi=
-$$
+```
 
-$$
+```math
 \dot\omega_\phi=
-$$
+```
 
 ### Results
 
@@ -435,9 +435,9 @@ Study the converse of the usual momentum-conservation argument.
 
 If every isolated two-particle system conserves momentum, can you derive
 
-$$
+```math
 \mathbf F_{12}=-\mathbf F_{21}?
-$$
+```
 
 ### Work
 
@@ -454,19 +454,19 @@ derivative.
 
 Prove
 
-$$
+```math
 |\mathbf v|=\text{constant}
 \quad\Longleftrightarrow\quad
 \mathbf v\cdot\dot{\mathbf v}=0.
-$$
+```
 
 ### Hint
 
 Differentiate
 
-$$
+```math
 \mathbf v\cdot\mathbf v.
-$$
+```
 
 ### Work
 
