@@ -80,31 +80,33 @@ By the end of the chapter, I should be able to:
 
 What does Taylor mean by classical mechanics?
 
+- Mechanics is the study of how things move. Classical mechanics generally means the mechanics derived by Newton, Lagrange, and Hamilton. From 1905-1925 it became clear that these mechanics fail when things are very small or move close to the speed of light. Classical mechanics generally means mechanics not including those domains
+
 ### Three formulations
 
-- Newtonian:
-- Lagrangian:
-- Hamiltonian:
+- Newtonian: 1642-1727
+- Lagrangian: 1736-1813
+- Hamiltonian: 1805-1865
 
 ### Relationship among them
 
 Explain why these are alternative formulations of the same mechanics.
 
+Lagrangian and Hamiltonian Mechanics are equivalent to Newtonian, but can be much simpler for certain problems
+
 ### Domain of validity
 
 Classical mechanics works well when:
 
-- 
-- 
+- We are not dealing with atoms and other small things 
+-  When we are not moving close to the speed of light
 
-It becomes inadequate when:
-
-- 
-- 
 
 ### My takeaway
 
 > Why does Taylor begin with the Newtonian formulation?
+
+It is the one most are familiar with and it came first
 
 ---
 
@@ -144,9 +146,9 @@ In Cartesian coordinates,
 +\dot z\hat{\mathbf z}.
 ```
 
-### Why Cartesian differentiation is simple
+> Why Cartesian differentiation is simple
 
-> The Cartesian basis vectors are fixed in time.
+The Cartesian basis vectors are fixed in time.
 
 ### Scalar product
 
@@ -156,12 +158,12 @@ In Cartesian coordinates,
 ab\cos\theta.
 ```
 
-Geometric meaning:
+Geometric meaning: The scalar magnitude of 2 vectors
 
 Important uses:
 
-- 
-- 
+- If a force acts on an object through a small displacement, the work is the dot product
+- the square root of a dot product of a vector with itself gives the magmitude of the vector
 
 ### Vector product
 
@@ -170,22 +172,24 @@ Important uses:
 =
 ```
 
-Geometric meaning:
+Geometric meaning: The cross product creates a vector perpindicular to each of the vectors we began with
 
 Important uses:
 
-- 
+- Rotational Motion
 - 
 
 ### Reference frames
 
 A reference frame specifies:
 
-- 
-- 
-- 
+- Spacial origin
+- Temporal origin
+- Orientation
 
-Why can a good choice of frame simplify a problem?
+> Why can a good choice of frame simplify a problem?
+
+If we have a block sliding down a plane, leveling the horizontal axis on the plane means the block move in the direction of are horizontal unit vector 
 
 ### Classical time
 
@@ -193,8 +197,8 @@ What assumption does classical mechanics make about time?
 
 ### Questions
 
-- 
-- 
+- Not sure about the question about time above
+
 
 ---
 
@@ -244,8 +248,9 @@ For the object of interest:
 
 ### My takeaway
 
-> What is the difference between defining force and determining a
-> particular force law?
+> What is the difference between defining force and determining a particular force law? 
+
+Still confused about this
 
 ---
 
@@ -253,7 +258,7 @@ For the object of interest:
 
 ### Newton's first law
 
-State it in my own words:
+State it in my own words: an object in motion will stay in the exact same motion unless acted on by a force
 
 ### Newton's second law
 
@@ -290,12 +295,12 @@ My definition:
 
 Examples of approximately inertial frames:
 
-- 
+- Watching the ice puck slide on the floor of a train
 
 Examples of noninertial frames:
 
-- 
-- 
+- Being in another train that is accelerating
+- Being on a merry-go-round as the puck moves in a straight line
 
 ### Newton's second law as a differential equation
 
