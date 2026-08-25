@@ -1,156 +1,138 @@
-**# Chapter 1 — Newton's Laws of Motion**
+﻿# Chapter 1 — Newton's Laws of Motion
 
-**\*\*Text:\*\*** John R. Taylor, *\*Classical Mechanics\**  
+**Text:** John R. Taylor, *Classical Mechanics*  
 
-**\*\*Dates studied:\*\*** July--August 2026  
+**Dates studied:** July--August 2026  
 
-**\*\*Status:\*\*** Chapter review complete  
+**Status:** Chapter review complete  
 
-**---**
+---
 
-**## How to use this file**
+## How to use this file
 
-This is the **\*\*notes and derivations sheet\*\*** for Chapter 1.
+This is the **notes and derivations sheet** for Chapter 1.
 
 Use it to record:
 
-\- the chapter's main ideas;
+- the chapter's main ideas;
 
-\- definitions and assumptions;
+- definitions and assumptions;
 
-\- physical interpretations;
+- physical interpretations;
 
-\- derivations you should be able to reproduce;
+- derivations you should be able to reproduce;
 
-\- questions, mistakes, and connections.
+- questions, mistakes, and connections.
 
 The separate exercise sheet is:
 
-[\`problems.md\`]\(problems.md)
+[`problems.md`](problems.md)
 
-**---**
+---
 
-**# 1. Chapter purpose**
-
-**## One-sentence summary**
-
+# 1. Chapter purpose
+## One-sentence summary
 \> Chapter 1 gives a foundation of Newtonian Mechanics and reviews the basics of vector calculus and differential equations
 
-**## My current interpretation**
-
+## My current interpretation
 This chapter establishes the basic objects and assumptions of Newtonian
 
 mechanics and shows how physical forces are converted into differential
 
 equations for motion.
 
-**## What was review?**
+## What was review?
+- Newton's Laws
 
-\- Newton's Laws
+- Harmonic Motion
 
-\- Harmonic Motion
+- Conservation of Momentum
 
-\- Conservation of Momentum
+## What was genuinely new or rusty?
+- I feel like I truly understand the basis in polar coordinates instead of just memorizing equations.
 
-**## What was genuinely new or rusty?**
+- Differential equations were rusty. The skateboard problem forced me to reconnect the order of an ODE with the number of initial conditions and to convert a second-order ODE into a first-order system for numerical solution.
 
-\- I feel like I truly understand the basis in polar coordinates instead of just memorizing equations.
-
-\- Differential equations were rusty. The skateboard problem forced me to reconnect the order of an ODE with the number of initial conditions and to convert a second-order ODE into a first-order system for numerical solution.
-
-\- Resolving vectors in rotated coordinate systems was rusty. Problem 1.38 showed me that I should define the axes first and project the force onto them rather than decide sine versus cosine from how a triangle looks.
+- Resolving vectors in rotated coordinate systems was rusty. Problem 1.38 showed me that I should define the axes first and project the force onto them rather than decide sine versus cosine from how a triangle looks.
 
 
 
-**---**
-
-**# 2. Learning objectives**
-
+---
+# 2. Learning objectives
 By the end of the chapter, I should be able to:
 
-\- [x] Explain the domain in which classical mechanics is appropriate.
+- [x] Explain the domain in which classical mechanics is appropriate.
 
-\- [x] Define position, velocity, and acceleration as vectors.
+- [x] Define position, velocity, and acceleration as vectors.
 
-\- [x] Differentiate vectors written in a fixed Cartesian basis.
+- [x] Differentiate vectors written in a fixed Cartesian basis.
 
-\- [x] Explain the physical meaning of mass and force.
+- [x] Explain the physical meaning of mass and force.
 
-\- [x] State Newton's three laws precisely.
+- [x] State Newton's three laws precisely.
 
-\- [x] Explain why Newton's first law defines inertial frames.
+- [x] Explain why Newton's first law defines inertial frames.
 
-\- [x] Treat Newton's second law as a differential equation.
+- [x] Treat Newton's second law as a differential equation.
 
-\- [x] Explain the role of initial conditions.
+- [x] Explain the role of initial conditions.
 
-\- [x] Derive conservation of momentum for an isolated system.
+- [x] Derive conservation of momentum for an isolated system.
 
-\- [x] Distinguish internal forces from external forces.
+- [x] Distinguish internal forces from external forces.
 
-\- [x] Choose useful Cartesian coordinates.
+- [x] Choose useful Cartesian coordinates.
 
-\- [x] Derive velocity and acceleration in two-dimensional polar coordinates.
+- [x] Derive velocity and acceleration in two-dimensional polar coordinates.
 
-\- [x] Interpret every term in the polar acceleration formula.
+- [x] Interpret every term in the polar acceleration formula.
 
-\- [x] Derive the nonlinear skateboard equation.
+- [x] Derive the nonlinear skateboard equation.
 
-\- [x] Explain and test the small-angle approximation.
+- [x] Explain and test the small-angle approximation.
 
-**---**
-
-**# 3. Section notes**
-
-**## 1.1 Classical Mechanics**
-
-**### Central idea**
-
+---
+# 3. Section notes
+## 1.1 Classical Mechanics
+### Central idea
 What does Taylor mean by classical mechanics?
 
-\- Mechanics is the study of how things move. Classical mechanics generally means the mechanics derived by Newton, Lagrange, and Hamilton. From 1905-1925 it became clear that these mechanics fail when things are very small or move close to the speed of light. Classical mechanics generally means mechanics not including those domains
+- Mechanics is the study of how things move. Classical mechanics generally means the mechanics derived by Newton, Lagrange, and Hamilton. From 1905-1925 it became clear that these mechanics fail when things are very small or move close to the speed of light. Classical mechanics generally means mechanics not including those domains
 
-**### Three formulations**
+### Three formulations
+- Newtonian: 1642-1727
 
-\- Newtonian: 1642-1727
+- Lagrangian: 1736-1813
 
-\- Lagrangian: 1736-1813
+- Hamiltonian: 1805-1865
 
-\- Hamiltonian: 1805-1865
-
-**### Relationship among them**
-
+### Relationship among them
 Explain why these are alternative formulations of the same mechanics.
 
 Lagrangian and Hamiltonian Mechanics are equivalent to Newtonian, but can be much simpler for certain problems
 
-**### Domain of validity**
-
+### Domain of validity
 Classical mechanics works well when:
 
-\- We are not dealing with atoms and other small things 
+- We are not dealing with atoms and other small things 
 
-\-  When we are not moving close to the speed of light
+- When we are not moving close to the speed of light
 
 
 
-**### My takeaway**
-
+### My takeaway
 \> Why does Taylor begin with the Newtonian formulation?
 
 It is the one most are familiar with and it came first
 
-**---**
-
-**## 1.2 Space and Time**
-
-**### Position**
-
-\`\`\`math
+---
+## 1.2 Space and Time
+### Position
+```math
 
 \mathbf r(t)
 
-\=
+=
 
 x(t)\hat{\mathbf x}
 
@@ -158,15 +140,14 @@ x(t)\hat{\mathbf x}
 
 +z(t)\hat{\mathbf z}.
 
-\`\`\`
+```
 
-**### Velocity and acceleration**
-
-\`\`\`math
+### Velocity and acceleration
+```math
 
 \mathbf v
 
-\=
+=
 
 \frac{d\mathbf r}{dt},
 
@@ -174,23 +155,23 @@ x(t)\hat{\mathbf x}
 
 \mathbf a
 
-\=
+=
 
 \frac{d\mathbf v}{dt}
 
-\=
+=
 
 \frac{d^2\mathbf r}{dt^2}.
 
-\`\`\`
+```
 
 In Cartesian coordinates,
 
-\`\`\`math
+```math
 
 \mathbf v
 
-\=
+=
 
 \dot x\hat{\mathbf x}
 
@@ -198,82 +179,74 @@ In Cartesian coordinates,
 
 +\dot z\hat{\mathbf z}.
 
-\`\`\`
+```
 
 \> Why Cartesian differentiation is simple
 
 The Cartesian basis vectors are fixed in time.
 
-**### Scalar product**
-
-\`\`\`math
+### Scalar product
+```math
 
 \mathbf a\cdot\mathbf b
 
-\=
+=
 
 ab\cos\theta.
 
-\`\`\`
+```
 
 Geometric meaning: The scalar magnitude of 2 vectors
 
 Important uses:
 
-\- If a force acts on an object through a small displacement, the work is the dot product
+- If a force acts on an object through a small displacement, the work is the dot product
 
-\- the square root of a dot product of a vector with itself gives the magmitude of the vector
+- the square root of a dot product of a vector with itself gives the magmitude of the vector
 
-**### Vector product**
-
-\`\`\`math
+### Vector product
+```math
 
 \mathbf a\times\mathbf b
 
-\=
+=
 
-\`\`\`
+```
 
 Geometric meaning: The cross product creates a vector perpindicular to each of the vectors we began with
 
 Important uses:
 
-\- Rotational Motion
+- Rotational Motion
 
-\- 
+- 
 
-**### Reference frames**
-
+### Reference frames
 A reference frame specifies:
 
-\- Spacial origin
+- Spacial origin
 
-\- Temporal origin
+- Temporal origin
 
-\- Orientation
+- Orientation
 
 \> Why can a good choice of frame simplify a problem?
 
 If we have a block sliding down a plane, leveling the horizontal axis on the plane means the block move in the direction of are horizontal unit vector 
 
-**### Classical time**
-
+### Classical time
 What assumption does classical mechanics make about time?
 
 Classical Newtonian mechanics assumes an absolute, universal time: all inertial observers use the same time coordinate. Time is independent of the observer's state of motion. This is one of the assumptions that must be modified in special relativity.
 
-**### Questions**
-
-\- Revisit this when studying relativity and compare Galilean time with relativistic spacetime.
-
+### Questions
+- Revisit this when studying relativity and compare Galilean time with relativistic spacetime.
 
 
-**---**
 
-**## 1.3 Mass and Force**
-
-**### Mass**
-
+---
+## 1.3 Mass and Force
+### Mass
 My physical interpretation:
 
 \> Mass measures resistance to acceleration.
@@ -282,12 +255,11 @@ How could two masses be compared operationally?
 
 Apply the same known force to each object and compare the accelerations. Since \(F=ma\), the object with the smaller acceleration has the larger mass. Equivalently,
 \[
-rac{m_1}{m_2}=rac{a_2}{a_1}
+\frac{m_1}{m_2}=\frac{a_2}{a_1}
 \]
 when the same force is applied.
 
-**### Force**
-
+### Force
 My physical interpretation:
 
 A force is an interaction that changes an object's motion; in an inertial frame its net effect is measured by the acceleration it produces.
@@ -296,86 +268,77 @@ How could force be measured operationally?
 
 For a known mass, measure the acceleration and use
 \[
-\mathbf F_{
-m net}=m\mathbf a.
+\\mathbf F_{\\mathrm{net}}=m\\mathbf a.
 \]
 A particular force law then specifies how that force depends on position, velocity, time, or other physical variables.
 
-**### Net force**
+### Net force
+```math
 
-\`\`\`math
+\mathbf F_{\mathrm{net}}
 
-\mathbf F\_{\mathrm{net}}
+=
 
-\=
+\sum_i \mathbf F_i.
 
-\sum\_i \mathbf F\_i.
+```
 
-\`\`\`
-
-**### Force-identification checklist**
-
+### Force-identification checklist
 For the object of interest:
 
-1\. What objects touch it?
+1. What objects touch it?
 
-2\. What contact forces can they exert?
+2. What contact forces can they exert?
 
-3\. What long-range forces act on it?
+3. What long-range forces act on it?
 
-4\. Which apparent forces act on some other object?
+4. Which apparent forces act on some other object?
 
-5\. Have I included the direction of every force?
+5. Have I included the direction of every force?
 
-**### Common forces**
+### Common forces
+| Force | Typical form | Direction |
 
-\| Force | Typical form | Direction |
+|---|---:|---|
 
-\|---|---:|---|
+| Weight | $m\mathbf g$ | Downward |
 
-\| Weight | $m\mathbf g$ | Downward |
+| Normal force | $N$ | Perpendicular to a surface |
 
-\| Normal force | $N$ | Perpendicular to a surface |
+| Kinetic friction | $f_k=\mu_kN$ | Opposite relative motion |
 
-\| Kinetic friction | $f\_k=\mu\_kN$ | Opposite relative motion |
+| Tension | $T$ | Along a string or cable |
 
-\| Tension | $T$ | Along a string or cable |
+| Spring force | $-k\mathbf x$ | Toward equilibrium |
 
-\| Spring force | $-k\mathbf x$ | Toward equilibrium |
-
-**### My takeaway**
-
+### My takeaway
 \> What is the difference between defining force and determining a particular force law? 
 
 Newton's second law tells me what the net force *does*: it determines the acceleration. A force law tells me the specific physical origin and mathematical form of a force, such as gravity, a spring force, friction, or drag. The equation \(F=ma\) is not by itself a model for gravity or a spring; those require separate force laws.
 
-**---**
-
-**## 1.4 Newton's First and Second Laws**
-
-**### Newton's first law**
-
+---
+## 1.4 Newton's First and Second Laws
+### Newton's first law
 State it in my own words: an object in motion will stay in the exact same motion unless acted on by a force
 
-**### Newton's second law**
+### Newton's second law
+```math
 
-\`\`\`math
+\mathbf F_{\mathrm{net}}
 
-\mathbf F\_{\mathrm{net}}
-
-\=
+=
 
 m\mathbf a.
 
-\`\`\`
+```
 
 For constant mass,
 
-\`\`\`math
+```math
 
-\mathbf F\_{\mathrm{net}}
+\mathbf F_{\mathrm{net}}
 
-\=
+=
 
 \frac{d\mathbf p}{dt},
 
@@ -383,154 +346,144 @@ For constant mass,
 
 \mathbf p=m\mathbf v.
 
-\`\`\`
+```
 
-**### Why the first law is not redundant**
-
+### Why the first law is not redundant
 Setting $\mathbf F=0$ in the second law appears to give
 
 $\mathbf a=0$, but this statement is only valid in an inertial frame.
 
-**### Inertial frame**
-
+### Inertial frame
 My definition:
 
-\`\`\`math
+```math
 
-\mathbf F\_{\mathrm{net}}=0
+\mathbf F_{\mathrm{net}}=0
 
 \quad\Longrightarrow\quad
 
 \mathbf v=\text{constant}.
 
-\`\`\`
+```
 
 Examples of approximately inertial frames:
 
-\- Watching the ice puck slide on the floor of a train
+- Watching the ice puck slide on the floor of a train
 
 Examples of noninertial frames:
 
-\- Being in another train that is accelerating
+- Being in another train that is accelerating
 
-\- Being on a merry-go-round as the puck moves in a straight line
+- Being on a merry-go-round as the puck moves in a straight line
 
-**### Newton's second law as a differential equation**
-
-\`\`\`math
+### Newton's second law as a differential equation
+```math
 
 m\ddot{\mathbf r}(t)
 
-\=
+=
 
 \mathbf F(\mathbf r,\dot{\mathbf r},t).
 
-\`\`\`
+```
 
 The unknown is:
 
-\`\`\`math
+```math
 
 \mathbf r(t).
 
-\`\`\`
+```
 
 A second-order equation normally requires:
 
-\`\`\`math
+```math
 
-\mathbf r(0)=\mathbf r\_0,
+\mathbf r(0)=\mathbf r_0,
 
 \qquad
 
-\dot{\mathbf r}(0)=\mathbf v\_0.
+\dot{\mathbf r}(0)=\mathbf v_0.
 
-\`\`\`
+```
 
-**### My takeaway**
-
+### My takeaway
 \> A mechanics problem consists of identifying the force law, constructing
 
 \> the differential equation, and solving it subject to initial conditions.
 
-**---**
+---
+## 1.5 Newton's Third Law and Momentum Conservation
+### Newton's third law
+```math
 
-**## 1.5 Newton's Third Law and Momentum Conservation**
+\mathbf F_{12}
 
-**### Newton's third law**
+=
 
-\`\`\`math
+-\mathbf F_{21}.
 
-\mathbf F\_{12}
-
-\=
-
--\mathbf F\_{21}.
-
-\`\`\`
+```
 
 Define carefully:
 
-\- $\mathbf F\_{12}$: the force exerted on particle 1 by particle 2.
+- $\mathbf F_{12}$: the force exerted on particle 1 by particle 2.
 
-\- $\mathbf F\_{21}$: the force exerted on particle 2 by particle 1.
+- $\mathbf F_{21}$: the force exerted on particle 2 by particle 1.
 
-**### Third-law pair checklist**
-
+### Third-law pair checklist
 A third-law pair:
 
-\- acts on two different objects;
+- acts on two different objects;
 
-\- comes from the same interaction;
+- comes from the same interaction;
 
-\- has equal magnitude;
+- has equal magnitude;
 
-\- points in opposite directions.
+- points in opposite directions.
 
-**### Total momentum**
-
+### Total momentum
 For a system of particles,
 
-\`\`\`math
+```math
 
 \mathbf P
 
-\=
+=
 
-\sum\_\alpha \mathbf p\_\alpha.
+\sum_\alpha \mathbf p_\alpha.
 
-\`\`\`
+```
 
 The central result is
 
-\`\`\`math
+```math
 
 \boxed{
 
 \frac{d\mathbf P}{dt}
 
-\=
+=
 
-\mathbf F\_{\mathrm{ext}}
+\mathbf F_{\mathrm{ext}}
 
 }.
 
-\`\`\`
+```
 
 For an isolated system,
 
-\`\`\`math
+```math
 
-\mathbf F\_{\mathrm{ext}}=0
+\mathbf F_{\mathrm{ext}}=0
 
 \quad\Longrightarrow\quad
 
 \boxed{\mathbf P=\text{constant}}.
 
-\`\`\`
+```
 
-**### System boundary**
-
+### System boundary
 The distinction between internal and external forces depends on:
 
 \> How the system is defined.
@@ -539,159 +492,148 @@ Example:
 
 If two particles push on each other and both are included in the system, the two interaction forces are internal and cancel in the total-momentum equation. If only one particle is included, the force exerted by the other particle crosses the system boundary and must be counted as an external force.
 
-**### My takeaway**
-
+### My takeaway
 \> Momentum conservation concerns the total momentum of a properly defined
 
 \> isolated system.
 
-**---**
+---
+## 1.6 Newton's Second Law in Cartesian Coordinates
+### Component equations
+```math
 
-**## 1.6 Newton's Second Law in Cartesian Coordinates**
-
-**### Component equations**
-
-\`\`\`math
-
-F\_x=m\ddot x,
+F_x=m\ddot x,
 
 \qquad
 
-F\_y=m\ddot y,
+F_y=m\ddot y,
 
 \qquad
 
-F\_z=m\ddot z.
+F_z=m\ddot z.
 
-\`\`\`
+```
 
-**### Problem-solving workflow**
+### Problem-solving workflow
+1. Define the system.
 
-1\. Define the system.
+2. Draw a free-body diagram.
 
-2\. Draw a free-body diagram.
+3. Choose coordinates.
 
-3\. Choose coordinates.
+4. Resolve the forces into components.
 
-4\. Resolve the forces into components.
+5. Write one equation per coordinate.
 
-5\. Write one equation per coordinate.
+6. Apply constraints.
 
-6\. Apply constraints.
+7. Solve the equations of motion.
 
-7\. Solve the equations of motion.
+8. Apply initial conditions.
 
-8\. Apply initial conditions.
+9. Check units and limiting cases.
 
-9\. Check units and limiting cases.
-
-**### Coordinate choice**
-
+### Coordinate choice
 A useful coordinate system should:
 
-\- align with constraints;
+- align with constraints;
 
-\- reduce the number of nonzero components;
+- reduce the number of nonzero components;
 
-\- exploit symmetry;
+- exploit symmetry;
 
-\- separate independent equations when possible.
+- separate independent equations when possible.
 
-**### Tilted-board example**
-
+### Tilted-board example
 Draw the complete free-body diagram.
 
 Forces:
 
-\- Weight: $m\mathbf g$, vertically downward.
+- Weight: $m\mathbf g$, vertically downward.
 
-\- Normal force: $N$, perpendicular to the board.
+- Normal force: $N$, perpendicular to the board.
 
-\- Other forces: none for the frictionless puck.
+- Other forces: none for the frictionless puck.
 
 Choose coordinates attached to the board:
 
-\- $x$: across the board, where gravity has no component.
+- $x$: across the board, where gravity has no component.
 
-\- $y$: up the board.
+- $y$: up the board.
 
-\- $z$: perpendicular to the board.
+- $z$: perpendicular to the board.
 
 The key lesson from this problem was to define the axes first and then project gravity onto them. The in-plane component is $mg\sin\theta$ and the normal component is $mg\cos\theta$.
 
 Normal equation:
 
-\`\`\`math
+```math
 
 N-mg\cos\theta=0.
 
-\`\`\`
+```
 
 Equations within the board:
 
-\`\`\`math
+```math
 
 m\ddot x=0,
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 m\ddot y=-mg\sin\theta.
 
-\`\`\`
+```
 
 Thus,
 
-\`\`\`math
+```math
 
 x(t)=v_{0x}t,
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 y(t)=v_{0y}t-\frac12g\sin\theta\,t^2,
 
-\`\`\`
+```
 
 for an initial position at the origin.
 
 If the puck returns to $y=0$, the nonzero return time is
 
-\`\`\`math
+```math
 
 t_{\rm return}=\frac{2v_{0y}}{g\sin\theta},
 
-\`\`\`
+```
 
 and the corresponding displacement across the board is
 
-\`\`\`math
+```math
 
 x_{\rm return}=\frac{2v_{0x}v_{0y}}{g\sin\theta}.
 
-\`\`\`
+```
 
-**### Checks**
+### Checks
+- [x] Correct units
 
-\- [x] Correct units
+- [x] Correct behavior when $\theta\to0$
 
-\- [x] Correct behavior when $\theta\to0$
+- [x] Correct initial position
 
-\- [x] Correct initial position
+- [x] Correct initial velocity
 
-\- [x] Correct initial velocity
+- [x] Clear physical interpretation
 
-\- [x] Clear physical interpretation
-
-**---**
-
-**## 1.7 Two-Dimensional Polar Coordinates**
-
-**### Coordinate definitions**
-
-\`\`\`math
+---
+## 1.7 Two-Dimensional Polar Coordinates
+### Coordinate definitions
+```math
 
 x=r\cos\phi,
 
@@ -699,21 +641,20 @@ x=r\cos\phi,
 
 y=r\sin\phi.
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 \mathbf r=r\hat{\mathbf r}.
 
-\`\`\`
+```
 
-**### Polar basis vectors**
-
-\`\`\`math
+### Polar basis vectors
+```math
 
 \hat{\mathbf r}
 
-\=
+=
 
 \cos\phi\\,\hat{\mathbf x}
 
@@ -721,13 +662,13 @@ y=r\sin\phi.
 
 \sin\phi\\,\hat{\mathbf y},
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 \hat{\boldsymbol\phi}
 
-\=
+=
 
 -\sin\phi\\,\hat{\mathbf x}
 
@@ -735,13 +676,12 @@ y=r\sin\phi.
 
 \cos\phi\\,\hat{\mathbf y}.
 
-\`\`\`
+```
 
-**### Why polar coordinates are different**
-
+### Why polar coordinates are different
 Unlike Cartesian basis vectors,
 
-\`\`\`math
+```math
 
 \hat{\mathbf r}
 
@@ -749,39 +689,38 @@ Unlike Cartesian basis vectors,
 
 \hat{\boldsymbol\phi}
 
-\`\`\`
+```
 
 change direction as the particle moves.
 
-**### Basis-vector derivatives**
-
-\`\`\`math
+### Basis-vector derivatives
+```math
 
 \boxed{
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 \dot\phi\\,\hat{\boldsymbol\phi}
 
 }
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 \boxed{
 
 \dot{\hat{\boldsymbol\phi}}
 
-\=
+=
 
 -\dot\phi\\,\hat{\mathbf r}
 
 }
 
-\`\`\`
+```
 
 Explain the signs geometrically:
 
@@ -792,15 +731,14 @@ As $\phi$ increases, $\hat{\mathbf r}$ rotates toward the direction of increasin
 \dot{\hat{\boldsymbol\phi}}=-\dot\phi\hat{\mathbf r}.
 \]
 
-**### Velocity**
-
-\`\`\`math
+### Velocity
+```math
 
 \boxed{
 
 \mathbf v
 
-\=
+=
 
 \dot r\\,\hat{\mathbf r}
 
@@ -810,23 +748,22 @@ r\dot\phi\\,\hat{\boldsymbol\phi}
 
 }
 
-\`\`\`
+```
 
 Interpret:
 
-\- $\dot r\hat{\mathbf r}$: radial velocity, the rate at which the distance from the origin changes.
+- $\dot r\hat{\mathbf r}$: radial velocity, the rate at which the distance from the origin changes.
 
-\- $r\dot\phi\hat{\boldsymbol\phi}$: tangential velocity caused by rotation about the origin. Its magnitude is radius times angular speed.
+- $r\dot\phi\hat{\boldsymbol\phi}$: tangential velocity caused by rotation about the origin. Its magnitude is radius times angular speed.
 
-**### Acceleration**
-
-\`\`\`math
+### Acceleration
+```math
 
 \boxed{
 
 \mathbf a
 
-\=
+=
 
 \left(\ddot r-r\dot\phi^2\right)\hat{\mathbf r}
 
@@ -838,69 +775,64 @@ Interpret:
 
 }
 
-\`\`\`
+```
 
-**### Interpretation of the terms**
+### Interpretation of the terms
+| Term | Interpretation |
 
-\| Term | Interpretation |
+|---|---|
 
-\|---|---|
+| $\ddot r$ | Change in radial speed; radial acceleration from changing $\dot r$ |
 
-\| $\ddot r$ | Change in radial speed; radial acceleration from changing $\dot r$ |
+| $-r\dot\phi^2$ | Inward centripetal acceleration caused by changing direction while rotating |
 
-\| $-r\dot\phi^2$ | Inward centripetal acceleration caused by changing direction while rotating |
+| $r\ddot\phi$ | Tangential acceleration from changing angular speed |
 
-\| $r\ddot\phi$ | Tangential acceleration from changing angular speed |
+| $2\dot r\dot\phi$ | Tangential contribution that appears when the radius changes while the particle is also rotating |
 
-\| $2\dot r\dot\phi$ | Tangential contribution that appears when the radius changes while the particle is also rotating |
+### Newton's second law in polar form
+```math
 
-**### Newton's second law in polar form**
+F_r
 
-\`\`\`math
-
-F\_r
-
-\=
+=
 
 m\left(\ddot r-r\dot\phi^2\right),
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
-F\_\phi
+F_\phi
 
-\=
+=
 
 m\left(r\ddot\phi+2\dot r\dot\phi\right).
 
-\`\`\`
+```
 
-**### Special cases**
-
-**#### Pure radial motion**
-
+### Special cases
+#### Pure radial motion
 Set
 
-\`\`\`math
+```math
 
 \dot\phi=0.
 
-\`\`\`
+```
 
 Then:
 
-\`\`\`math
+```math
 
 \mathbf a=\ddot r\,\hat{\mathbf r}.
 
-\`\`\`
+```
 
-**#### Uniform circular motion**
-
+#### Uniform circular motion
 Set
 
-\`\`\`math
+```math
 
 r=R,
 
@@ -916,23 +848,22 @@ r=R,
 
 \ddot\phi=0.
 
-\`\`\`
+```
 
 Then:
 
-\`\`\`math
+```math
 
 \mathbf a=-R\omega^2\hat{\mathbf r}.
 
-\`\`\`
+```
 
 The acceleration is purely inward (centripetal).
 
-**#### Circular motion with angular acceleration**
-
+#### Circular motion with angular acceleration
 Set
 
-\`\`\`math
+```math
 
 r=R,
 
@@ -940,389 +871,375 @@ r=R,
 
 \dot r=\ddot r=0.
 
-\`\`\`
+```
 
 Then:
 
-\`\`\`math
+```math
 
 \mathbf a=-R\dot\phi^2\hat{\mathbf r}+R\ddot\phi\hat{\boldsymbol\phi}.
 
-\`\`\`
+```
 
 There is an inward radial component from the changing direction of the velocity and a tangential component from the changing angular speed.
 
-**### Fixed-radius skateboard equation**
-
+### Fixed-radius skateboard equation
 For $r=R$,
 
-\`\`\`math
+```math
 
-F\_\phi=-mg\sin\phi.
+F_\phi=-mg\sin\phi.
 
-\`\`\`
+```
 
 Newton's second law gives
 
-\`\`\`math
+```math
 
 mR\ddot\phi=-mg\sin\phi,
 
-\`\`\`
+```
 
 so
 
-\`\`\`math
+```math
 
 \boxed{
 
 \ddot\phi
 
-\=
+=
 
 -\frac{g}{R}\sin\phi
 
 }.
 
-\`\`\`
+```
 
 Why is this nonlinear?
 
 Because the unknown function $\phi(t)$ appears inside $\sin\phi$. The equation is not linear in $\phi$.
 
-**### Small-angle approximation**
-
+### Small-angle approximation
 For small $\phi$ in radians,
 
-\`\`\`math
+```math
 
 \sin\phi\approx\phi.
 
-\`\`\`
+```
 
 Therefore,
 
-\`\`\`math
+```math
 
 \ddot\phi+\frac{g}{R}\phi=0.
 
-\`\`\`
+```
 
 Define
 
-\`\`\`math
+```math
 
-\omega\_0^2=\frac{g}{R}.
+\omega_0^2=\frac{g}{R}.
 
-\`\`\`
+```
 
 Then
 
-\`\`\`math
+```math
 
 \phi(t)
 
-\=
+=
 
-A\cos(\omega\_0t)
+A\cos(\omega_0t)
 
 \+
 
-B\sin(\omega\_0t).
+B\sin(\omega_0t).
 
-\`\`\`
+```
 
 The approximate period is
 
-\`\`\`math
+```math
 
 \boxed{
 
 T
 
-\=
+=
 
 2\pi\sqrt{\frac{R}{g}}
 
 }.
 
-\`\`\`
+```
 
-**### Exact versus approximate motion**
-
+### Exact versus approximate motion
 Exact:
 
-\`\`\`math
+```math
 
 \ddot\phi
 
-\=
+=
 
 -\frac{g}{R}\sin\phi.
 
-\`\`\`
+```
 
 Approximate:
 
-\`\`\`math
+```math
 
 \ddot\phi
 
-\=
+=
 
 -\frac{g}{R}\phi.
 
-\`\`\`
+```
 
 What changes as the initial angle increases?
 
 The small-angle approximation becomes less accurate. For positive $\phi$, $\sin\phi<\phi$, so the exact restoring acceleration is weaker in magnitude than the linear approximation predicts. The exact motion therefore takes longer to complete a cycle, and the two trajectories develop an increasing phase difference. The exact nonlinear period depends on amplitude, whereas the small-angle period does not.
 
-**### Connection to later chapters**
-
+### Connection to later chapters
 Why does this calculation motivate generalized coordinates and
 
 Lagrangian mechanics?
 
 The skateboard is constrained to a circle, so its motion has only one independent coordinate, $\phi$. In Newtonian mechanics I can enforce the constraint by working in polar coordinates and carrying the radial normal force along even though it does not determine the motion in $\phi$. Generalized coordinates let me describe the system directly with the independent coordinate, which can avoid explicitly solving for constraint forces that are not needed to determine the motion.
 
-**---**
-
-**# 4. Essential derivations**
-
+---
+# 4. Essential derivations
 These belong in the notes because they are part of the chapter's core
 
 understanding, not merely exercises.
 
-**## Derivation 1 — Constant-force motion as an initial-value problem**
+## Derivation 1 — Constant-force motion as an initial-value problem
+### Starting equation
+```math
 
-**### Starting equation**
+m\ddot x=F_0.
 
-\`\`\`math
+```
 
-m\ddot x=F\_0.
-
-\`\`\`
-
-**### First integration**
-
-\`\`\`math
+### First integration
+```math
 
 \dot x(t)
 
-\=
+=
 
-\frac{F\_0}{m}t+C\_1.
+\frac{F_0}{m}t+C_1.
 
-\`\`\`
+```
 
-**### Second integration**
-
-\`\`\`math
+### Second integration
+```math
 
 x(t)
 
-\=
+=
 
-\frac{F\_0}{2m}t^2+C\_1t+C\_2.
+\frac{F_0}{2m}t^2+C_1t+C_2.
 
-\`\`\`
+```
 
 Apply
 
-\`\`\`math
+```math
 
-x(0)=x\_0,
+x(0)=x_0,
 
 \qquad
 
-\dot x(0)=v\_0.
+\dot x(0)=v_0.
 
-\`\`\`
+```
 
 Then
 
-\`\`\`math
+```math
 
-C\_1=v\_0,
+C_1=v_0,
 
 \qquad
 
-C\_2=x\_0.
+C_2=x_0.
 
-\`\`\`
+```
 
 Therefore,
 
-\`\`\`math
+```math
 
 \boxed{
 
 x(t)
 
-\=
+=
 
-x\_0+v\_0t+\frac{F\_0}{2m}t^2
+x_0+v_0t+\frac{F_0}{2m}t^2
 
 }.
 
-\`\`\`
+```
 
-**### Why this matters**
+### Why this matters
+- The equation of motion is second order.
 
-\- The equation of motion is second order.
+- Two integrations introduce two constants.
 
-\- Two integrations introduce two constants.
+- The initial position and velocity determine those constants.
 
-\- The initial position and velocity determine those constants.
+### Reproduce from memory
+- [ ] First attempt
 
-**### Reproduce from memory**
+- [ ] One-week review
 
-\- [ ] First attempt
+- [ ] End-of-chapter review
 
-\- [ ] One-week review
-
-\- [ ] End-of-chapter review
-
-**---**
-
-**## Derivation 2 — Momentum conservation for an $N$-particle system**
-
+---
+## Derivation 2 — Momentum conservation for an $N$-particle system
 Define
 
-\`\`\`math
+```math
 
 \mathbf P
 
-\=
+=
 
-\sum\_{\alpha=1}^{N}
+\sum_{\alpha=1}^{N}
 
-\mathbf p\_\alpha.
+\mathbf p_\alpha.
 
-\`\`\`
+```
 
 For particle $\alpha$,
 
-\`\`\`math
+```math
 
-\dot{\mathbf p}\_\alpha
+\dot{\mathbf p}_\alpha
 
-\=
+=
 
-\sum\_{\beta\ne\alpha}
+\sum_{\beta\ne\alpha}
 
-\mathbf F\_{\alpha\beta}
+\mathbf F_{\alpha\beta}
 
 \+
 
-\mathbf F\_\alpha^{\mathrm{ext}}.
+\mathbf F_\alpha^{\mathrm{ext}}.
 
-\`\`\`
+```
 
 Differentiate the total momentum:
 
-\`\`\`math
+```math
 
 \frac{d\mathbf P}{dt}
 
-\=
+=
 
-\sum\_\alpha
+\sum_\alpha
 
-\dot{\mathbf p}\_\alpha.
+\dot{\mathbf p}_\alpha.
 
-\`\`\`
+```
 
 Substitute the equations of motion:
 
-\`\`\`math
+```math
 
 \frac{d\mathbf P}{dt}
 
-\=
+=
 
-\sum\_\alpha
+\sum_\alpha
 
-\sum\_{\beta\ne\alpha}
+\sum_{\beta\ne\alpha}
 
-\mathbf F\_{\alpha\beta}
+\mathbf F_{\alpha\beta}
 
 \+
 
-\sum\_\alpha
+\sum_\alpha
 
-\mathbf F\_\alpha^{\mathrm{ext}}.
+\mathbf F_\alpha^{\mathrm{ext}}.
 
-\`\`\`
+```
 
 Each internal interaction appears twice:
 
-\`\`\`math
+```math
 
-\mathbf F\_{\alpha\beta}
+\mathbf F_{\alpha\beta}
 
 \+
 
-\mathbf F\_{\beta\alpha}
+\mathbf F_{\beta\alpha}
 
-\=
+=
 
 0
 
-\`\`\`
+```
 
 by Newton's third law. Therefore,
 
-\`\`\`math
+```math
 
-\sum\_\alpha
+\sum_\alpha
 
-\sum\_{\beta\ne\alpha}
+\sum_{\beta\ne\alpha}
 
-\mathbf F\_{\alpha\beta}
+\mathbf F_{\alpha\beta}
 
-\=
+=
 
-0\.
+0.
 
-\`\`\`
+```
 
 Hence,
 
-\`\`\`math
+```math
 
 \boxed{
 
 \frac{d\mathbf P}{dt}
 
-\=
+=
 
-\sum\_\alpha
+\sum_\alpha
 
-\mathbf F\_\alpha^{\mathrm{ext}}
+\mathbf F_\alpha^{\mathrm{ext}}
 
 }.
 
-\`\`\`
+```
 
 For an isolated system,
 
-\`\`\`math
+```math
 
-\sum\_\alpha
+\sum_\alpha
 
-\mathbf F\_\alpha^{\mathrm{ext}}
+\mathbf F_\alpha^{\mathrm{ext}}
 
-\=
+=
 
 0,
 
-\`\`\`
+```
 
 so
 
-\`\`\`math
+```math
 
 \boxed{
 
@@ -1330,37 +1247,33 @@ so
 
 }.
 
-\`\`\`
+```
 
-**### Questions to answer**
+### Questions to answer
+- Why does every internal force appear twice?
 
-\- Why does every internal force appear twice?
+- Why do the two appearances have opposite signs?
 
-\- Why do the two appearances have opposite signs?
+- How does the choice of system boundary affect the proof?
 
-\- How does the choice of system boundary affect the proof?
+- What assumptions about the force law are being used?
 
-\- What assumptions about the force law are being used?
+### Reproduce from memory
+- [x] Three-particle version
 
-**### Reproduce from memory**
+- [x] $N$-particle version
 
-\- [x] Three-particle version
+- [x] Explain the physical meaning aloud
 
-\- [x] $N$-particle version
-
-\- [x] Explain the physical meaning aloud
-
-**---**
-
-**## Derivation 3 — Polar basis-vector derivatives**
-
+---
+## Derivation 3 — Polar basis-vector derivatives
 Begin with
 
-\`\`\`math
+```math
 
 \hat{\mathbf r}
 
-\=
+=
 
 \cos\phi\\,\hat{\mathbf x}
 
@@ -1368,13 +1281,13 @@ Begin with
 
 \sin\phi\\,\hat{\mathbf y},
 
-\`\`\`
+```
 
-\`\`\`math
+```math
 
 \hat{\boldsymbol\phi}
 
-\=
+=
 
 -\sin\phi\\,\hat{\mathbf x}
 
@@ -1382,15 +1295,15 @@ Begin with
 
 \cos\phi\\,\hat{\mathbf y}.
 
-\`\`\`
+```
 
 Differentiate $\hat{\mathbf r}$:
 
-\`\`\`math
+```math
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 -\sin\phi\\,\dot\phi\\,\hat{\mathbf x}
 
@@ -1398,15 +1311,15 @@ Differentiate $\hat{\mathbf r}$:
 
 \cos\phi\\,\dot\phi\\,\hat{\mathbf y}.
 
-\`\`\`
+```
 
 Factor out $\dot\phi$:
 
-\`\`\`math
+```math
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 \dot\phi
 
@@ -1420,93 +1333,89 @@ Factor out $\dot\phi$:
 
 \right).
 
-\`\`\`
+```
 
 Therefore,
 
-\`\`\`math
+```math
 
 \boxed{
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 \dot\phi\\,\hat{\boldsymbol\phi}
 
 }.
 
-\`\`\`
+```
 
 Now differentiate $\hat{\boldsymbol\phi}$:
 
-\`\`\`math
+```math
 
 \dot{\hat{\boldsymbol\phi}}
 
-\=
+=
 
 -\cos\phi\\,\dot\phi\\,\hat{\mathbf x}
 
-\-
+-
 
 \sin\phi\\,\dot\phi\\,\hat{\mathbf y}.
 
-\`\`\`
+```
 
 Thus,
 
-\`\`\`math
+```math
 
 \boxed{
 
 \dot{\hat{\boldsymbol\phi}}
 
-\=
+=
 
 -\dot\phi\\,\hat{\mathbf r}
 
 }.
 
-\`\`\`
+```
 
-**### Geometric interpretation**
+### Geometric interpretation
+- $\hat{\mathbf r}$ rotates toward $\hat{\boldsymbol\phi}$.
 
-\- $\hat{\mathbf r}$ rotates toward $\hat{\boldsymbol\phi}$.
+- $\hat{\boldsymbol\phi}$ rotates toward $-\hat{\mathbf r}$.
 
-\- $\hat{\boldsymbol\phi}$ rotates toward $-\hat{\mathbf r}$.
+- A unit vector's derivative is perpendicular to the vector itself.
 
-\- A unit vector's derivative is perpendicular to the vector itself.
+### Reproduce from memory
+- [x] Draw the basis
 
-**### Reproduce from memory**
+- [x] Derive both Cartesian expressions
 
-\- [x] Draw the basis
+- [x] Derive both time derivatives
 
-\- [x] Derive both Cartesian expressions
+- [x] Explain the signs geometrically
 
-\- [x] Derive both time derivatives
-
-\- [x] Explain the signs geometrically
-
-**---**
-
-**## Derivation 4 — Velocity and acceleration in polar coordinates**
-
+---
+## Derivation 4 — Velocity and acceleration in polar coordinates
 Begin with
 
-\`\`\`math
+```math
 
 \mathbf r=r\hat{\mathbf r}.
 
-\`\`\`
+```
 
 Differentiate:
 
-\`\`\`math
+```math
 
 \mathbf v
 
-\=
+=
 
 \dot r\\,\hat{\mathbf r}
 
@@ -1514,29 +1423,29 @@ Differentiate:
 
 r\dot{\hat{\mathbf r}}.
 
-\`\`\`
+```
 
 Using
 
-\`\`\`math
+```math
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 \dot\phi\\,\hat{\boldsymbol\phi},
 
-\`\`\`
+```
 
 we obtain
 
-\`\`\`math
+```math
 
 \boxed{
 
 \mathbf v
 
-\=
+=
 
 \dot r\\,\hat{\mathbf r}
 
@@ -1546,15 +1455,15 @@ r\dot\phi\\,\hat{\boldsymbol\phi}
 
 }.
 
-\`\`\`
+```
 
 Differentiate again:
 
-\`\`\`math
+```math
 
 \mathbf a
 
-\=
+=
 
 \frac{d}{dt}
 
@@ -1568,15 +1477,15 @@ r\dot\phi\\,\hat{\boldsymbol\phi}
 
 \right).
 
-\`\`\`
+```
 
 Apply the product rule:
 
-\`\`\`math
+```math
 
 \mathbf a
 
-\=
+=
 
 \ddot r\\,\hat{\mathbf r}
 
@@ -1596,15 +1505,15 @@ r\ddot\phi\\,\hat{\boldsymbol\phi}
 
 r\dot\phi\\,\dot{\hat{\boldsymbol\phi}}.
 
-\`\`\`
+```
 
 Substitute
 
-\`\`\`math
+```math
 
 \dot{\hat{\mathbf r}}
 
-\=
+=
 
 \dot\phi\\,\hat{\boldsymbol\phi},
 
@@ -1612,19 +1521,19 @@ Substitute
 
 \dot{\hat{\boldsymbol\phi}}
 
-\=
+=
 
 -\dot\phi\\,\hat{\mathbf r}.
 
-\`\`\`
+```
 
 Then
 
-\`\`\`math
+```math
 
 \mathbf a
 
-\=
+=
 
 \ddot r\\,\hat{\mathbf r}
 
@@ -1640,21 +1549,21 @@ Then
 
 r\ddot\phi\\,\hat{\boldsymbol\phi}
 
-\-
+-
 
 r\dot\phi^2\\,\hat{\mathbf r}.
 
-\`\`\`
+```
 
 Collect terms:
 
-\`\`\`math
+```math
 
 \boxed{
 
 \mathbf a
 
-\=
+=
 
 \left(\ddot r-r\dot\phi^2\right)\hat{\mathbf r}
 
@@ -1666,27 +1575,25 @@ Collect terms:
 
 }.
 
-\`\`\`
+```
 
-**### Interpret every term**
+### Interpret every term
+| Term | Interpretation |
 
-\| Term | Interpretation |
+|---|---|
 
-\|---|---|
+| $\ddot r$ | Change in radial speed |
 
-\| $\ddot r$ | Change in radial speed |
+| $-r\dot\phi^2$ | Inward centripetal acceleration |
 
-\| $-r\dot\phi^2$ | Inward centripetal acceleration |
+| $r\ddot\phi$ | Tangential acceleration from changing angular speed |
 
-\| $r\ddot\phi$ | Tangential acceleration from changing angular speed |
+| $2\dot r\dot\phi$ | Tangential contribution from changing radius while rotating |
 
-\| $2\dot r\dot\phi$ | Tangential contribution from changing radius while rotating |
-
-**### Special-case checks**
-
+### Special-case checks
 For uniform circular motion,
 
-\`\`\`math
+```math
 
 r=R,
 
@@ -1702,69 +1609,66 @@ r=R,
 
 \ddot\phi=0,
 
-\`\`\`
+```
 
 so
 
-\`\`\`math
+```math
 
 \boxed{
 
 \mathbf a
 
-\=
+=
 
 -R\omega^2\hat{\mathbf r}
 
 }.
 
-\`\`\`
+```
 
-**### Reproduce from memory**
+### Reproduce from memory
+- [x] Velocity
 
-\- [x] Velocity
+- [x] Full acceleration
 
-\- [x] Full acceleration
+- [x] Interpretation of all four terms
 
-\- [x] Interpretation of all four terms
+- [x] Uniform circular-motion check
 
-\- [x] Uniform circular-motion check
-
-**---**
-
-**## Derivation 5 — Exact skateboard equation and small-angle motion**
-
+---
+## Derivation 5 — Exact skateboard equation and small-angle motion
 For fixed radius $R$,
 
-\`\`\`math
+```math
 
-a\_\phi=R\ddot\phi.
+a_\phi=R\ddot\phi.
 
-\`\`\`
+```
 
 The tangential component of gravity is
 
-\`\`\`math
+```math
 
-F\_\phi=-mg\sin\phi.
+F_\phi=-mg\sin\phi.
 
-\`\`\`
+```
 
 Newton's second law gives
 
-\`\`\`math
+```math
 
 mR\ddot\phi
 
-\=
+=
 
 -mg\sin\phi.
 
-\`\`\`
+```
 
 Therefore,
 
-\`\`\`math
+```math
 
 \boxed{
 
@@ -1774,13 +1678,13 @@ Therefore,
 
 \frac{g}{R}\sin\phi
 
-\=
+=
 
 0
 
 }.
 
-\`\`\`
+```
 
 This equation is nonlinear because the unknown $\phi$ appears inside
 
@@ -1788,15 +1692,15 @@ the nonlinear function $\sin\phi$.
 
 For small angles measured in radians,
 
-\`\`\`math
+```math
 
 \sin\phi\approx\phi.
 
-\`\`\`
+```
 
 Then
 
-\`\`\`math
+```math
 
 \ddot\phi
 
@@ -1804,147 +1708,138 @@ Then
 
 \frac{g}{R}\phi
 
-\=
+=
 
-0\.
+0.
 
-\`\`\`
+```
 
 Define
 
-\`\`\`math
+```math
 
-\omega\_0^2=\frac{g}{R}.
+\omega_0^2=\frac{g}{R}.
 
-\`\`\`
+```
 
 The solution is
 
-\`\`\`math
+```math
 
 \phi(t)
 
-\=
+=
 
-A\cos(\omega\_0t)
+A\cos(\omega_0t)
 
 \+
 
-B\sin(\omega\_0t).
+B\sin(\omega_0t).
 
-\`\`\`
+```
 
 For
 
-\`\`\`math
+```math
 
-\phi(0)=\phi\_0,
+\phi(0)=\phi_0,
 
 \qquad
 
 \dot\phi(0)=0,
 
-\`\`\`
+```
 
 we obtain
 
-\`\`\`math
+```math
 
 \boxed{
 
 \phi(t)
 
-\=
+=
 
-\phi\_0\cos(\omega\_0t)
+\phi_0\cos(\omega_0t)
 
 }.
 
-\`\`\`
+```
 
 The approximate period is
 
-\`\`\`math
+```math
 
 \boxed{
 
 T
 
-\=
+=
 
 2\pi\sqrt{\frac{R}{g}}
 
 }.
 
-\`\`\`
+```
 
-**### Questions to answer**
+### Questions to answer
+- Why must the angle be measured in radians?
 
-\- Why must the angle be measured in radians?
+- Why is the approximate period independent of amplitude?
 
-\- Why is the approximate period independent of amplitude?
+- Does the exact nonlinear period depend on amplitude?
 
-\- Does the exact nonlinear period depend on amplitude?
+- Why does the approximation worsen at large angles?
 
-\- Why does the approximation worsen at large angles?
+### Reproduce from memory
+- [x] Exact equation
 
-**### Reproduce from memory**
+- [x] Small-angle approximation
 
-\- [x] Exact equation
+- [x] Solution under the stated initial conditions
 
-\- [x] Small-angle approximation
+- [x] Period
 
-\- [x] Solution under the stated initial conditions
-
-\- [x] Period
-
-**---**
-
-**# 5. Computational experiment**
-
-**## Exact skateboard motion versus the small-angle approximation**
-
-**### Exact model**
-
-\`\`\`math
+---
+# 5. Computational experiment
+## Exact skateboard motion versus the small-angle approximation
+### Exact model
+```math
 
 \ddot\phi
 
-\=
+=
 
 -\frac{g}{R}\sin\phi.
 
-\`\`\`
+```
 
-**### Approximate model**
-
-\`\`\`math
+### Approximate model
+```math
 
 \ddot\phi
 
-\=
+=
 
 -\frac{g}{R}\phi.
 
-\`\`\`
+```
 
-**### Initial conditions**
+### Initial conditions
+```math
 
-\`\`\`math
-
-\phi(0)=\phi\_0,
+\phi(0)=\phi_0,
 
 \qquad
 
 \dot\phi(0)=0.
 
-\`\`\`
+```
 
-**### Angles to investigate**
+### Angles to investigate
+```math
 
-\`\`\`math
-
-\phi\_0
+\phi_0
 
 \in
 
@@ -1960,70 +1855,63 @@ T
 
 \right\\}.
 
-\`\`\`
+```
 
-**### Outputs**
+### Outputs
+- [x] Exact numerical trajectory
 
-\- [x] Exact numerical trajectory
+- [x] Small-angle trajectory
 
-\- [x] Small-angle trajectory
+- [x] Comparison plot
 
-\- [x] Comparison plot
+- [x] Estimated exact period
 
-\- [x] Estimated exact period
+- [x] Approximate period
 
-\- [x] Approximate period
+- [x] Relative period error
 
-\- [x] Relative period error
+- [x] Maximum trajectory difference
 
-\- [x] Maximum trajectory difference
-
-**### Code location**
-
-\`\`\`text
+### Code location
+```text
 
 code/problem-1-50-skateboard.ipynb
 
-\`\`\`
+```
 
 Save plots in:
 
-\`\`\`text
+```text
 
 figures/
 
-\`\`\`
+```
 
 
 
-**### Interpretation**
-
+### Interpretation
 \> Describe the physical result, not merely what the plot looks like.
 
 The small angle approximation is off by a phase shift compared to the exact result for large enough $\phi$. This means that it takes longer under the exact equation to compleate a full cycle relative to the small angle approximation 
 
-**---**
+---
+# 6. Mistake and confusion log
+| Issue | Why I was confused | Resolution |
 
-**# 6. Mistake and confusion log**
+|---|---|---|
 
-\| Issue | Why I was confused | Resolution |
+| I did not understand basis vectors well | I always pictured a basis vector as being tied to the origin. | In polar coordinates the basis is local: $\hat{\mathbf r}$ and $\hat{\boldsymbol\phi}$ are defined at the particle's current angle and rotate as $\phi$ changes. A coordinate pair $(r,\phi)$ is not the same thing as the position vector $\mathbf r=r\hat{\mathbf r}$. |
 
-\|---|---|---|
+| I switched sine and cosine in the tilted-board gravity components | I was deciding which component was adjacent by looking at the triangle rather than asking which axis the vector was being projected onto. | Define the axes first. The component of a vector along an axis is its projection onto that axis. For the tilted board this gives $mg\sin\theta$ along the board and $mg\cos\theta$ normal to it. |
 
-\| I did not understand basis vectors well | I always pictured a basis vector as being tied to the origin. | In polar coordinates the basis is local: $\hat{\mathbf r}$ and $\hat{\boldsymbol\phi}$ are defined at the particle's current angle and rotate as $\phi$ changes. A coordinate pair $(r,\phi)$ is not the same thing as the position vector $\mathbf r=r\hat{\mathbf r}$. |
-
-\| I switched sine and cosine in the tilted-board gravity components | I was deciding which component was adjacent by looking at the triangle rather than asking which axis the vector was being projected onto. | Define the axes first. The component of a vector along an axis is its projection onto that axis. For the tilted board this gives $mg\sin\theta$ along the board and $mg\cos\theta$ normal to it. |
-
-\| Differential equations were rusty in the skateboard problem | I understood the physics equation but had to review how a second-order ODE is solved and how initial conditions enter. | The order of an ODE tells me the number of independent initial conditions normally required. For numerical work, introduce a new variable for $\dot\phi$ and convert the second-order equation into two first-order equations. |
+| Differential equations were rusty in the skateboard problem | I understood the physics equation but had to review how a second-order ODE is solved and how initial conditions enter. | The order of an ODE tells me the number of independent initial conditions normally required. For numerical work, introduce a new variable for $\dot\phi$ and convert the second-order equation into two first-order equations. |
 
 
 
 
 
-**# 7. Connections**
-
-**## Differential equations**
-
+# 7. Connections
+## Differential equations
 How does the order of an equation determine the number of initial conditions?
 
 \> An $n$th-order ODE generally requires $n$ independent initial conditions. Each integration introduces an arbitrary constant. For Newton's second-order equation of motion, those conditions are usually initial position and initial velocity.
@@ -2032,51 +1920,45 @@ How does the order of an equation determine the number of initial conditions?
 
 
 
-**## Lagrangian mechanics**
-
+## Lagrangian mechanics
 Why might generalized coordinates be easier than resolving Newton's law
 
 into polar components? 
 
 \> Generalized coordinates can build the constraint directly into the coordinates. In the skateboard problem the radius is fixed, so the motion has only one independent coordinate, $\phi$. A Lagrangian treatment can work directly with $\phi$ instead of carrying the radial equation and normal force when they are not needed to determine the motion.
 
-**## Hamiltonian mechanics**
-
+## Hamiltonian mechanics
 Which quantities in this chapter will later become position and momentum
 
 coordinates in phase space? 
 
 \> Will find out eventually, should revisit after Hamiltonian mechanics chapter
 
-**---**
+---
+# 8. Final chapter summary
+## Five central ideas
+1. Newton's laws turn physical statements about forces into differential equations for motion.
 
-**# 8. Final chapter summary**
+2. Newton's first law identifies inertial frames: a force-free object moves with constant velocity only in an inertial frame.
 
-**## Five central ideas**
+3. Momentum conservation follows because internal third-law force pairs cancel; only the net external force changes total momentum.
 
-1\. Newton's laws turn physical statements about forces into differential equations for motion.
+4. Coordinate choice is part of solving the physics. Good coordinates align with constraints and simplify force components.
 
-2\. Newton's first law identifies inertial frames: a force-free object moves with constant velocity only in an inertial frame.
+5. Polar coordinates use a moving basis. The time dependence of $\hat{\mathbf r}$ and $\hat{\boldsymbol\phi}$ produces the extra terms in polar velocity and acceleration.
 
-3\. Momentum conservation follows because internal third-law force pairs cancel; only the net external force changes total momentum.
-
-4\. Coordinate choice is part of solving the physics. Good coordinates align with constraints and simplify force components.
-
-5\. Polar coordinates use a moving basis. The time dependence of $\hat{\mathbf r}$ and $\hat{\boldsymbol\phi}$ produces the extra terms in polar velocity and acceleration.
-
-**## Three equations I must know**
-
-1\. Newton's second law:
+## Three equations I must know
+1. Newton's second law:
 \[
 \mathbf F_{\rm net}=m\mathbf a.
 \]
 
-2\. Total momentum:
+2. Total momentum:
 \[
 \frac{d\mathbf P}{dt}=\mathbf F_{\rm ext}.
 \]
 
-3\. Polar acceleration:
+3. Polar acceleration:
 \[
 \mathbf a=
 (\ddot r-r\dot\phi^2)\hat{\mathbf r}
@@ -2084,21 +1966,16 @@ coordinates in phase space?
 (r\ddot\phi+2\dot r\dot\phi)\hat{\boldsymbol\phi}.
 \]
 
-**## Two derivations I must reproduce**
+## Two derivations I must reproduce
+1. Derive the polar basis-vector derivatives and then derive polar velocity and acceleration from $\mathbf r=r\hat{\mathbf r}$.
 
-1\. Derive the polar basis-vector derivatives and then derive polar velocity and acceleration from $\mathbf r=r\hat{\mathbf r}$.
+2. Derive momentum conservation by summing the particle equations of motion and cancelling the internal third-law force pairs.
 
-2\. Derive momentum conservation by summing the particle equations of motion and cancelling the internal third-law force pairs.
+## One remaining question
+1. Revisit how the same constrained skateboard problem is formulated with generalized coordinates in Lagrangian mechanics, and compare that derivation directly with the Newtonian polar-coordinate derivation.
 
-**## One remaining question**
-
-1\. Revisit how the same constrained skateboard problem is formulated with generalized coordinates in Lagrangian mechanics, and compare that derivation directly with the Newtonian polar-coordinate derivation.
-
-**---**
-
-
-**# 8.5 End-of-chapter reflection**
-
+---
+# 8.5 End-of-chapter reflection
 **Hardest problem:** Problem 1.50. The hard part was not mainly the Python; it was bringing together polar-coordinate dynamics, force decomposition, differential equations, initial conditions, linearization, and numerical solution.
 
 **Most useful problem:** Problem 1.50, because it tied most of the chapter together. Problem 1.43 was also especially useful because understanding the rotating polar basis made the later formulas feel derived rather than memorized.
@@ -2120,34 +1997,32 @@ coordinates in phase space?
 \text{motion}.
 \]
 
-**---**
-
-**# 9. Mastery check**
-
+---
+# 9. Mastery check
 I am ready to move to Chapter 2 when I can:
 
-\- [x] Explain inertial frames without consulting the book.
+- [x] Explain inertial frames without consulting the book.
 
-\- [x] Construct a correct free-body diagram.
+- [x] Construct a correct free-body diagram.
 
-\- [x] Convert a force model into differential equations.
+- [x] Convert a force model into differential equations.
 
-\- [x] Explain why initial position and velocity are required.
+- [x] Explain why initial position and velocity are required.
 
-\- [x] Derive momentum conservation.
+- [x] Derive momentum conservation.
 
-\- [x] Choose effective Cartesian coordinates.
+- [x] Choose effective Cartesian coordinates.
 
-\- [x] Derive polar basis-vector derivatives.
+- [x] Derive polar basis-vector derivatives.
 
-\- [x] Derive polar velocity and acceleration from scratch.
+- [x] Derive polar velocity and acceleration from scratch.
 
-\- [x] Explain every term in the polar acceleration formula.
+- [x] Explain every term in the polar acceleration formula.
 
-\- [x] Derive the exact skateboard equation.
+- [x] Derive the exact skateboard equation.
 
-\- [x] Explain when the small-angle approximation is valid.
+- [x] Explain when the small-angle approximation is valid.
 
-\- [x] Complete the selected problems in \`problems.md\`.
+- [x] Complete the selected problems in `problems.md`.
 
-\- [x] Complete the numerical comparison in Problem 1.50.
+- [x] Complete the numerical comparison in Problem 1.50.

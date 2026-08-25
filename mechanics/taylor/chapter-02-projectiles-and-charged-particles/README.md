@@ -23,7 +23,7 @@ Use it to record:
 
 The separate exercise sheet is:
 
-`chapter2_problems.md`
+[Chapter 2 problems](problems/README.md)
 
 The goal is not to memorize formulas. By the end of the chapter, I should be able to start from Newton's second law and derive the important results.
 
