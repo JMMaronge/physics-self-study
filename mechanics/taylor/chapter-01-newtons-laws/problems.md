@@ -16,43 +16,43 @@ Check that you can move from a vector-valued position function to velocity and a
 ### Work
 
 For uniform circular motion of radius \(R\), with \(\phi(0)=0\) and constant angular velocity
-\[
+```math
 \omega=\frac{d\phi}{dt},
-\]
+```
 integration gives
-\[
+```math
 \phi=\omega t.
-\]
+```
 
 Therefore the position vector is
-\[
+```math
 \mathbf r(t)
 =
 R\cos(\omega t)\,\hat{\mathbf x}
 +
 R\sin(\omega t)\,\hat{\mathbf y}.
-\]
+```
 
 Differentiating once,
-\[
+```math
 \mathbf v(t)
 =
 -\omega R\sin(\omega t)\,\hat{\mathbf x}
 +
 \omega R\cos(\omega t)\,\hat{\mathbf y}.
-\]
+```
 
 Its magnitude is
-\[
+```math
 |\mathbf v|
 =
 \sqrt{\omega^2R^2\sin^2(\omega t)+\omega^2R^2\cos^2(\omega t)}
 =
 \omega R.
-\]
+```
 
 Also,
-\[
+```math
 \mathbf r\cdot\mathbf v
 =
 -\omega R^2\cos(\omega t)\sin(\omega t)
@@ -60,33 +60,33 @@ Also,
 \omega R^2\sin(\omega t)\cos(\omega t)
 =
 0,
-\]
+```
 so the velocity is perpendicular to the radius and therefore tangent to the circular path.
 
 Differentiating again,
-\[
+```math
 \mathbf a(t)
 =
 -\omega^2R\cos(\omega t)\,\hat{\mathbf x}
 -
 \omega^2R\sin(\omega t)\,\hat{\mathbf y}.
-\]
+```
 
 Thus
-\[
+```math
 \boxed{\mathbf a(t)=-\omega^2\mathbf r(t)},
-\]
+```
 so the acceleration points toward the center.
 
 Its magnitude is
-\[
+```math
 |\mathbf a|=\omega^2R.
-\]
+```
 
 Since \(v=\omega R\),
-\[
+```math
 \boxed{|\mathbf a|=\frac{v^2}{R}}.
-\]
+```
 
 ### Where I got stuck
 
@@ -103,60 +103,60 @@ For uniform circular motion, Cartesian differentiation makes the geometry appear
 ### Work
 
 Start with
-\[
+```math
 \dot f=f.
-\]
+```
 
 Then
-\[
+```math
 \frac{df}{dt}=f
 \quad\Longrightarrow\quad
 \frac{df}{f}=dt.
-\]
+```
 
 Integrating,
-\[
+```math
 \int\frac{df}{f}
 =
 \int dt,
-\]
+```
 so
-\[
+```math
 \ln|f|=t+C.
-\]
+```
 
 Exponentiating,
-\[
+```math
 f=e^{t+C}=Ae^t,
-\]
+```
 where \(A=e^C\) is an arbitrary constant. Therefore
-\[
+```math
 \boxed{f(t)=Ae^t}.
-\]
+```
 
 If one initial condition is supplied, for example
-\[
+```math
 f(0)=f_0,
-\]
+```
 then
-\[
+```math
 A=f_0
-\]
+```
 and
-\[
+```math
 \boxed{f(t)=f_0e^t}.
-\]
+```
 
 A first-order differential equation therefore requires one initial condition to determine the arbitrary constant.
 
 By contrast, a second-order equation generally contains two arbitrary constants. For example,
-\[
+```math
 \ddot f=f
-\]
+```
 has the general solution
-\[
+```math
 f(t)=Ae^t+Be^{-t}.
-\]
+```
 
 Two independent initial conditions, usually \(f(0)\) and \(\dot f(0)\), are therefore needed. This is the same reason that Newton's second-order equation of motion normally requires an initial position and an initial velocity.
 
@@ -185,40 +185,40 @@ Let \(S''\) accelerate east with constant acceleration \(a_0\).
 ### Coordinate transformations
 
 For the constant-velocity frame,
-\[
+```math
 x'=x-vt.
-\]
+```
 
 For the accelerating frame,
-\[
+```math
 x''=x-\frac12a_0t^2.
-\]
+```
 
 ### Velocity and acceleration in each frame
 
 In \(S\),
-\[
+```math
 \mathbf a=0,
-\]
-\[
+```
+```math
 \mathbf v=v_0\hat{\mathbf y},
-\]
+```
 and, taking the initial position to be the origin,
-\[
+```math
 \boxed{\mathbf r(t)=v_0t\,\hat{\mathbf y}}.
-\]
+```
 
 In \(S'\),
-\[
+```math
 \mathbf a'=0,
-\]
-\[
+```
+```math
 \mathbf v'
 =
 -v\hat{\mathbf x}+v_0\hat{\mathbf y},
-\]
+```
 and
-\[
+```math
 \boxed{
 \mathbf r'(t)
 =
@@ -226,27 +226,27 @@ and
 +
 v_0t\,\hat{\mathbf y}
 }.
-\]
+```
 
 The trajectory is still a straight line with constant velocity.
 
 In \(S''\),
-\[
+```math
 \mathbf a''
 =
 -a_0\hat{\mathbf x}.
-\]
+```
 
 With coincident origins at \(t=0\),
-\[
+```math
 \mathbf v''
 =
 -a_0t\,\hat{\mathbf x}
 +
 v_0\hat{\mathbf y},
-\]
+```
 and
-\[
+```math
 \boxed{
 \mathbf r''(t)
 =
@@ -254,7 +254,7 @@ and
 +
 v_0t\,\hat{\mathbf y}
 }.
-\]
+```
 
 The accelerating observer therefore sees a curved trajectory even though no physical force was added to the puck.
 
@@ -281,16 +281,16 @@ Frames related by constant-velocity transformations have the same acceleration a
 #### Total momentum
 
 For three particles,
-\[
+```math
 \boxed{
 \mathbf P
 =
 \mathbf p_1+\mathbf p_2+\mathbf p_3
 }.
-\]
+```
 
 The equations of motion are
-\[
+```math
 \dot{\mathbf p}_1
 =
 \mathbf F_{12}
@@ -298,8 +298,8 @@ The equations of motion are
 \mathbf F_{13}
 +
 \mathbf F_1^{\mathrm{ext}},
-\]
-\[
+```
+```math
 \dot{\mathbf p}_2
 =
 \mathbf F_{21}
@@ -307,8 +307,8 @@ The equations of motion are
 \mathbf F_{23}
 +
 \mathbf F_2^{\mathrm{ext}},
-\]
-\[
+```
+```math
 \dot{\mathbf p}_3
 =
 \mathbf F_{31}
@@ -316,12 +316,12 @@ The equations of motion are
 \mathbf F_{32}
 +
 \mathbf F_3^{\mathrm{ext}}.
-\]
+```
 
 #### Sum of the equations of motion
 
 Adding,
-\[
+```math
 \dot{\mathbf P}
 =
 \mathbf F_{12}
@@ -341,28 +341,28 @@ Adding,
 \mathbf F_2^{\mathrm{ext}}
 +
 \mathbf F_3^{\mathrm{ext}}.
-\]
+```
 
 #### Internal-force cancellations
 
 Newton's third law gives
-\[
+```math
 \mathbf F_{12}=-\mathbf F_{21},
-\]
-\[
+```
+```math
 \mathbf F_{13}=-\mathbf F_{31},
-\]
+```
 and
-\[
+```math
 \mathbf F_{23}=-\mathbf F_{32}.
-\]
+```
 
 Therefore all internal-force pairs cancel.
 
 #### Final result
 
 The remaining terms are the external forces:
-\[
+```math
 \boxed{
 \frac{d\mathbf P}{dt}
 =
@@ -374,20 +374,20 @@ The remaining terms are the external forces:
 =
 \mathbf F_{\mathrm{ext}}
 }.
-\]
+```
 
 If
-\[
+```math
 \mathbf F_{\mathrm{ext}}=0,
-\]
+```
 then
-\[
+```math
 \frac{d\mathbf P}{dt}=0
-\]
+```
 and
-\[
+```math
 \boxed{\mathbf P=\text{constant}}.
-\]
+```
 
 Total momentum is therefore conserved when all interactions internal to the chosen system are included and the net external force on the system is zero.
 
@@ -421,78 +421,78 @@ The important point is to define the axes first and then project gravity onto th
 ### Force components
 
 Gravity has no component in the \(x\)-direction:
-\[
+```math
 F_x=0.
-\]
+```
 
 Along the board,
-\[
+```math
 F_y=-mg\sin\theta.
-\]
+```
 
 Perpendicular to the board,
-\[
+```math
 F_z=N-mg\cos\theta.
-\]
+```
 
 Because the puck remains on the board,
-\[
+```math
 a_z=0,
-\]
+```
 so
-\[
+```math
 \boxed{N=mg\cos\theta}.
-\]
+```
 
 The sine/cosine components follow from projections onto the chosen axes. The component along the tilted board is \(mg\sin\theta\), while the component normal to it is \(mg\cos\theta\).
 
 ### Equations of motion
 
 Within the board,
-\[
+```math
 m\ddot x=0,
-\]
-\[
+```
+```math
 m\ddot y=-mg\sin\theta.
-\]
+```
 
 Therefore
-\[
+```math
 \boxed{\ddot x=0},
 \qquad
 \boxed{\ddot y=-g\sin\theta}.
-\]
+```
 
 ### Initial conditions
 
 Let the initial velocity components in the chosen board coordinates be
-\[
+```math
 \dot x(0)=v_{0x},
 \qquad
 \dot y(0)=v_{0y},
-\]
+```
 with
-\[
+```math
 x(0)=y(0)=0.
-\]
+```
 
 ### Trajectory
 
 Integrating the \(x\)-equation,
-\[
+```math
 \dot x=v_{0x},
-\]
+```
 so
-\[
+```math
 \boxed{x(t)=v_{0x}t}.
-\]
+```
 
 Integrating the \(y\)-equation,
-\[
+```math
 \dot y=v_{0y}-g\sin\theta\,t,
-\]
+```
 so
-\[
+```math
 \boxed{
 y(t)
 =
@@ -500,27 +500,27 @@ v_{0y}t
 -
 \frac12g\sin\theta\,t^2
 }.
-\]
+```
 
 If the requested return corresponds to \(y=0\), the nonzero return time satisfies
-\[
+```math
 0
 =
 v_{0y}t
 -
 \frac12g\sin\theta\,t^2,
-\]
+```
 so
-\[
+```math
 \boxed{
 t_{\mathrm{return}}
 =
 \frac{2v_{0y}}{g\sin\theta}
 }.
-\]
+```
 
 The corresponding displacement across the board is
-\[
+```math
 x_{\mathrm{return}}
 =
 v_{0x}t_{\mathrm{return}}
@@ -528,18 +528,18 @@ v_{0x}t_{\mathrm{return}}
 \boxed{
 \frac{2v_{0x}v_{0y}}{g\sin\theta}
 }.
-\]
+```
 
 ### Checks
 
 As
-\[
+```math
 \theta\to0,
-\]
+```
 the component of gravity along the board satisfies
-\[
+```math
 g\sin\theta\to0.
-\]
+```
 
 The board becomes horizontal, so there is no acceleration within the board. In that limit the puck moves with constant in-plane velocity, as expected.
 
@@ -554,7 +554,7 @@ The safest way to resolve a force in rotated coordinates is to define the axes f
 ### Work
 
 The radial unit vector is
-\[
+```math
 \boxed{
 \hat{\mathbf r}
 =
@@ -562,10 +562,10 @@ The radial unit vector is
 +
 \sin\phi\,\hat{\mathbf y}
 }.
-\]
+```
 
 The unit vector in the direction of increasing \(\phi\) is
-\[
+```math
 \boxed{
 \hat{\boldsymbol\phi}
 =
@@ -573,10 +573,10 @@ The unit vector in the direction of increasing \(\phi\) is
 +
 \cos\phi\,\hat{\mathbf y}
 }.
-\]
+```
 
 Differentiate \(\hat{\mathbf r}\) with respect to \(\phi\):
-\[
+```math
 \frac{d\hat{\mathbf r}}{d\phi}
 =
 -\sin\phi\,\hat{\mathbf x}
@@ -584,10 +584,10 @@ Differentiate \(\hat{\mathbf r}\) with respect to \(\phi\):
 \cos\phi\,\hat{\mathbf y}
 =
 \hat{\boldsymbol\phi}.
-\]
+```
 
 Using the chain rule,
-\[
+```math
 \boxed{
 \dot{\hat{\mathbf r}}
 =
@@ -595,10 +595,10 @@ Using the chain rule,
 =
 \dot\phi\,\hat{\boldsymbol\phi}
 }.
-\]
+```
 
 Similarly,
-\[
+```math
 \frac{d\hat{\boldsymbol\phi}}{d\phi}
 =
 -\cos\phi\,\hat{\mathbf x}
@@ -606,22 +606,22 @@ Similarly,
 \sin\phi\,\hat{\mathbf y}
 =
 -\hat{\mathbf r},
-\]
+```
 so
-\[
+```math
 \boxed{
 \dot{\hat{\boldsymbol\phi}}
 =
 -\dot\phi\,\hat{\mathbf r}
 }.
-\]
+```
 
 This immediately gives the polar-coordinate velocity:
-\[
+```math
 \mathbf r=r\hat{\mathbf r},
-\]
+```
 so
-\[
+```math
 \mathbf v
 =
 \frac{d}{dt}(r\hat{\mathbf r})
@@ -629,9 +629,9 @@ so
 \dot r\,\hat{\mathbf r}
 +
 r\dot{\hat{\mathbf r}},
-\]
+```
 and hence
-\[
+```math
 \boxed{
 \mathbf v
 =
@@ -639,10 +639,10 @@ and hence
 +
 r\dot\phi\,\hat{\boldsymbol\phi}
 }.
-\]
+```
 
 Differentiating once more gives
-\[
+```math
 \boxed{
 \mathbf a
 =
@@ -650,18 +650,18 @@ Differentiating once more gives
 +
 (r\ddot\phi+2\dot r\dot\phi)\hat{\boldsymbol\phi}
 }.
-\]
+```
 
 ### Geometric interpretation
 
 As \(\phi\) increases, \(\hat{\mathbf r}\) rotates toward the direction of increasing angle, which is \(+\hat{\boldsymbol\phi}\). Therefore its derivative points in the \(+\hat{\boldsymbol\phi}\) direction.
 
 At the same time, \(\hat{\boldsymbol\phi}\) rotates so that its change points inward, toward \(-\hat{\mathbf r}\). This gives the minus sign in
-\[
+```math
 \dot{\hat{\boldsymbol\phi}}
 =
 -\dot\phi\,\hat{\mathbf r}.
-\]
+```
 
 ### What I should recognize next time
 
@@ -674,7 +674,7 @@ Polar coordinates are not just a different way to label a point. The basis vecto
 ### Work
 
 For uniform circular motion,
-\[
+```math
 r=R,
 \qquad
 \dot r=0,
@@ -684,78 +684,78 @@ r=R,
 \dot\phi=\omega,
 \qquad
 \ddot\phi=0.
-\]
+```
 
 Using
-\[
+```math
 \mathbf a
 =
 (\ddot r-r\dot\phi^2)\hat{\mathbf r}
 +
 (r\ddot\phi+2\dot r\dot\phi)\hat{\boldsymbol\phi},
-\]
+```
 we obtain
-\[
+```math
 \mathbf a
 =
 (0-R\omega^2)\hat{\mathbf r}
 +
 0\hat{\boldsymbol\phi}.
-\]
+```
 
 Therefore
-\[
+```math
 \boxed{
 \mathbf a=-R\omega^2\hat{\mathbf r}
 }.
-\]
+```
 
 This is the centripetal acceleration. The negative sign means that it points inward because \(+\hat{\mathbf r}\) points outward.
 
 #### Radial equation
 
 The string tension points inward:
-\[
+```math
 \mathbf T=-T\hat{\mathbf r}.
-\]
+```
 
 Newton's second law gives
-\[
+```math
 -T=-mR\omega^2,
-\]
+```
 so
-\[
+```math
 \boxed{T=mR\omega^2}.
-\]
+```
 
 Since \(v=R\omega\),
-\[
+```math
 \boxed{
 T=\frac{mv^2}{R}
 }.
-\]
+```
 
 #### Angular equation
 
 There is no tangential force and no tangential acceleration:
-\[
+```math
 F_\phi=ma_\phi=0.
-\]
+```
 
 #### Final result
 
-\[
+```math
 \boxed{T=mR\omega^2=\frac{mv^2}{R}}.
-\]
+```
 
 The units are
-\[
+```math
 [mR\omega^2]
 =
 \mathrm{kg}\,\mathrm m\,\mathrm s^{-2}
 =
 \mathrm N.
-\]
+```
 
 ### What I should recognize next time
 
@@ -770,103 +770,103 @@ For fixed-radius uniform circular motion, the full polar acceleration formula im
 ### Derivation of the exact equation
 
 For motion constrained to a circular ramp of radius \(R\),
-\[
+```math
 r=R,
 \qquad
 \dot r=\ddot r=0.
-\]
+```
 
 The tangential component of gravity is
-\[
+```math
 F_\phi=-mg\sin\phi.
-\]
+```
 
 The tangential component of Newton's second law is
-\[
+```math
 F_\phi
 =
 m(r\ddot\phi+2\dot r\dot\phi).
-\]
+```
 
 Since \(r=R\) is constant,
-\[
+```math
 -mg\sin\phi
 =
 mR\ddot\phi.
-\]
+```
 
 Therefore
-\[
+```math
 \boxed{
 \ddot\phi
 =
 -\frac{g}{R}\sin\phi
 }.
-\]
+```
 
 This equation is nonlinear because the unknown \(\phi\) appears inside the nonlinear function \(\sin\phi\).
 
 ### Small-angle approximation
 
 For small angles measured in radians,
-\[
+```math
 \sin\phi\approx\phi.
-\]
+```
 
 Therefore
-\[
+```math
 \ddot\phi
 =
 -\frac{g}{R}\phi.
-\]
+```
 
 Define
-\[
+```math
 \omega^2=\frac{g}{R}.
-\]
+```
 
 Then
-\[
+```math
 \ddot\phi+\omega^2\phi=0.
-\]
+```
 
 The general solution is
-\[
+```math
 \phi(t)
 =
 A\sin(\omega t)
 +
 B\cos(\omega t).
-\]
+```
 
 For
-\[
+```math
 \phi(0)=\phi_0,
 \qquad
 \dot\phi(0)=0,
-\]
+```
 we get
-\[
+```math
 B=\phi_0,
 \qquad
 A=0.
-\]
+```
 
 Thus
-\[
+```math
 \boxed{
 \phi_{\mathrm{small}}(t)
 =
 \phi_0\cos(\omega t)
 },
-\]
+```
 where
-\[
+```math
 \omega=\sqrt{\frac gR}.
-\]
+```
 
 The small-angle period is
-\[
+```math
 \boxed{
 T_{\mathrm{small}}
 =
@@ -874,40 +874,35 @@ T_{\mathrm{small}}
 =
 2\pi\sqrt{\frac Rg}
 }.
-\]
+```
 
 ### First-order system
 
 To solve the nonlinear second-order equation numerically, define
-\[
+```math
 \omega_\phi=\dot\phi.
-\]
+```
 
 Then
-\[
+```math
 \boxed{
 \dot\phi=\omega_\phi
 }
-\]
+```
 and
-\[
+```math
 \boxed{
 \dot\omega_\phi
 =
 -\frac{g}{R}\sin\phi
 }.
-\]
+```
 
 This is the form used by the numerical ODE solver.
 
 ### Results
 
-The Python notebook
-
-```text
-code/problem-1-50-skateboard.ipynb
-```
-
+The [Python notebook for Problem 1.50](code/problem-1-50-skateboard.ipynb)
 contains the computational analysis. It:
 
 - solves the exact nonlinear equation numerically with `solve_ivp`;
@@ -922,28 +917,28 @@ contains the computational analysis. It:
 ### Interpretation
 
 At small initial angles,
-\[
+```math
 \sin\phi\approx\phi,
-\]
+```
 so the nonlinear and small-angle equations produce nearly identical motion.
 
 As the initial angle becomes larger, \(\sin\phi\) increasingly differs from \(\phi\). For positive \(\phi\),
-\[
+```math
 \sin\phi<\phi,
-\]
+```
 so the exact restoring acceleration has smaller magnitude than the linearized model predicts. The exact motion therefore takes longer to complete a cycle.
 
 The small-angle model predicts an amplitude-independent period
-\[
+```math
 T=2\pi\sqrt{\frac Rg},
-\]
+```
 whereas the exact nonlinear period increases with amplitude. As a result, the exact and approximate trajectories gradually drift out of phase at larger initial angles.
 
 ### What I should recognize next time
 
 The skateboard problem is an initial-value problem for a nonlinear second-order differential equation. The main workflow is:
 
-\[
+```math
 \text{forces}
 \longrightarrow
 \text{coordinate components}
@@ -953,7 +948,7 @@ The skateboard problem is an initial-value problem for a nonlinear second-order 
 \text{initial conditions}
 \longrightarrow
 \text{analytic or numerical solution}.
-\]
+```
 
 The small-angle approximation changes the nonlinear equation into a linear harmonic oscillator. The computational comparison shows when that approximation is justified and when its error becomes physically important.
 
@@ -1042,7 +1037,7 @@ Polar coordinates now make sense to me as a moving basis rather than just anothe
 
 I also have a clearer picture of Newtonian mechanics as a general workflow:
 
-\[
+```math
 \boxed{
 \text{physical forces}
 \longrightarrow
@@ -1054,6 +1049,6 @@ I also have a clearer picture of Newtonian mechanics as a general workflow:
 \longrightarrow
 \text{motion}
 }
-\]
+```
 
 The skateboard problem made this connection especially clear. I needed to refresh differential equations in order to solve the equation of motion, and once the polar-coordinate derivation was understood, the structure of the problem became much more natural.
