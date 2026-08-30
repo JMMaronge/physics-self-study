@@ -31,11 +31,11 @@ There are **no optional filler problems**. The core problems are the problems I 
 
 This checks whether I understand the physical meaning of
 
-```math
+$$
 f_{\rm lin}=bv,
 \qquad
 f_{\rm quad}=cv^2,
-```
+$$
 
 rather than treating them as arbitrary formulas.
 
@@ -50,22 +50,22 @@ rather than treating them as arbitrary formulas.
 
 #### Ratio of drag terms
 
-```math
+$$
 \frac{f_{\rm quad}}{f_{\rm lin}}
 =
-```
+$$
 
 #### Condition for equal importance
 
-```math
+$$
 f_{\rm quad}=f_{\rm lin}
-```
+$$
 
 implies
 
-```math
+$$
 v=
-```
+$$
 
 ### Physical interpretation
 
@@ -89,40 +89,40 @@ The exact linear-drag solution must reduce to ordinary free fall before the obje
 
 For an object dropped from rest,
 
-```math
+$$
 v(t)
 =
 v_{\rm ter}
 \left(
 1-e^{-t/\tau}
 \right).
-```
+$$
 
 Use
 
-```math
+$$
 e^{-t/\tau}
 =
 1-\frac{t}{\tau}
 +\frac12\left(\frac{t}{\tau}\right)^2
 -\cdots.
-```
+$$
 
 ### Velocity limit
 
 Show that for \(t\ll\tau\),
 
-```math
+$$
 v(t)\approx gt.
-```
+$$
 
 ### Position limit
 
 Use the corresponding position solution to show
 
-```math
+$$
 y(t)\approx\frac12gt^2.
-```
+$$
 
 ### Conceptual question
 
@@ -146,31 +146,31 @@ This makes me connect the separate \(x(t)\) and \(y(t)\) solutions into the actu
 
 Write Taylor's linear-drag projectile equations:
 
-```math
+$$
 x(t)=
-```
+$$
 
-```math
+$$
 y(t)=
-```
+$$
 
 ### Solve for time
 
 From \(x(t)\),
 
-```math
+$$
 t=
-```
+$$
 
 ### Substitute
 
 Obtain
 
-```math
+$$
 \boxed{
 y=y(x)
 }.
-```
+$$
 
 ### Checks
 
@@ -199,47 +199,47 @@ This is the main analytic quadratic-drag derivation. It combines Newton's law, s
 
 Take downward as positive:
 
-```math
+$$
 m\dot v
 =
 mg-cv^2.
-```
+$$
 
 ### Terminal speed
 
 Derive
 
-```math
+$$
 \boxed{
 v_{\rm ter}
 =
 \sqrt{\frac{mg}{c}}
 }.
-```
+$$
 
 Then rewrite the ODE as
 
-```math
+$$
 \dot v
 =
 g
 \left(
 1-\frac{v^2}{v_{\rm ter}^2}
 \right).
-```
+$$
 
 ### Separation
 
-```math
+$$
 \frac{dv}
 {1-v^2/v_{\rm ter}^2}
 =
 g\,dt.
-```
+$$
 
 Carry out the integral and derive
 
-```math
+$$
 \boxed{
 v(t)
 =
@@ -249,15 +249,15 @@ v_{\rm ter}
 \frac{gt}{v_{\rm ter}}
 \right)
 }.
-```
+$$
 
 ### Position
 
 Integrate again to obtain \(y(t)\).
 
-```math
+$$
 y(t)=
-```
+$$
 
 ### Checks
 
@@ -286,33 +286,33 @@ This makes sure complex exponentials are not just formal manipulation. I should 
 
 Use Taylor's complex transverse velocity
 
-```math
+$$
 \eta(t)=v_x(t)+iv_y(t).
-```
+$$
 
 Write the solution in exponential form and use
 
-```math
+$$
 e^{i\theta}
 =
 \cos\theta+i\sin\theta.
-```
+$$
 
 ### Extract the real components
 
-```math
+$$
 v_x(t)=
-```
+$$
 
-```math
+$$
 v_y(t)=
-```
+$$
 
 ### Show constant transverse speed
 
-```math
+$$
 v_x^2+v_y^2=
-```
+$$
 
 ### Interpretation
 
@@ -333,14 +333,14 @@ v_x^2+v_y^2=
 
 This is the core magnetic-force problem. It requires turning
 
-```math
+$$
 \mathbf F
 =
 q
 \left(
 \mathbf E+\mathbf v\times\mathbf B
 \right)
-```
+$$
 
 into equations of motion and then interpreting the resulting trajectory.
 
@@ -350,31 +350,31 @@ Define the directions of \(\mathbf E\), \(\mathbf B\), and the coordinate axes.
 
 ### Step 2 — Compute the cross product
 
-```math
+$$
 \mathbf v\times\mathbf B=
-```
+$$
 
 ### Step 3 — Component equations
 
-```math
+$$
 m\dot v_x=
-```
+$$
 
-```math
+$$
 m\dot v_y=
-```
+$$
 
-```math
+$$
 m\dot v_z=
-```
+$$
 
 ### Step 4 — Solve
 
 Find
 
-```math
+$$
 v_x(t),\qquad v_y(t),\qquad v_z(t).
-```
+$$
 
 Then integrate for position.
 
@@ -411,52 +411,52 @@ Unlike the Chapter 1 skateboard problem, the numerical method is not just being 
 
 With \(y\) upward,
 
-```math
+$$
 m\dot v_x
 =
 -cvv_x,
-```
+$$
 
-```math
+$$
 m\dot v_y
 =
 -mg-cvv_y,
-```
+$$
 
 where
 
-```math
+$$
 v
 =
 \sqrt{v_x^2+v_y^2}.
-```
+$$
 
 Add
 
-```math
+$$
 \dot x=v_x,
-```
+$$
 
-```math
+$$
 \dot y=v_y.
-```
+$$
 
 ### First-order system
 
 Write the state vector
 
-```math
+$$
 \mathbf z
 =
 (x,y,v_x,v_y).
-```
+$$
 
 Then write
 
-```math
+$$
 \dot{\mathbf z}
 =
-```
+$$
 
 explicitly.
 
@@ -505,11 +505,11 @@ The force changes its mathematical form depending on the direction of motion bec
 
 This problem also uses the identity
 
-```math
+$$
 a
 =
 v\frac{dv}{dy},
-```
+$$
 
 which provides another way to solve Newton's equation.
 
@@ -541,9 +541,9 @@ Why must the upward and downward portions of quadratic-drag motion be treated ca
 
 The chapter solves the magnetic equations elegantly using
 
-```math
+$$
 v_x+iv_y.
-```
+$$
 
 This problem makes me solve the same physics using ordinary real differential equations.
 
@@ -551,39 +551,39 @@ That comparison should clarify what the complex-number trick is actually buying 
 
 ### Starting equations
 
-```math
+$$
 \dot v_x=\Omega v_y,
-```
+$$
 
-```math
+$$
 \dot v_y=-\Omega v_x.
-```
+$$
 
 Differentiate the first equation:
 
-```math
+$$
 \ddot v_x=
-```
+$$
 
 Use the second equation to show
 
-```math
+$$
 \boxed{
 \ddot v_x+\Omega^2v_x=0
 }.
-```
+$$
 
 ### Solve
 
-```math
+$$
 v_x(t)=
-```
+$$
 
 Then obtain
 
-```math
+$$
 v_y(t)=
-```
+$$
 
 from the original first-order relation.
 
