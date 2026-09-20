@@ -237,7 +237,7 @@ $$
 Thus
 
 $$
-v_{\mathrm{ter}}\operatorname{artanh}\left(\frac{v}{v_{\mathrm{ter}}}\right)
+v_{\mathrm{ter}}\,\mathrm{arctanh}\left(\frac{v}{v_{\mathrm{ter}}}\right)
 =gt+C.
 $$
 
@@ -662,7 +662,7 @@ $$
 or
 
 $$
-\operatorname{Re}\!\left(De^{i\omega t}\right).
+\Re\!\left(De^{i\omega t}\right).
 $$
 
 The differential equation determines the solution space. The initial conditions select the coefficients—or, equivalently, the amplitude and phase. Cosine is convenient when the quantity begins at a maximum; sine is convenient when it begins at zero with a nonzero derivative; complex exponentials are convenient for algebra and for representing rotation.

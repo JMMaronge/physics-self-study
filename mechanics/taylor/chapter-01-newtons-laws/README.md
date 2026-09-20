@@ -651,75 +651,47 @@ $$
 
 ### Polar basis vectors
 $$
-
 \hat{\mathbf r}
-
 =
-
-\cos\phi\\,\hat{\mathbf x}
-
-\+
-
-\sin\phi\\,\hat{\mathbf y},
-
+\cos\phi\,\hat{\mathbf x}
++
+\sin\phi\,\hat{\mathbf y},
 $$
 
 $$
-
 \hat{\boldsymbol\phi}
-
 =
-
--\sin\phi\\,\hat{\mathbf x}
-
-\+
-
-\cos\phi\\,\hat{\mathbf y}.
-
+-\sin\phi\,\hat{\mathbf x}
++
+\cos\phi\,\hat{\mathbf y}.
 $$
 
 ### Why polar coordinates are different
 Unlike Cartesian basis vectors,
 
 $$
-
 \hat{\mathbf r}
-
 \quad\text{and}\quad
-
 \hat{\boldsymbol\phi}
-
 $$
 
 change direction as the particle moves.
 
 ### Basis-vector derivatives
 $$
-
 \boxed{
-
 \dot{\hat{\mathbf r}}
-
 =
-
-\dot\phi\\,\hat{\boldsymbol\phi}
-
+\dot\phi\,\hat{\boldsymbol\phi}
 }
-
 $$
 
 $$
-
 \boxed{
-
 \dot{\hat{\boldsymbol\phi}}
-
 =
-
--\dot\phi\\,\hat{\mathbf r}
-
+-\dot\phi\,\hat{\mathbf r}
 }
-
 $$
 
 Explain the signs geometrically:
@@ -733,48 +705,30 @@ As $\phi$ increases, $\hat{\mathbf r}$ rotates toward the direction of increasin
 
 ### Velocity
 $$
-
 \boxed{
-
 \mathbf v
-
 =
-
-\dot r\\,\hat{\mathbf r}
-
-\+
-
-r\dot\phi\\,\hat{\boldsymbol\phi}
-
+\dot r\,\hat{\mathbf r}
++
+r\dot\phi\,\hat{\boldsymbol\phi}
 }
-
 $$
 
 Interpret:
 
 - $\dot r\hat{\mathbf r}$: radial velocity, the rate at which the distance from the origin changes.
-
 - $r\dot\phi\hat{\boldsymbol\phi}$: tangential velocity caused by rotation about the origin. Its magnitude is radius times angular speed.
 
 ### Acceleration
 $$
-
 \boxed{
-
 \mathbf a
-
 =
-
 \left(\ddot r-r\dot\phi^2\right)\hat{\mathbf r}
-
-\+
-
++
 \left(r\ddot\phi+2\dot r\dot\phi\right)
-
 \hat{\boldsymbol\phi}
-
 }
-
 $$
 
 ### Interpretation of the terms
@@ -1260,9 +1214,7 @@ $$
 
 ### Reproduce from memory
 - [x] Three-particle version
-
 - [x] $N$-particle version
-
 - [x] Explain the physical meaning aloud
 
 ---
@@ -1270,133 +1222,68 @@ $$
 Begin with
 
 $$
-
 \hat{\mathbf r}
-
-=
-
-\cos\phi\\,\hat{\mathbf x}
-
-\+
-
-\sin\phi\\,\hat{\mathbf y},
-
+=\cos\phi\,\hat{\mathbf x}
++
+\sin\phi\,\hat{\mathbf y},
 $$
 
 $$
-
 \hat{\boldsymbol\phi}
-
-=
-
--\sin\phi\\,\hat{\mathbf x}
-
-\+
-
-\cos\phi\\,\hat{\mathbf y}.
-
+=-\sin\phi\,\hat{\mathbf x}
++
+\cos\phi\,\hat{\mathbf y}.
 $$
 
 Differentiate $\hat{\mathbf r}$:
 
 $$
-
 \dot{\hat{\mathbf r}}
-
-=
-
--\sin\phi\\,\dot\phi\\,\hat{\mathbf x}
-
-\+
-
-\cos\phi\\,\dot\phi\\,\hat{\mathbf y}.
-
+=-\sin\phi\,\dot\phi\,\hat{\mathbf x}
++
+\cos\phi\,\dot\phi\,\hat{\mathbf y}.
 $$
 
 Factor out $\dot\phi$:
 
 $$
-
 \dot{\hat{\mathbf r}}
-
-=
-
-\dot\phi
-
-\left(
-
--\sin\phi\\,\hat{\mathbf x}
-
-\+
-
-\cos\phi\\,\hat{\mathbf y}
-
-\right).
-
+=\dot\phi\left(-\sin\phi\,\hat{\mathbf x}+
+\cos\phi\,\hat{\mathbf y}\right).
 $$
 
 Therefore,
 
 $$
-
 \boxed{
-
-\dot{\hat{\mathbf r}}
-
-=
-
-\dot\phi\\,\hat{\boldsymbol\phi}
-
-}.
-
+\dot{\hat{\mathbf r}}=\dot\phi\,\hat{\boldsymbol\phi}}
 $$
 
 Now differentiate $\hat{\boldsymbol\phi}$:
 
 $$
-
 \dot{\hat{\boldsymbol\phi}}
-
-=
-
--\cos\phi\\,\dot\phi\\,\hat{\mathbf x}
-
+=-\cos\phi\,\dot\phi\,\hat{\mathbf x}
 -
-
-\sin\phi\\,\dot\phi\\,\hat{\mathbf y}.
-
+\sin\phi\,\dot\phi\,\hat{\mathbf y}.
 $$
 
 Thus,
 
 $$
-
 \boxed{
-
-\dot{\hat{\boldsymbol\phi}}
-
-=
-
--\dot\phi\\,\hat{\mathbf r}
-
-}.
-
+\dot{\hat{\boldsymbol\phi}}=-\dot\phi\,\hat{\mathbf r}}
 $$
 
 ### Geometric interpretation
 - $\hat{\mathbf r}$ rotates toward $\hat{\boldsymbol\phi}$.
-
 - $\hat{\boldsymbol\phi}$ rotates toward $-\hat{\mathbf r}$.
-
 - A unit vector's derivative is perpendicular to the vector itself.
 
 ### Reproduce from memory
 - [x] Draw the basis
-
 - [x] Derive both Cartesian expressions
-
 - [x] Derive both time derivatives
-
 - [x] Explain the signs geometrically
 
 ---
@@ -1404,163 +1291,77 @@ $$
 Begin with
 
 $$
-
 \mathbf r=r\hat{\mathbf r}.
-
 $$
 
 Differentiate:
 
 $$
-
-\mathbf v
-
-=
-
-\dot r\\,\hat{\mathbf r}
-
-\+
-
-r\dot{\hat{\mathbf r}}.
-
+\mathbf v=\dot r\,\hat{\mathbf r}+r\dot{\hat{\mathbf r}}.
 $$
 
 Using
 
 $$
-
-\dot{\hat{\mathbf r}}
-
-=
-
-\dot\phi\\,\hat{\boldsymbol\phi},
-
+\dot{\hat{\mathbf r}}=\dot\phi\,\hat{\boldsymbol\phi},
 $$
 
 we obtain
 
 $$
-
 \boxed{
-
-\mathbf v
-
-=
-
-\dot r\\,\hat{\mathbf r}
-
-\+
-
-r\dot\phi\\,\hat{\boldsymbol\phi}
-
-}.
-
+\mathbf v=\dot r\,\hat{\mathbf r}+r\dot\phi\,\hat{\boldsymbol\phi}}
 $$
 
 Differentiate again:
 
 $$
-
-\mathbf a
-
-=
-
-\frac{d}{dt}
-
-\left(
-
-\dot r\\,\hat{\mathbf r}
-
-\+
-
-r\dot\phi\\,\hat{\boldsymbol\phi}
-
-\right).
-
+\mathbf a=
+\frac{d}{dt}\left(\dot r\,\hat{\mathbf r}+r\dot\phi\,\hat{\boldsymbol\phi}\right).
 $$
 
 Apply the product rule:
 
 $$
-
-\mathbf a
-
-=
-
-\ddot r\\,\hat{\mathbf r}
-
-\+
-
-\dot r\\,\dot{\hat{\mathbf r}}
-
-\+
-
-\dot r\dot\phi\\,\hat{\boldsymbol\phi}
-
-\+
-
-r\ddot\phi\\,\hat{\boldsymbol\phi}
-
-\+
-
-r\dot\phi\\,\dot{\hat{\boldsymbol\phi}}.
-
+\mathbf a=
+\ddot r\,\hat{\mathbf r}
++
+\dot r\,\dot{\hat{\mathbf r}}
++
+\dot r\dot\phi\,\hat{\boldsymbol\phi}
++
+r\ddot\phi\,\hat{\boldsymbol\phi}
++
+r\dot\phi\,\dot{\hat{\boldsymbol\phi}}.
 $$
 
 Substitute
 
 $$
-
-\dot{\hat{\mathbf r}}
-
-=
-
-\dot\phi\\,\hat{\boldsymbol\phi},
-
+\dot{\hat{\mathbf r}}=\dot\phi\,\hat{\boldsymbol\phi},
 \qquad
-
-\dot{\hat{\boldsymbol\phi}}
-
-=
-
--\dot\phi\\,\hat{\mathbf r}.
-
+\dot{\hat{\boldsymbol\phi}}=-\dot\phi\,\hat{\mathbf r}.
 $$
 
 Then
 
 $$
-
-\mathbf a
-
-=
-
-\ddot r\\,\hat{\mathbf r}
-
-\+
-
-\dot r\dot\phi\\,\hat{\boldsymbol\phi}
-
-\+
-
-\dot r\dot\phi\\,\hat{\boldsymbol\phi}
-
-\+
-
-r\ddot\phi\\,\hat{\boldsymbol\phi}
-
+\mathbf a=
+\ddot r\,\hat{\mathbf r}
++
+\dot r\dot\phi\,\hat{\boldsymbol\phi}
++
+\dot r\dot\phi\,\hat{\boldsymbol\phi}
++
+r\ddot\phi\,\hat{\boldsymbol\phi}
 -
-
-r\dot\phi^2\\,\hat{\mathbf r}.
-
+r\dot\phi^2\,\hat{\mathbf r}.
 $$
 
 Collect terms:
 
 $$
-
 \boxed{
-
 \mathbf a
 
 =
@@ -1838,23 +1639,12 @@ $$
 
 ### Angles to investigate
 $$
-
-\phi_0
-
-\in
-
-\left\\{
-
-5^\circ,\\,
-
-20^\circ,\\,
-
-45^\circ,\\,
-
+\phi_0\in\left\{
+5^\circ,\,
+20^\circ,\,
+45^\circ,\,
 90^\circ
-
-\right\\}.
-
+\right\}.
 $$
 
 ### Outputs

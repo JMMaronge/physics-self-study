@@ -932,7 +932,7 @@ C\cos(\omega t-\phi),
 $$
 
 $$
-\operatorname{Re}\left(De^{i\omega t}\right).
+\Re\left(De^{i\omega t}\right).
 $$
 
 Use the full $A\cos+B\sin$ form when applying arbitrary initial conditions. Use amplitude and phase when the geometry is clearer that way. Use complex exponentials when differentiation, coupling, or rotation becomes simpler.
@@ -1016,11 +1016,11 @@ $$
 Useful identities are
 
 $$
-\frac{d}{dx}\tanh x=\operatorname{sech}^2x,
+\frac{d}{dx}\tanh x=\mathrm{sech}^2 x,
 $$
 
 $$
-1-\tanh^2x=\operatorname{sech}^2x,
+1-\tanh^2x=\mathrm{sech}^2 x,
 $$
 
 $$
