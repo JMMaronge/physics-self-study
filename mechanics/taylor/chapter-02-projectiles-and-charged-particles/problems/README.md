@@ -4,8 +4,6 @@
 
 This document collects solutions to Problems 2.1, 2.6, 2.17, 2.35, 2.41, 2.43, 2.52, 2.53, and 2.54 from John R. Taylor's *Classical Mechanics*. The cleaned derivations preserve the reasoning in the original solutions while standardizing notation and clearly identifying any corrections.
 
-Numerical companion: [Taylor 2.43 notebook](../taylor_problem_2_43.ipynb)
-
 ## Overall assessment
 
 **Overall grade: A (about 95%)**
@@ -32,31 +30,31 @@ Overall, the mechanics is strong. The solutions consistently translate physical 
 
 Taylor gives the ratio in the form
 
-$$
+```math
 \frac{f_{\mathrm{quad}}}{f_{\mathrm{lin}}}
 =\left(1.6\times10^3\ \frac{\mathrm{s}}{\mathrm{m}^2}\right)Dv.
-$$
+```
 
 The two drag forces are equal when this ratio is one:
 
-$$
+```math
 v_*=\frac{1}{(1.6\times10^3)D}.
-$$
+```
 
 ### Baseball
 
 For $D=7\times10^{-2}\,\mathrm{m}$,
 
-$$
+```math
 v_* = \frac{1}{(1.6\times10^3)(7\times10^{-2})}
 \approx 8.9\times10^{-3}\,\mathrm{m/s}.
-$$
+```
 
 At $v=1\,\mathrm{m/s}$,
 
-$$
+```math
 \frac{f_{\mathrm{quad}}}{f_{\mathrm{lin}}}\approx112,
-$$
+```
 
 so the linear force is less than 1% of the quadratic force. At ordinary baseball speeds, neglecting linear drag is completely reasonable.
 
@@ -64,9 +62,9 @@ so the linear force is less than 1% of the quadratic force. At ordinary baseball
 
 For $D=7\times10^{-1}\,\mathrm{m}$,
 
-$$
+```math
 v_*\approx 8.9\times10^{-4}\,\mathrm{m/s}.
-$$
+```
 
 Again, essentially any ordinary motion in air is well inside the quadratic-drag regime.
 
@@ -80,29 +78,29 @@ Again, essentially any ordinary motion in air is well inside the quadratic-drag 
 
 Take downward as positive. For an object released from rest under linear drag,
 
-$$
+```math
 v(t)=v_{\mathrm{ter}}\left(1-e^{-t/\tau}\right),
 \qquad
 v_{\mathrm{ter}}=\frac{mg}{b},
 \qquad
 \tau=\frac{m}{b}.
-$$
+```
 
 ### (a) Velocity at short times
 
 For $t\ll\tau$,
 
-$$
+```math
 e^{-t/\tau}=1-\frac{t}{\tau}+O\!\left(\frac{t^2}{\tau^2}\right).
-$$
+```
 
 Therefore,
 
-$$
+```math
 v(t)\approx v_{\mathrm{ter}}\frac{t}{\tau}
 =\frac{mg}{b}\frac{bt}{m}
 =gt.
-$$
+```
 
 This is exactly the vacuum result at leading order. Physically, drag initially vanishes because the object starts with $v=0$, so gravity controls the first instant of motion.
 
@@ -110,32 +108,32 @@ This is exactly the vacuum result at leading order. Physically, drag initially v
 
 With $y(0)=0$,
 
-$$
+```math
 y(t)=v_{\mathrm{ter}}\left[t-\tau\left(1-e^{-t/\tau}\right)\right].
-$$
+```
 
 Now the first two terms in the exponential expansion are not enough:
 
-$$
+```math
 1-e^{-t/\tau}\approx\frac{t}{\tau}
 \quad\Longrightarrow\quad
 t-\tau\frac{t}{\tau}=0.
-$$
+```
 
 This zero is not a prediction that the object fails to move. It says the constant and linear contributions cancel exactly, so the leading nonzero behavior lies at the next order. Keeping the quadratic term,
 
-$$
+```math
 e^{-t/\tau}
 =1-\frac{t}{\tau}+\frac{t^2}{2\tau^2}
 +O\!\left(\frac{t^3}{\tau^3}\right),
-$$
+```
 
 gives
 
-$$
+```math
 y(t)\approx v_{\mathrm{ter}}\frac{t^2}{2\tau}
 =\frac12gt^2.
-$$
+```
 
 ### Why velocity needs fewer terms than position
 
@@ -151,38 +149,38 @@ Velocity begins as $v(0)=0$ but has nonzero first derivative $\dot v(0)=g$, so i
 
 The parametric solution can be written
 
-$$
+```math
 x(t)=v_{x0}\tau\left(1-e^{-t/\tau}\right),
-$$
+```
 
-$$
+```math
 y(t)=(v_{y0}+v_{\mathrm{ter}})\tau
 \left(1-e^{-t/\tau}\right)-v_{\mathrm{ter}}t,
-$$
+```
 
 where upward is positive and $v_{\mathrm{ter}}=g\tau$ denotes the positive magnitude of terminal speed.
 
 From the horizontal equation,
 
-$$
+```math
 e^{-t/\tau}=1-\frac{x}{v_{x0}\tau}.
-$$
+```
 
 Taking logarithms gives
 
-$$
+```math
 \boxed{t=-\tau\ln\left(1-\frac{x}{v_{x0}\tau}\right)}.
-$$
+```
 
 Substitution into $y(t)$ gives
 
-$$
+```math
 \boxed{
 y(x)=\frac{v_{y0}+v_{\mathrm{ter}}}{v_{x0}}x
 +v_{\mathrm{ter}}\tau
 \ln\left(1-\frac{x}{v_{x0}\tau}\right)
 }.
-$$
+```
 
 ### Correction
 
@@ -190,9 +188,9 @@ The handwritten intermediate line omitted the minus sign in the expression for $
 
 The logarithm also explains the finite horizontal asymptote:
 
-$$
+```math
 x_{\infty}=v_{x0}\tau.
-$$
+```
 
 As $t\to\infty$, horizontal velocity decays exponentially to zero, so the projectile accumulates only a finite horizontal displacement.
 
@@ -206,55 +204,55 @@ As $t\to\infty$, horizontal velocity decays exponentially to zero, so the projec
 
 Choose downward as positive. For an object released from rest,
 
-$$
+```math
 m\dot v=mg-cv^2.
-$$
+```
 
 Define the terminal speed
 
-$$
+```math
 v_{\mathrm{ter}}=\sqrt{\frac{mg}{c}}.
-$$
+```
 
 Then
 
-$$
+```math
 \dot v=g\left(1-\frac{v^2}{v_{\mathrm{ter}}^2}\right).
-$$
+```
 
 Separate variables:
 
-$$
+```math
 \frac{dv}{1-(v/v_{\mathrm{ter}})^2}=g\,dt.
-$$
+```
 
 Let $u=v/v_{\mathrm{ter}}$. Since $dv=v_{\mathrm{ter}}du$,
 
-$$
+```math
 v_{\mathrm{ter}}\int\frac{du}{1-u^2}=gt+C.
-$$
+```
 
 Thus
 
-$$
-v_{\mathrm{ter}}\,\mathrm{arctanh}\left(\frac{v}{v_{\mathrm{ter}}}\right)
+```math
+v_{\mathrm{ter}}\operatorname{artanh}\left(\frac{v}{v_{\mathrm{ter}}}\right)
 =gt+C.
-$$
+```
 
 Using $v(0)=0$ gives $C=0$, so
 
-$$
+```math
 \boxed{
 v(t)=v_{\mathrm{ter}}
 \tanh\left(\frac{gt}{v_{\mathrm{ter}}}\right)
 }.
-$$
+```
 
 Since $v_{\mathrm{ter}}=g\tau$, this is also
 
-$$
+```math
 v(t)=v_{\mathrm{ter}}\tanh(t/\tau).
-$$
+```
 
 ### Grade and comments
 
@@ -266,58 +264,58 @@ $$
 
 Choose upward as positive. During the upward journey, $v>0$, so gravity and drag both point downward:
 
-$$
+```math
 m\dot v=-mg-cv^2.
-$$
+```
 
 Using
 
-$$
+```math
 v_{\mathrm{ter}}^2=\frac{mg}{c},
-$$
+```
 
 we obtain
 
-$$
+```math
 \dot v=-g\left(1+\frac{v^2}{v_{\mathrm{ter}}^2}\right).
-$$
+```
 
 Taylor asks for the $v\,dv/dy$ rule. Since $v=v(y)$,
 
-$$
+```math
 \dot v=\frac{dv}{dy}\frac{dy}{dt}
 =v\frac{dv}{dy}.
-$$
+```
 
 Therefore,
 
-$$
+```math
 v\frac{dv}{dy}
 =-g\left(1+\frac{v^2}{v_{\mathrm{ter}}^2}\right).
-$$
+```
 
 Separate and integrate from $(y,v)=(0,v_0)$ to $(y,v)$:
 
-$$
+```math
 \int_{v_0}^{v}
 \frac{v'\,dv'}{1+(v'/v_{\mathrm{ter}})^2}
 =-g\int_0^y dy'.
-$$
+```
 
 This gives
 
-$$
+```math
 \frac{v_{\mathrm{ter}}^2}{2}
 \ln\left[
 \frac{1+(v/v_{\mathrm{ter}})^2}
 {1+(v_0/v_{\mathrm{ter}})^2}
 \right]
 =-gy.
-$$
+```
 
 Hence
 
-$$
+```math
 \boxed{
 y(v)=\frac{v_{\mathrm{ter}}^2}{2g}
 \ln\left[
@@ -325,11 +323,11 @@ y(v)=\frac{v_{\mathrm{ter}}^2}{2g}
 {1+(v/v_{\mathrm{ter}})^2}
 \right]
 }.
-$$
+```
 
 Solving explicitly for speed gives
 
-$$
+```math
 \boxed{
 v(y)=v_{\mathrm{ter}}
 \sqrt{
@@ -337,38 +335,38 @@ v(y)=v_{\mathrm{ter}}
 e^{-2gy/v_{\mathrm{ter}}^2}-1
 }
 },
-$$
+```
 
 with the positive square root because this formula describes the upward branch.
 
 At maximum height, $v=0$:
 
-$$
+```math
 \boxed{
 y_{\max}=\frac{v_{\mathrm{ter}}^2}{2g}
 \ln\left(1+\frac{v_0^2}{v_{\mathrm{ter}}^2}\right)
 }.
-$$
+```
 
 For $m=0.15\,\mathrm{kg}$, $D=0.07\,\mathrm{m}$, $c=\gamma D^2$ with $\gamma=0.25\,\mathrm{N\,s^2/m^4}$, and $v_0=20\,\mathrm{m/s}$,
 
-$$
+```math
 c=0.001225\,\mathrm{kg/m},
 \qquad
 v_{\mathrm{ter}}\approx34.6\,\mathrm{m/s},
-$$
+```
 
 and
 
-$$
+```math
 y_{\max}\approx17.6\,\mathrm{m}.
-$$
+```
 
 In a vacuum,
 
-$$
+```math
 y_{\max}^{(0)}=\frac{v_0^2}{2g}\approx20.4\,\mathrm{m}.
-$$
+```
 
 Quadratic drag therefore reduces the maximum height by about $2.8\,\mathrm{m}$, or roughly 14%.
 
@@ -376,9 +374,9 @@ Quadratic drag therefore reduces the maximum height by about $2.8\,\mathrm{m}$, 
 
 The compact equation valid for both directions is
 
-$$
+```math
 m\dot v=-mg-cv|v|.
-$$
+```
 
 It is legitimate to solve separate $v>0$ and $v<0$ branches, but they meet at the apex, where $v=0$ at a nonzero time $t=t_{\mathrm{up}}$. They should not be matched to each other at $t=0$. For this problem, solving directly for $v(y)$ avoids that unnecessary complication.
 
@@ -392,48 +390,48 @@ It is legitimate to solve separate $v>0$ and $v<0$ branches, but they meet at th
 
 Quadratic drag has magnitude $cv^2$ and points opposite the velocity. Therefore,
 
-$$
+```math
 \mathbf F_{\mathrm{drag}}
 =-cv^2\hat{\mathbf v}
 =-cv\mathbf v,
 \qquad
 v=\sqrt{v_x^2+v_y^2}.
-$$
+```
 
 With $y$ positive upward,
 
-$$
+```math
 m\dot v_x=-cvv_x,
-$$
+```
 
-$$
+```math
 m\dot v_y=-mg-cvv_y.
-$$
+```
 
 Equivalently, the first-order numerical system is
 
-$$
+```math
 \dot x=v_x,
 \qquad
 \dot y=v_y,
-$$
+```
 
-$$
+```math
 \dot v_x=-\frac{c}{m}\sqrt{v_x^2+v_y^2}\,v_x,
-$$
+```
 
-$$
+```math
 \dot v_y=-g-\frac{c}{m}\sqrt{v_x^2+v_y^2}\,v_y.
-$$
+```
 
 The initial conditions for launch speed $v_0$ and angle $\theta$ are
 
-$$
+```math
 x(0)=0,
 \quad y(0)=0,
 \quad v_x(0)=v_0\cos\theta,
 \quad v_y(0)=v_0\sin\theta.
-$$
+```
 
 The components are coupled through the common speed $v$. That coupling is exactly why the ordinary two-dimensional quadratic-drag problem does not reduce to separate elementary formulas for $x(t)$ and $y(t)$; numerical integration is the appropriate next step.
 
@@ -447,55 +445,55 @@ The components are coupled through the common speed $v$. That coupling is exactl
 
 Let
 
-$$
+```math
 \mathbf B=(0,0,B),
 \qquad
 \omega=\frac{qB}{m}.
-$$
+```
 
 The Lorentz-force equation is
 
-$$
+```math
 m\dot{\mathbf v}=q\mathbf v\times\mathbf B.
-$$
+```
 
 Since
 
-$$
+```math
 \mathbf v\times\mathbf B=(v_yB,-v_xB,0),
-$$
+```
 
 the component equations are
 
-$$
+```math
 \dot v_x=\omega v_y,
 \qquad
 \dot v_y=-\omega v_x,
 \qquad
 \dot v_z=0.
-$$
+```
 
 Differentiating the first equation gives
 
-$$
+```math
 \ddot v_x=-\omega^2v_x.
-$$
+```
 
 For $v_x(0)=v_0$ and $v_y(0)=0$,
 
-$$
+```math
 \boxed{v_x(t)=v_0\cos(\omega t)},
-$$
+```
 
-$$
+```math
 \boxed{v_y(t)=-v_0\sin(\omega t)}.
-$$
+```
 
 The speed is constant:
 
-$$
+```math
 v_x^2+v_y^2=v_0^2.
-$$
+```
 
 This is physically necessary because the magnetic force is perpendicular to $\mathbf v$, and therefore does no work.
 
@@ -503,29 +501,29 @@ This is physically necessary because the magnetic force is perpendicular to $\ma
 
 Define
 
-$$
+```math
 u(t)=v_x(t)+iv_y(t).
-$$
+```
 
 Then
 
-$$
+```math
 \dot u
 =\omega v_y-i\omega v_x
 =-i\omega u,
-$$
+```
 
 so
 
-$$
+```math
 \boxed{u(t)=u(0)e^{-i\omega t}}.
-$$
+```
 
 Because
 
-$$
+```math
 e^{-i\omega t}=\cos(\omega t)-i\sin(\omega t),
-$$
+```
 
 this reproduces the two real components above.
 
@@ -543,57 +541,57 @@ The handwritten real solution is correct. The complex-exponential discussion nee
 
 Let
 
-$$
+```math
 \mathbf E=(0,0,E_z),
 \qquad
 \mathbf B=(0,0,B),
 \qquad
 \omega=\frac{qB}{m}.
-$$
+```
 
 The equation of motion is
 
-$$
+```math
 m\dot{\mathbf v}=q(\mathbf E+\mathbf v\times\mathbf B).
-$$
+```
 
 Thus
 
-$$
+```math
 \dot v_x=\omega v_y,
 \qquad
 \dot v_y=-\omega v_x,
 \qquad
 \dot v_z=\frac{qE_z}{m}.
-$$
+```
 
 For $v_x(0)=v_{x0}$, $v_y(0)=0$, and $v_z(0)=v_{z0}$,
 
-$$
+```math
 v_x(t)=v_{x0}\cos(\omega t),
-$$
+```
 
-$$
+```math
 v_y(t)=-v_{x0}\sin(\omega t),
-$$
+```
 
-$$
+```math
 v_z(t)=v_{z0}+\frac{qE_z}{m}t.
-$$
+```
 
 Taking the initial position to be the origin and integrating,
 
-$$
+```math
 \boxed{x(t)=\frac{v_{x0}}{\omega}\sin(\omega t)},
-$$
+```
 
-$$
+```math
 \boxed{y(t)=\frac{v_{x0}}{\omega}\left[\cos(\omega t)-1\right]},
-$$
+```
 
-$$
+```math
 \boxed{z(t)=v_{z0}t+\frac{qE_z}{2m}t^2}.
-$$
+```
 
 The motion is circular in the transverse $xy$-plane while accelerating along the field direction. In three dimensions this produces a helix whose pitch changes with time because $v_z$ changes linearly.
 
@@ -607,63 +605,63 @@ The motion is circular in the transverse $xy$-plane while accelerating along the
 
 Starting from
 
-$$
+```math
 \dot v_x=\omega v_y,
 \qquad
 \dot v_y=-\omega v_x,
-$$
+```
 
 we obtain
 
-$$
+```math
 \ddot v_x+\omega^2v_x=0.
-$$
+```
 
 The general real solution is
 
-$$
+```math
 v_x(t)=A\sin(\omega t)+B\cos(\omega t).
-$$
+```
 
 Using $v_y=\dot v_x/\omega$,
 
-$$
+```math
 v_y(t)=A\cos(\omega t)-B\sin(\omega t).
-$$
+```
 
 Now impose the initial conditions $v_x(0)=v_0$ and $v_y(0)=0$:
 
-$$
+```math
 B=v_0,
 \qquad
 A=0.
-$$
+```
 
 Therefore,
 
-$$
+```math
 \boxed{v_x(t)=v_0\cos(\omega t)},
 \qquad
 \boxed{v_y(t)=-v_0\sin(\omega t)}.
-$$
+```
 
 ### How to decide among sine, cosine, and $e^{i\omega t}$
 
 You do not choose among three physically different solutions. They are different coordinate systems for the same two-dimensional solution space:
 
-$$
+```math
 A\cos(\omega t)+B\sin(\omega t),
-$$
+```
 
-$$
+```math
 C\cos(\omega t-\phi),
-$$
+```
 
 or
 
-$$
-\Re\!\left(De^{i\omega t}\right).
-$$
+```math
+\operatorname{Re}\!\left(De^{i\omega t}\right).
+```
 
 The differential equation determines the solution space. The initial conditions select the coefficients—or, equivalently, the amplitude and phase. Cosine is convenient when the quantity begins at a maximum; sine is convenient when it begins at zero with a nonzero derivative; complex exponentials are convenient for algebra and for representing rotation.
 
@@ -697,15 +695,15 @@ That single sentence determines almost every later sign.
 
 The equation
 
-$$
+```math
 \ddot x+\omega^2x=0
-$$
+```
 
 does not say “the answer is sine” or “the answer is cosine.” It says
 
-$$
+```math
 x=A\cos(\omega t)+B\sin(\omega t).
-$$
+```
 
 Initial conditions determine $A$ and $B$. The same principle applies to integration constants in drag problems and to the phase of a complex exponential.
 
@@ -717,19 +715,19 @@ The number of terms required is not fixed in advance. Expand until the first non
 
 For linear drag,
 
-$$
+```math
 \tau=\frac{m}{b},
 \qquad
 v_{\mathrm{ter}}=g\tau.
-$$
+```
 
 For quadratic drag,
 
-$$
+```math
 v_{\mathrm{ter}}=\sqrt{\frac{mg}{c}},
 \qquad
 \tau=\frac{v_{\mathrm{ter}}}{g}.
-$$
+```
 
 Writing equations in terms of $t/\tau$ and $v/v_{\mathrm{ter}}$ exposes their structure. These ratios tell us whether drag has had time to matter and whether the speed is near the terminal scale.
 
@@ -737,9 +735,9 @@ Writing equations in terms of $t/\tau$ and $v/v_{\mathrm{ter}}$ exposes their st
 
 If the question asks for speed as a function of height, solving for $v(t)$ and then $y(t)$ is often unnecessary. The chain rule
 
-$$
+```math
 \dot v=v\frac{dv}{dy}
-$$
+```
 
 eliminates time directly. This is not a trick; it is an ordinary change in which variable parametrizes the motion.
 
@@ -747,17 +745,17 @@ eliminates time directly. This is not a trick; it is an ordinary change in which
 
 Linear drag produces separate equations such as
 
-$$
+```math
 \dot v_x=-\frac{b}{m}v_x,
 \qquad
 \dot v_y=-g-\frac{b}{m}v_y.
-$$
+```
 
 Quadratic drag instead contains
 
-$$
+```math
 v=\sqrt{v_x^2+v_y^2},
-$$
+```
 
 so each component depends on both. This is why the two-dimensional quadratic-drag problem naturally leads to numerical integration.
 
