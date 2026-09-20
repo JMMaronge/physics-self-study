@@ -1,31 +1,11 @@
 # Chapter 2 — Projectiles and Charged Particles
 
 **Text:** John R. Taylor, *Classical Mechanics*  
-**Chapter:** 2 — Projectiles and Charged Particles  
-**Dates studied:**  
-**Status:** Not started
+**Status:** Completed  
+**Dates studied:** August--September 2026   
+**Purpose:** Consolidated notes based on the chapter, my worked solutions, and follow-up discussions.
 
----
-
-## How to use this file
-
-This is the **notes and derivations sheet** for Chapter 2.
-
-Use it to record:
-
-- the chapter's main ideas;
-- definitions and assumptions;
-- physical interpretations;
-- derivations I should be able to reproduce;
-- approximations and limiting cases;
-- computational checks;
-- questions, mistakes, and connections.
-
-The separate exercise sheet is:
-
-[Chapter 2 problems](problems/README.md)
-
-The goal is not to memorize formulas. By the end of the chapter, I should be able to start from Newton's second law and derive the important results.
+> These notes are meant to preserve the reasoning I should carry forward, not merely a list of formulas. The central habit is to begin with the vector force law and a declared coordinate convention, derive the differential equation, apply the initial conditions, and then check dimensions and limiting cases.
 
 ---
 
@@ -33,307 +13,312 @@ The goal is not to memorize formulas. By the end of the chapter, I should be abl
 
 ## One-sentence summary
 
-> 
+Chapter 2 applies Newton's second law to velocity-dependent forces, using air resistance and the magnetic Lorentz force to develop intuition for exponential relaxation, terminal behavior, coupled differential equations, approximations, hyperbolic functions, numerical solutions, and complex representations of planar motion.
 
-## My current interpretation
+## How Chapter 2 extends Chapter 1
 
-Chapter 2 takes the Newtonian framework from Chapter 1 and applies it to forces that depend on velocity. The two main examples are resistive forces on projectiles and the magnetic Lorentz force on charged particles.
+Chapter 1 established the general structure
 
-The chapter is also a mathematical bridge: exponential decay, terminal behavior, Taylor expansions, coupled differential equations, hyperbolic functions, and complex exponentials all appear naturally from physical problems.
+$$
+m\ddot{\mathbf r}=\mathbf F(\mathbf r,\dot{\mathbf r},t).
+$$
 
-## What should feel familiar from Chapter 1?
+Chapter 2 focuses on important cases in which the force depends explicitly on velocity:
 
-- Newton's second law as a differential equation;
-- choosing coordinates;
-- resolving vectors into components;
-- initial-value problems;
-- first- and second-order differential equations;
-- checking limiting cases.
+$$
+\mathbf F_d=-b\mathbf v,
+$$
 
-## What is likely to be genuinely new or rusty?
+$$
+\mathbf F_d=-cv\mathbf v,
+$$
 
-- velocity-dependent forces;
-- linear versus quadratic drag;
-- terminal velocity and characteristic times;
-- coupled differential equations;
-- Taylor-series approximations;
-- hyperbolic functions;
-- the Lorentz force;
-- complex exponentials as a tool for two-dimensional motion.
+$$
+\mathbf F_B=q\mathbf v\times\mathbf B.
+$$
+
+This makes the differential-equation viewpoint essential. The force determines how velocity changes, and the velocity must then be integrated to determine the trajectory.
+
+## Core habits from this chapter
+
+1. Declare the positive directions before assigning signs.
+2. Write the force as a vector before taking components.
+3. Distinguish a signed component from a nonnegative magnitude.
+4. Use the initial conditions to select a particular solution.
+5. Identify the natural dimensional scales of the problem.
+6. Check short-time, long-time, zero-drag, and dimensional limits.
+7. Recognize when an analytic solution is inconvenient or unavailable and use numerical integration.
 
 ---
 
-# 2. Learning objectives
+# 2. Drag forces and sign conventions
 
-By the end of the chapter, I should be able to:
+## General drag law
 
-- [x] Write a drag force as a vector opposite the velocity.
-- [x] Distinguish linear and quadratic drag physically and mathematically.
-- [x] Explain when linear or quadratic drag dominates.
-- [x] Solve one-dimensional motion with linear drag.
-- [x] Derive and interpret terminal velocity.
-- [x] Interpret the characteristic time \(\tau=m/b\).
-- [x] Solve projectile motion with linear drag in Cartesian components.
-- [x] Eliminate time to obtain a trajectory \(y(x)\).
-- [ ] Recover the vacuum limit using a Taylor expansion.
-- [x] Explain why quadratic drag couples the Cartesian equations.
-- [ ] Derive the vertical quadratic-drag solution.
-- [x] Explain why \(\tanh\) and \(\ln\cosh\) appear.
-- [x] Write and interpret the magnetic Lorentz force.
-- [x] Explain why a magnetic field changes direction but not speed.
-- [ ] Derive circular and helical motion in a uniform magnetic field.
-- [ ] Use Euler's formula and complex exponentials comfortably.
-- [ ] Combine two coupled real ODEs into one complex ODE.
-- [ ] Interpret a complex solution as real physical motion.
-
----
-
-# 3. Section notes
-
-## 2.1 Air Resistance
-
-### Central idea
-
-For a nonrotating projectile in a stationary fluid, drag acts opposite the velocity:
+For a nonrotating object moving through a stationary fluid, the drag force points opposite the object's velocity relative to the fluid:
 
 $$
-\mathbf f=-f(v)\hat{\mathbf v}.
+\mathbf F_d=-f(v)\hat{\mathbf v},
+\qquad
+v=|\mathbf v|.
 $$
 
-Why is the minus sign there?
+The minus sign means “opposite the velocity vector.” It does not mean “always downward” or “always negative in a chosen coordinate system.”
 
-> Because drag always opposes the velocity vector
-
-
-### Linear and quadratic terms
-
-Taylor models the magnitude approximately as
+An approximate drag magnitude is
 
 $$
-f(v)=bv+cv^2.
+f(v)=bv+cv^2,
+$$
+
+so
+
+$$
+\mathbf F_d=-(bv+cv^2)\hat{\mathbf v}.
+$$
+
+## Linear versus quadratic drag
+
+The two magnitudes are
+
+$$
+f_{\mathrm{lin}}=bv,
+\qquad
+f_{\mathrm{quad}}=cv^2.
+$$
+
+Their ratio is
+
+$$
+\frac{f_{\mathrm{quad}}}{f_{\mathrm{lin}}}=\frac{cv}{b}.
+$$
+
+Therefore:
+
+- linear drag is relatively more important at low speeds;
+- quadratic drag is relatively more important at high speeds;
+- the crossover occurs when $v=b/c$.
+
+The relevant velocity is the velocity relative to the medium. If the air itself moves with velocity $\mathbf u$, then the drag law depends on $\mathbf v-\mathbf u$.
+
+## One-dimensional sign rules
+
+With upward chosen as positive, gravity is always
+
+$$
+F_g=-mg.
+$$
+
+Linear drag is
+
+$$
+F_d=-bv.
+$$
+
+This automatically reverses direction:
+
+- if $v>0$ while the object rises, then $F_d<0$ and drag points downward;
+- if $v<0$ while the object falls, then $F_d>0$ and drag points upward;
+- at the apex, $v=0$, so the instantaneous drag force is zero, but gravity remains $-mg$.
+
+Quadratic drag must preserve the same directional information. In one dimension,
+
+$$
+\boxed{F_d=-cv|v|}.
 $$
 
 Thus
 
 $$
-\mathbf f
-=
--\left(bv+cv^2\right)\hat{\mathbf v}.
+F_d=
+\begin{cases}
+-cv^2, & v>0,\\
++cv^2, & v<0.
+\end{cases}
 $$
 
-Interpret:
+Writing only $-cv^2$ loses the reversal of direction because $v^2$ is always nonnegative.
 
-- \(b\): The linear effect of drag
-- \(c\): The quadratic effect of drag
+## Main takeaway
 
-The ratio is
-
-$$
-\frac{f_{\rm quad}}{f_{\rm lin}}
-=
-\frac{cv}{b}.
-$$
-
-Therefore:
-
-- small \(v\): linear effect dominates
-- large \(v\): quadratic effect dominates
-
-### Physical questions
-
-- Why does drag depend on velocity relative to the medium?
-- Why can linear drag dominate at low speed?
-- Why can quadratic drag dominate at high speed?
-- What assumptions are hidden in assuming drag is exactly opposite \(\mathbf v\)?
-
-### My takeaway
-
-> 
+The coordinate sign of drag should be derived from the velocity, not memorized separately for rising and falling motion.
 
 ---
 
-## 2.2 Linear Air Resistance
+# 3. Linear drag in one dimension
 
-Assume
+## Horizontal motion without gravity
 
-$$
-\mathbf f=-b\mathbf v.
-$$
-
-The useful feature is that the Cartesian components separate.
-
----
-
-### Horizontal motion
-
-Newton's second law gives
+Start from
 
 $$
-m\dot v_x=-bv_x.
+m\dot v=-bv.
 $$
 
-Define
+Define the characteristic time
 
 $$
-\tau=\frac{m}{b}.
+\boxed{\tau=\frac{m}{b}}.
 $$
 
 Then
 
 $$
-\dot v_x=-\frac{1}{\tau}v_x.
+\dot v=-\frac{v}{\tau}.
 $$
 
-Derive
+Separating variables gives
 
 $$
-v_x(t)=v_{x0}e^{-t/\tau}.
+\frac{dv}{v}=-\frac{dt}{\tau},
 $$
 
-Integrate to obtain
+and therefore
 
 $$
-x(t)
-=
-v_{x0}\tau
-\left(1-e^{-t/\tau}\right)
+\boxed{v(t)=v_0e^{-t/\tau}}.
 $$
 
-for \(x(0)=0\).
-
-### Interpretation of the time constant
-
-At \(t=\tau\),
+For $x(0)=0$,
 
 $$
-v_x(\tau)=\frac{v_{x0}}{e}.
+x(t)=\int_0^t v_0e^{-t'/\tau}\,dt'
+=v_0\tau\left(1-e^{-t/\tau}\right).
 $$
 
-What does this mean physically?
-
-> 
-
-What happens as \(t\to\infty\)?
-
-> 
-
----
-
-### Vertical fall with linear drag
-
-Take downward as positive:
+Hence
 
 $$
-m\dot v
-=
-mg-bv.
+\boxed{x_\infty=v_0\tau}.
 $$
 
-Rearrange:
+This result makes physical sense: $v_0$ sets the initial distance traveled per unit time, while $\tau$ sets how long appreciable horizontal motion persists. Their product is the natural distance scale.
+
+## The meaning of $\tau$
+
+The characteristic time is the natural clock of the system:
+
+- $t\ll\tau$: the velocity has changed little;
+- $t\sim\tau$: drag has produced an order-one change;
+- $t\gg\tau$: the initial transient is mostly gone.
+
+At $t=\tau$,
 
 $$
-\dot v
-+
-\frac{1}{\tau}v
-=
-g.
+v(\tau)=\frac{v_0}{e}\approx0.368v_0.
 $$
 
-### Terminal speed
+The value $1/e$ is not a special physical threshold. It occurs because exponential decay is the solution of a system whose instantaneous rate of change is proportional to its current value. One time constant is defined as the time that makes the exponent equal to $-1$.
 
-At terminal speed,
+After each additional interval of length $\tau$, the remaining deviation is multiplied by another factor of $1/e$.
+
+At $t=\tau$, the object has traveled
 
 $$
-\dot v=0.
+x(\tau)=x_\infty\left(1-\frac1e\right)\approx0.632x_\infty.
+$$
+
+## Vertical fall with linear drag
+
+Choose downward as positive. Newton's law is
+
+$$
+m\dot v=mg-bv.
+$$
+
+Terminal speed is found by setting the acceleration equal to zero:
+
+$$
+0=mg-bv_{\mathrm{ter}},
+$$
+
+so
+
+$$
+\boxed{v_{\mathrm{ter}}=\frac{mg}{b}=g\tau}.
+$$
+
+Terminal velocity is a dynamical equilibrium: gravity and drag balance, so acceleration vanishes. It is not necessarily the largest speed an object can ever have. An object can begin faster than its terminal speed and then decelerate toward it.
+
+The general solution is
+
+$$
+\boxed{
+v(t)=v_{\mathrm{ter}}+\left(v_0-v_{\mathrm{ter}}\right)e^{-t/\tau}
+}.
+$$
+
+This is best interpreted as
+
+$$
+v(t)-v_{\mathrm{ter}}
+=\left(v_0-v_{\mathrm{ter}}\right)e^{-t/\tau}.
+$$
+
+The velocity does not merely decay toward zero; its deviation from equilibrium decays toward zero.
+
+For release from rest,
+
+$$
+v(t)=v_{\mathrm{ter}}\left(1-e^{-t/\tau}\right).
+$$
+
+Integrating with $y(0)=0$ gives
+
+$$
+\boxed{
+y(t)=v_{\mathrm{ter}}
+\left[t-\tau\left(1-e^{-t/\tau}\right)\right]
+}.
+$$
+
+## Short-time limit and Taylor expansion
+
+The dimensionless expansion parameter is $t/\tau$:
+
+$$
+e^{-t/\tau}
+=1-\frac{t}{\tau}
++\frac12\left(\frac{t}{\tau}\right)^2
+-\frac16\left(\frac{t}{\tau}\right)^3+\cdots.
+$$
+
+For velocity, the first nonzero term gives
+
+$$
+v(t) \approx v_{\mathrm{ter}}\frac{t}{\tau}=gt.
+$$
+
+For position, the constant and linear contributions cancel:
+
+$$
+t-\tau\left(1-e^{-t/\tau}\right)
+\approx t-\tau\left(\frac{t}{\tau}
+-\frac{t^2}{2\tau^2}\right)
+=\frac{t^2}{2\tau}.
 $$
 
 Therefore
 
 $$
-\boxed{
-v_{\rm ter}
-=
-\frac{mg}{b}
-=
-g\tau
-}.
+y(t)\approx\frac12gt^2.
 $$
 
-Explain physically what terminal velocity means:
+### How many Taylor terms are enough?
 
-> 
-
-### General velocity
-
-Derive
+Keep terms until the first nonzero physical contribution survives all substitutions and cancellations. The necessary order depends on the initial conditions:
 
 $$
-v(t)
-=
-v_{\rm ter}
-+
-\left(v_0-v_{\rm ter}\right)e^{-t/\tau}.
+y(t)=y_0+v_0t+\frac12a_0t^2+\cdots.
 $$
 
-For release from rest:
-
-$$
-v(t)
-=
-v_{\rm ter}
-\left(1-e^{-t/\tau}\right).
-$$
-
-### Position
-
-For \(v_0=0\) and \(y(0)=0\), derive
-
-$$
-y(t)=
-$$
-
-### Limiting-case check
-
-For \(t\ll\tau\),
-
-$$
-e^{-t/\tau}
-\approx
-1-\frac{t}{\tau}
-+\frac12\left(\frac{t}{\tau}\right)^2-\cdots.
-$$
-
-Show that
-
-$$
-v\approx gt,
-$$
-
-and
-
-$$
-y\approx\frac12gt^2.
-$$
-
-### What I should recognize next time
-
-> Linear drag produces exponential relaxation toward terminal behavior. The natural timescale is \(\tau=m/b\).
+If $y_0=0$ and $v_0=0$, the constant and linear terms vanish, so the quadratic term is the leading behavior. Obtaining zero from a lower-order approximation does not mean the object does not move; it means the approximation has not yet reached the first nonzero term.
 
 ---
 
-## 2.3 Trajectory and Range in a Linear Medium
+# 4. Projectile motion with linear drag
 
-Take \(y\) positive upward and launch with
-
-$$
-v_{x0}=v_0\cos\theta,
-$$
-
-$$
-v_{y0}=v_0\sin\theta.
-$$
-
-### Component equations
+Choose $x$ horizontal and $y$ vertically upward. Then
 
 $$
 m\dot v_x=-bv_x,
@@ -343,415 +328,531 @@ $$
 m\dot v_y=-mg-bv_y.
 $$
 
-Why are these equations uncoupled?
+The equations are uncoupled because each drag component depends only on the corresponding velocity component. Gravity appears only in the vertical equation.
 
-> 
-
-### Solve for velocity
+For
 
 $$
-v_x(t)=
+v_{x0}=v_0\cos\theta,
+\qquad
+v_{y0}=v_0\sin\theta,
 $$
 
-$$
-v_y(t)=
-$$
-
-### Solve for position
+the velocities are
 
 $$
-x(t)=
+\boxed{v_x(t)=v_{x0}e^{-t/\tau}},
 $$
 
 $$
-y(t)=
+\boxed{
+v_y(t)=\left(v_{y0}+g\tau\right)e^{-t/\tau}-g\tau
+}.
 $$
 
-### Eliminate time
+The vertical terminal velocity is $-g\tau$ because upward is positive.
 
-Solve \(x(t)\) for \(t\):
-
-$$
-t=t(x).
-$$
-
-Substitute into \(y(t)\):
+Taking $x(0)=y(0)=0$,
 
 $$
-y=y(x).
+\boxed{
+x(t)=v_{x0}\tau\left(1-e^{-t/\tau}\right)
+},
 $$
 
-### Compare with vacuum motion
-
-Vacuum:
-
 $$
-y_{\rm vac}(x)
-=
-x\tan\theta
--
-\frac{gx^2}
-{2v_0^2\cos^2\theta}.
+\boxed{
+y(t)=\left(v_{y0}+g\tau\right)\tau
+\left(1-e^{-t/\tau}\right)-g\tau t
+}.
 $$
 
-What changes when drag is present?
+## Eliminating time
 
-> 
-
-Why does the linear-drag trajectory have a finite limiting horizontal coordinate?
-
-> 
-
-### Range
-
-The range is determined by
+From the horizontal position,
 
 $$
-y(R)=0.
+e^{-t/\tau}=1-\frac{x}{v_{x0}\tau}.
 $$
 
-Why does this become a transcendental equation?
+Therefore
 
-> 
+$$
+\boxed{
+t=-\tau\ln\left(1-\frac{x}{v_{x0}\tau}\right)
+}.
+$$
 
-### Approximation strategy
+Substituting into $y(t)$ gives
 
-Taylor expansions allow a complicated exact relation to be approximated when a dimensionless quantity is small.
+$$
+\boxed{
+y(x)=
+\frac{v_{y0}+g\tau}{v_{x0}}x
++g\tau^2
+\ln\left(1-\frac{x}{v_{x0}\tau}\right)
+}.
+$$
 
-General workflow:
+The logarithm arises from inverting exponential decay.
 
-```text
-exact expression
-→ identify small dimensionless parameter
-→ expand
-→ keep leading terms
-→ solve simpler equation
-→ check neglected terms
-```
+## Finite horizontal distance
 
-### What I should recognize next time
+As $t\to\infty$,
 
-> 
+$$
+x(t)\to v_{x0}\tau.
+$$
+
+This is not primarily because the projectile eventually hits the ground. It follows mathematically from the integrability of the exponentially decaying horizontal velocity:
+
+$$
+\int_0^\infty v_{x0}e^{-t/\tau}\,dt=v_{x0}\tau.
+$$
+
+In the idealized model continued indefinitely, the object approaches this horizontal coordinate asymptotically.
+
+## Vacuum limit
+
+For weak drag or short times, expand in the small dimensionless ratio $t/\tau$. The component solutions reduce to
+
+$$
+x(t)\approx v_{x0}t,
+$$
+
+$$
+y(t)\approx v_{y0}t-\frac12gt^2,
+$$
+
+which leads to the familiar vacuum trajectory
+
+$$
+y(x)=x\tan\theta
+-\frac{gx^2}{2v_0^2\cos^2\theta}.
+$$
+
+The vacuum limit is a crucial check: as $b\to0$, $	au=m/b\to\infty$, so the drag solution must approach ordinary projectile motion.
+
+## Range
+
+The range $R$ satisfies $y(R)=0$. Because $y(x)$ contains
+
+$$
+\ln\left(1-\frac{x}{v_{x0}\tau}\right),
+$$
+
+the equation for $R$ is transcendental: the unknown occurs both algebraically and inside a logarithm. It generally requires approximation or numerical solution.
 
 ---
 
-## 2.4 Quadratic Air Resistance
+# 5. Quadratic drag
 
-Assume
+## Vector form
 
-$$
-\mathbf f
-=
--cv^2\hat{\mathbf v}.
-$$
-
-Since
+Quadratic drag has magnitude $cv^2$ and points opposite the velocity:
 
 $$
-\mathbf v=v\hat{\mathbf v},
+\mathbf F_d=-cv^2\hat{\mathbf v}.
 $$
 
-we can write
+Since $\mathbf v=v\hat{\mathbf v}$,
 
 $$
-\mathbf f=-cv\mathbf v.
+\boxed{\mathbf F_d=-cv\mathbf v}.
 $$
 
-### Why the 2D equations are coupled
+## Why the two-dimensional equations are coupled
+
+With $y$ upward,
 
 $$
-f_x=-cvv_x,
+m\dot v_x=-cvv_x,
 $$
 
 $$
-f_y=-cvv_y,
+m\dot v_y=-mg-cvv_y,
 $$
 
-with
+where
 
 $$
 v=\sqrt{v_x^2+v_y^2}.
 $$
 
-Explain why neither equation can be solved independently of the other:
+Although the force components look separate, the common speed $v$ depends on both $v_x$ and $v_y$. Each differential equation therefore depends on both components. Unlike linear drag, the system is nonlinear and coupled.
 
-> 
+## Vertical fall
 
-This is an important contrast with linear drag.
-
----
-
-### Vertical fall
-
-Take downward as positive:
+Choose downward as positive. Then
 
 $$
 m\dot v=mg-cv^2.
 $$
 
-At terminal speed:
+At terminal speed,
 
 $$
-mg=cv_{\rm ter}^2.
+mg=cv_{\mathrm{ter}}^2,
 $$
 
-Thus
+so
 
 $$
-\boxed{
-v_{\rm ter}
-=
-\sqrt{\frac{mg}{c}}
-}.
+\boxed{v_{\mathrm{ter}}=\sqrt{\frac{mg}{c}}}.
 $$
 
-Rewrite the equation as
+The equation becomes
 
 $$
-\dot v
-=
-g
-\left(
-1-\frac{v^2}{v_{\rm ter}^2}
-\right).
+\dot v=g\left(1-\frac{v^2}{v_{\mathrm{ter}}^2}\right).
 $$
 
-Separate:
+Separate variables:
 
 $$
-\frac{dv}
-{1-v^2/v_{\rm ter}^2}
-=
-g\,dt.
+\frac{dv}{1-v^2/v_{\mathrm{ter}}^2}=g\,dt.
 $$
 
-For release from rest, derive
+For release from rest,
 
 $$
 \boxed{
-v(t)
-=
-v_{\rm ter}
-\tanh
-\left(
-\frac{gt}{v_{\rm ter}}
-\right)
+v(t)=v_{\mathrm{ter}}
+\tanh\left(\frac{gt}{v_{\mathrm{ter}}}\right)
 }.
 $$
 
-### Position
-
-Integrate \(v(t)\) and obtain
+Define the quadratic-drag time scale
 
 $$
-y(t)=
+\tau_q=\frac{v_{\mathrm{ter}}}{g}
+=\sqrt{\frac{m}{gc}}.
 $$
 
-Why does \(\ln\cosh\) appear?
+Then
 
-> 
+$$
+v(t)=v_{\mathrm{ter}}\tanh(t/\tau_q).
+$$
 
-### Limiting cases
+The function $\tanh$ is natural because it begins linearly,
 
-Check:
+$$
+\tanh z\approx z \quad (z\ll1),
+$$
 
-- \(t\to0\): recover free fall;
-- \(t\to\infty\): \(v\to v_{\rm ter}\);
-- at late times: \(y(t)\) becomes approximately linear.
+and saturates at one,
 
-### Linear versus quadratic drag
+$$
+\tanh z\to1 \quad (z\to\infty).
+$$
+
+It therefore captures both initial free fall and eventual terminal motion.
+
+## Position for vertical fall
+
+Integrating the velocity,
+
+$$
+y(t)=v_{\mathrm{ter}}
+\int_0^t\tanh\left(\frac{gt'}{v_{\mathrm{ter}}}\right)dt'.
+$$
+
+Since
+
+$$
+\frac{d}{dz}\ln\cosh z=\tanh z,
+$$
+
+we obtain
+
+$$
+\boxed{
+y(t)=\frac{v_{\mathrm{ter}}^2}{g}
+\ln\cosh\left(\frac{gt}{v_{\mathrm{ter}}}\right)
+}.
+$$
+
+At short times, $y\approx gt^2/2$. At long times, $\ln\cosh z\approx z-\ln2$, so position becomes approximately linear with slope $v_{\mathrm{ter}}$.
+
+## Upward and downward motion
+
+With upward positive, the compact equation valid through a reversal is
+
+$$
+\boxed{m\dot v=-mg-cv|v|}.
+$$
+
+Equivalently,
+
+$$
+m\dot v=
+\begin{cases}
+-mg-cv^2, & v>0 \quad \text{(rising)},\\
+-mg+cv^2, & v<0 \quad \text{(falling)}.
+\end{cases}
+$$
+
+If the branches are solved separately, they meet at the apex, where $v=0$ at $t=t_{\mathrm{up}}$. They do not meet at $t=0$ unless the object is released from rest at the apex.
+
+## Changing the independent variable: the $v\,dv/dy$ rule
+
+If velocity is regarded as a function of position, $v=v(y)$, then the chain rule gives
+
+$$
+\boxed{
+\dot v=\frac{dv}{dt}
+=\frac{dv}{dy}\frac{dy}{dt}
+=v\frac{dv}{dy}
+}.
+$$
+
+This is useful when the question asks for speed as a function of height or for a maximum height. It eliminates time directly.
+
+For a baseball thrown vertically upward,
+
+$$
+m\dot v=-mg-cv^2
+$$
+
+on the upward branch. Using $v_{\mathrm{ter}}^2=mg/c$,
+
+$$
+v\frac{dv}{dy}
+=-g\left(1+\frac{v^2}{v_{\mathrm{ter}}^2}\right).
+$$
+
+Integrating from $(0,v_0)$ to $(y,v)$ gives
+
+$$
+\boxed{
+y(v)=\frac{v_{\mathrm{ter}}^2}{2g}
+\ln\left[
+\frac{1+(v_0/v_{\mathrm{ter}})^2}
+{1+(v/v_{\mathrm{ter}})^2}
+\right]
+}.
+$$
+
+At the maximum height, $v=0$:
+
+$$
+\boxed{
+y_{\max}=\frac{v_{\mathrm{ter}}^2}{2g}
+\ln\left(1+\frac{v_0^2}{v_{\mathrm{ter}}^2}\right)
+}.
+$$
+
+## Numerical two-dimensional motion
+
+For general two-dimensional quadratic drag, use the first-order state
+
+$$
+\mathbf s=(x,y,v_x,v_y).
+$$
+
+The system is
+
+$$
+\dot x=v_x,
+\qquad
+\dot y=v_y,
+$$
+
+$$
+\dot v_x=-\frac{c}{m}
+\sqrt{v_x^2+v_y^2}\,v_x,
+$$
+
+$$
+\dot v_y=-g-\frac{c}{m}
+\sqrt{v_x^2+v_y^2}\,v_y.
+$$
+
+This is the system used in Problem 2.43. A numerical solver advances all four state variables together because the acceleration at each instant depends on both velocity components.
+
+## Linear versus quadratic drag
 
 | Feature | Linear drag | Quadratic drag |
 |---|---|---|
-| Force magnitude | \(bv\) | \(cv^2\) |
-| Terminal speed |  |  |
-| 2D Cartesian equations | uncoupled | coupled |
-| Typical analytic functions | exponentials | hyperbolic functions |
-| Most important at |  |  |
-
-### What I should recognize next time
-
-> 
+| Force | $-b\mathbf v$ | $-cv\mathbf v$ |
+| Magnitude | $bv$ | $cv^2$ |
+| Terminal speed | $mg/b$ | $\sqrt{mg/c}$ |
+| 2D Cartesian equations | Uncoupled | Coupled through $v$ |
+| Typical functions in 1D | Exponentials | $\tanh$ and $\ln\cosh$ |
+| Relative importance | Lower speeds | Higher speeds |
 
 ---
 
-## 2.5 Motion of a Charge in a Uniform Magnetic Field
+# 6. Motion of a charged particle in uniform fields
 
-The Lorentz force is
+## Lorentz force
+
+The electromagnetic force is
 
 $$
 \boxed{
-\mathbf F
-=
-q\left(
-\mathbf E+\mathbf v\times\mathbf B
-\right)
+\mathbf F=q\left(\mathbf E+\mathbf v\times\mathbf B\right)
 }.
 $$
 
 For a pure magnetic field,
 
 $$
-\mathbf F=q\mathbf v\times\mathbf B.
+m\dot{\mathbf v}=q\mathbf v\times\mathbf B.
 $$
 
-### Why magnetic fields do no work
+## Why a magnetic field does no work
 
-Because
-
-$$
-\mathbf v\times\mathbf B
-$$
-
-is perpendicular to \(\mathbf v\),
+The cross product is perpendicular to $\mathbf v$, so
 
 $$
-\mathbf F\cdot\mathbf v=0.
+\mathbf F_B\cdot\mathbf v=0.
 $$
 
-Therefore
+Because power is $\mathbf F\cdot\mathbf v$,
 
 $$
-\frac{d}{dt}
-\left(
-\frac12mv^2
-\right)
-=0.
+\frac{d}{dt}\left(\frac12mv^2\right)=0.
 $$
 
-So a magnetic field changes:
+A magnetic field changes the direction of velocity but not its magnitude. Acceleration can therefore be nonzero even while speed remains constant.
 
-- [ ] speed
-- [ ] direction
+## Component equations for $\mathbf B=B\hat{\mathbf z}$
 
-Explain:
-
-> 
-
----
-
-### Choose \(\mathbf B=B\hat{\mathbf z}\)
-
-Write
+Let
 
 $$
-\mathbf v
-=
-v_x\hat{\mathbf x}
-+
-v_y\hat{\mathbf y}
-+
-v_z\hat{\mathbf z}.
+\mathbf v=(v_x,v_y,v_z),
+\qquad
+\mathbf B=(0,0,B).
 $$
 
-Compute
+Then
 
 $$
-\mathbf v\times\mathbf B=
+\mathbf v\times\mathbf B=(v_yB,-v_xB,0).
 $$
 
-and derive
+Define the signed angular frequency
 
 $$
-m\dot v_x=
+\Omega=\frac{qB}{m}.
 $$
 
-$$
-m\dot v_y=
-$$
-
-$$
-m\dot v_z=
-$$
-
-### Consequences
-
-What happens to \(v_z\)?
-
-> 
-
-What happens in the \(xy\)-plane?
-
-> 
-
-### Cyclotron frequency
+The equations are
 
 $$
 \boxed{
-\omega_c=\frac{|q|B}{m}
+\dot v_x=\Omega v_y,
+\qquad
+\dot v_y=-\Omega v_x,
+\qquad
+\dot v_z=0
 }.
 $$
 
-Why does the sign of \(q\) reverse the direction of rotation without changing the frequency magnitude?
+The parallel velocity $v_z$ is constant. The transverse velocity rotates in the $xy$-plane.
 
-> 
-
-### Radius
-
-For perpendicular motion,
+The cyclotron-frequency magnitude is
 
 $$
-|q|v_\perp B
-=
-\frac{mv_\perp^2}{R}.
+\boxed{\omega_c=\frac{|q|B}{m}}.
+$$
+
+Changing the sign of $q$ changes the sign of $\Omega$, reversing the direction of rotation, but it does not change $|\Omega|$.
+
+## Real solution
+
+Differentiate the first planar equation:
+
+$$
+\ddot v_x=\Omega\dot v_y=-\Omega^2v_x.
 $$
 
 Thus
 
 $$
-\boxed{
-R
-=
-\frac{mv_\perp}{|q|B}
-}.
+\ddot v_x+\Omega^2v_x=0.
 $$
 
-Interpret how \(R\) changes with:
-
-- \(m\):
-- \(v_\perp\):
-- \(B\):
-- \(|q|\):
-
-### Helical motion
-
-If \(v_z\neq0\), explain why the trajectory becomes a helix:
-
-> 
-
-### What I should recognize next time
-
-> 
-
----
-
-## 2.6 Complex Exponentials
-
-### Euler's formula
+The general real solution is
 
 $$
-\boxed{
-e^{i\theta}
-=
-\cos\theta+i\sin\theta
-}.
+v_x(t)=A\cos(\Omega t)+B\sin(\Omega t).
+$$
+
+The differential equation does not choose sine or cosine. Both are independent solutions, and the initial conditions select their linear combination.
+
+For $v_x(0)=v_0$ and $v_y(0)=0$,
+
+$$
+\boxed{v_x(t)=v_0\cos(\Omega t)},
+$$
+
+$$
+\boxed{v_y(t)=-v_0\sin(\Omega t)}.
+$$
+
+Indeed,
+
+$$
+v_x^2+v_y^2=v_0^2.
+$$
+
+## Radius and circular motion
+
+For perpendicular motion, the magnetic force supplies centripetal acceleration:
+
+$$
+|q|v_\perp B=\frac{mv_\perp^2}{R}.
 $$
 
 Therefore
 
 $$
-\cos\theta
-=
-\frac{e^{i\theta}+e^{-i\theta}}{2},
+\boxed{R=\frac{mv_\perp}{|q|B}}.
+$$
+
+Consequently, $R$ increases with $m$ and $v_\perp$, and decreases with $|q|$ and $B$.
+
+If $v_z\neq0$, the particle simultaneously moves uniformly along the field and circles around the field direction. The result is a helix with pitch
+
+$$
+p=v_z\frac{2\pi}{\omega_c}.
+$$
+
+## Parallel electric and magnetic fields
+
+If both fields point along $z$, the magnetic field still produces circular transverse motion, while the electric field accelerates the particle along $z$:
+
+$$
+\dot v_z=\frac{qE_z}{m}.
+$$
+
+Thus
+
+$$
+v_z(t)=v_{z0}+\frac{qE_z}{m}t,
 $$
 
 $$
-\sin\theta
-=
-\frac{e^{i\theta}-e^{-i\theta}}{2i}.
+z(t)=z_0+v_{z0}t+\frac{qE_z}{2m}t^2.
 $$
 
-### Geometry
+The trajectory is a helix whose pitch changes with time.
+
+---
+
+# 7. Complex exponentials and planar rotation
+
+## Euler's formula
+
+$$
+\boxed{e^{i\theta}=\cos\theta+i\sin\theta}.
+$$
+
+Multiplying a complex number by $e^{i\alpha}$ rotates it counterclockwise through angle $\alpha$ without changing its magnitude.
 
 For
 
@@ -759,652 +860,417 @@ $$
 z=re^{i\theta},
 $$
 
-interpret:
+$r$ is the magnitude and $\theta$ is the angle in the complex plane.
 
-- \(r\):
-- \(\theta\):
+## Why complex exponentials help
 
-What does multiplication by \(e^{i\alpha}\) do geometrically?
-
-> 
-
-### Differentiation
+Differentiation preserves the exponential form:
 
 $$
-\frac{d}{dt}
-e^{i\omega t}
-=
-i\omega e^{i\omega t}.
+\frac{d}{dt}e^{i\omega t}=i\omega e^{i\omega t}.
 $$
 
-Why is this useful for rotational motion?
+The factor $i$ represents a $90^\circ$ rotation. This makes complex numbers a natural language for planar rotational dynamics.
 
-> 
+## Complex magnetic-field solution
 
-### Key conceptual point
-
-Complex notation is a mathematical representation of two real quantities. If
+Define the complex velocity
 
 $$
-u=v_x+iv_y,
+u(t)=v_x(t)+iv_y(t).
 $$
 
-then
-
-$$
-v_x=\operatorname{Re}u,
-$$
-
-$$
-v_y=\operatorname{Im}u.
-$$
-
-### What I should recognize next time
-
-> Complex exponentials package sine and cosine into a single object whose derivative has the same form.
-
----
-
-## 2.7 Solution for the Charge in a \(B\) Field
-
-For \(\mathbf B=B\hat{\mathbf z}\), the planar equations are coupled.
-
-Write them in the form
+Using
 
 $$
 \dot v_x=\Omega v_y,
-$$
-
-$$
+\qquad
 \dot v_y=-\Omega v_x,
 $$
 
-where the sign of
-
-$$
-\Omega=\frac{qB}{m}
-$$
-
-contains the charge sign.
-
-### Complex velocity
-
-Define
-
-$$
-u=v_x+iv_y.
-$$
-
-Then
+we find
 
 $$
 \dot u
-=
-\dot v_x+i\dot v_y.
+=\dot v_x+i\dot v_y
+=\Omega v_y-i\Omega v_x
+=-i\Omega u.
 $$
 
-Use the real equations to show
+Therefore
 
 $$
-\dot u=
+\boxed{u(t)=u(0)e^{-i\Omega t}}.
 $$
 
-and solve:
+For $u(0)=v_0$,
 
 $$
-u(t)=
+u(t)=v_0\left[\cos(\Omega t)-i\sin(\Omega t)\right],
 $$
 
-### Recover the physical solution
-
-Extract:
+so
 
 $$
-v_x(t)=
-$$
-
-$$
-v_y(t)=
-$$
-
-Then integrate to obtain:
-
-$$
-x(t)=
-$$
-
-$$
-y(t)=
-$$
-
-### Physical interpretation
-
-Show that the trajectory in the plane perpendicular to \(\mathbf B\) is circular.
-
-Identify:
-
-- angular frequency:
-- radius:
-- center:
-- direction of rotation:
-
-### What I should recognize next time
-
-> Two coupled real first-order equations describing rotation can often be combined into one complex first-order equation.
-
----
-
-# 4. Essential derivations
-
-## Derivation 1 — Linear drag in one dimension
-
-Start from
-
-$$
-m\dot v=-bv.
-$$
-
-Derive
-
-$$
-v(t)=v_0e^{-t/\tau},
+v_x(t)=v_0\cos(\Omega t),
 \qquad
-\tau=\frac{m}{b},
+v_y(t)=-v_0\sin(\Omega t).
 $$
 
-then integrate for \(x(t)\).
+The sign in the exponent matters. With the definition $u=v_x+iv_y$, these equations give $e^{-i\Omega t}$. Defining $u=v_x-iv_y$ would reverse the sign in the complex equation.
 
-### Reproduce from memory
+## Sine, cosine, and complex exponentials
 
-- [ ] First attempt
-- [ ] One-week review
-- [ ] End-of-chapter review
+The following are equivalent ways of expressing the same two-dimensional real solution space:
+
+$$
+A\cos(\omega t)+B\sin(\omega t),
+$$
+
+$$
+C\cos(\omega t-\phi),
+$$
+
+$$
+\operatorname{Re}\left(De^{i\omega t}\right).
+$$
+
+Use the full $A\cos+B\sin$ form when applying arbitrary initial conditions. Use amplitude and phase when the geometry is clearer that way. Use complex exponentials when differentiation, coupling, or rotation becomes simpler.
 
 ---
 
-## Derivation 2 — Terminal velocity with linear drag
-
-Start from
-
-$$
-m\dot v=mg-bv.
-$$
-
-Derive
-
-$$
-v_{\rm ter}=\frac{mg}{b}=g\tau
-$$
-
-and
-
-$$
-v(t)
-=
-v_{\rm ter}
-+
-(v_0-v_{\rm ter})e^{-t/\tau}.
-$$
-
-### Reproduce from memory
-
-- [ ] Terminal velocity
-- [ ] General velocity
-- [ ] Position
-- [ ] Small-time limit
-
----
-
-## Derivation 3 — Linear-drag projectile trajectory
-
-Derive \(x(t)\) and \(y(t)\), eliminate \(t\), and obtain \(y(x)\).
-
-### Checks
-
-- [ ] Explain why the components decouple.
-- [ ] Recover the vacuum limit.
-- [ ] Explain the limiting horizontal distance.
-
----
-
-## Derivation 4 — Vertical quadratic drag
-
-Start from
-
-$$
-m\dot v=mg-cv^2.
-$$
-
-Derive
-
-$$
-v_{\rm ter}=\sqrt{\frac{mg}{c}}
-$$
-
-and
-
-$$
-v(t)
-=
-v_{\rm ter}
-\tanh\left(
-\frac{gt}{v_{\rm ter}}
-\right).
-$$
-
-Then integrate for \(y(t)\).
-
-### Reproduce from memory
-
-- [ ] Separation of variables
-- [ ] Hyperbolic-function integral
-- [ ] Position
-- [ ] Limiting cases
-
----
-
-## Derivation 5 — Circular motion in a magnetic field
-
-Start from
-
-$$
-m\dot{\mathbf v}
-=
-q\mathbf v\times\mathbf B.
-$$
-
-For \(\mathbf B=B\hat{\mathbf z}\):
-
-1. compute the cross product;
-2. derive the component equations;
-3. show that speed is constant;
-4. derive
-
-$$
-\omega_c=\frac{|q|B}{m};
-$$
-
-5. derive
-
-$$
-R=\frac{mv_\perp}{|q|B}.
-$$
-
-### Reproduce from memory
-
-- [ ] Cross product
-- [ ] Component equations
-- [ ] Constant-speed argument
-- [ ] Frequency
-- [ ] Radius
-
----
-
-## Derivation 6 — Complex solution of the magnetic equations
-
-Define
-
-$$
-u=v_x+iv_y.
-$$
-
-Combine the coupled equations into one ODE, solve it, and extract the real motion.
-
-### Reproduce from memory
-
-- [ ] Combine equations
-- [ ] Solve complex ODE
-- [ ] Extract \(v_x,v_y\)
-- [ ] Integrate for position
-- [ ] Interpret circle
-
----
-
-# 5. Mathematics review
+# 8. Mathematical tools developed in this chapter
 
 ## Separation of variables
 
-Recognize
+For
 
 $$
-\dot y=f(y)
+\dot y=f(y),
 $$
 
-and rewrite it as
+write
 
 $$
 \frac{dy}{f(y)}=dt.
 $$
 
-- [ ] I can identify when separation is valid.
-- [ ] I can apply limits directly when initial conditions are known.
-
----
-
-## First-order linear ODEs
-
-Recognize
+When the initial condition is known, definite integrals often avoid a separate integration constant:
 
 $$
-\dot y+ay=b.
+\int_{y_0}^{y(t)}\frac{dy'}{f(y')}
+=\int_0^t dt'.
 $$
 
-Be able to solve using:
+## First-order linear equations
 
-- homogeneous + particular solution;
-- separation when possible;
-- integrating factor if needed.
-
-- [ ] Comfortable
-- [ ] Needs review
-
----
-
-## Taylor series
-
-Know the core expansions:
+An equation of the form
 
 $$
-e^x
-=
-1+x+\frac{x^2}{2!}
-+\frac{x^3}{3!}
-+\cdots,
+\dot y+ay=b
+$$
+
+has an equilibrium solution $y_{\mathrm{eq}}=b/a$, and the deviation from equilibrium decays exponentially:
+
+$$
+y(t)-y_{\mathrm{eq}}
+=\left[y(0)-y_{\mathrm{eq}}\right]e^{-at}.
+$$
+
+This is the general mathematical structure behind linear terminal velocity.
+
+## Taylor expansions
+
+Important expansions include
+
+$$
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots,
 $$
 
 $$
-\sin x
-=
-x-\frac{x^3}{3!}
-+\frac{x^5}{5!}
--\cdots,
+\sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots,
 $$
 
 $$
-\cos x
-=
-1-\frac{x^2}{2!}
-+\frac{x^4}{4!}
--\cdots,
+\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots,
 $$
 
 $$
-\ln(1+x)
-=
-x-\frac{x^2}{2}
-+\frac{x^3}{3}
--\cdots.
+\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots.
 $$
 
-Questions:
-
-- Why should the expansion parameter be dimensionless?
-- How do I know how many terms to keep?
-- How can I estimate the size of the neglected term?
-
----
+The expansion parameter must be dimensionless. Statements such as “$t$ is small” are incomplete; the meaningful statement is $t/\tau\ll1$.
 
 ## Hyperbolic functions
 
 $$
-\sinh x
-=
-\frac{e^x-e^{-x}}{2},
+\sinh x=\frac{e^x-e^{-x}}2,
+\qquad
+\cosh x=\frac{e^x+e^{-x}}2,
 $$
 
 $$
-\cosh x
-=
-\frac{e^x+e^{-x}}{2},
+\tanh x=\frac{\sinh x}{\cosh x}.
+$$
+
+Useful identities are
+
+$$
+\frac{d}{dx}\tanh x=\operatorname{sech}^2x,
 $$
 
 $$
-\tanh x
-=
-\frac{\sinh x}{\cosh x}.
+1-\tanh^2x=\operatorname{sech}^2x,
 $$
 
-Know
+$$
+\frac{d}{dx}\ln\cosh x=\tanh x.
+$$
+
+## Linear coupled equations versus nonlinear coupled equations
+
+The magnetic equations are coupled but linear with constant coefficients:
 
 $$
-\frac{d}{dx}\tanh x
+\frac{d}{dt}
+\begin{pmatrix}v_x\\v_y\end{pmatrix}
 =
-\operatorname{sech}^2x,
+\begin{pmatrix}0&\Omega\\-\Omega&0\end{pmatrix}
+\begin{pmatrix}v_x\\v_y\end{pmatrix}.
+$$
+
+Their matrix generates rotations, so they can be solved exactly using trigonometric functions, eigenvalues, matrix exponentials, or complex numbers.
+
+Two-dimensional quadratic drag is also coupled, but it is nonlinear because the coefficient
+
+$$
+\sqrt{v_x^2+v_y^2}
+$$
+
+depends on the unknown solution. That nonlinear structure is why general analytic solutions are unavailable and numerical integration is natural.
+
+---
+
+# 9. Checks that catch mistakes
+
+## Initial conditions
+
+Evaluate every solution at $t=0$. It must reproduce the specified initial position and velocity.
+
+## Dimensions
+
+- $\tau=m/b$ must have units of time.
+- $v_{\mathrm{ter}}=mg/b$ and $\sqrt{mg/c}$ must have units of speed.
+- An exponential argument such as $t/\tau$ must be dimensionless.
+- A logarithm must act on a dimensionless quantity.
+
+## Physical limits
+
+- $t\ll\tau$: drag should be initially negligible when the object begins from rest.
+- $t\to\infty$: velocity should approach the correct terminal value.
+- $b\to0$ or $c\to0$: recover vacuum motion where the limit is applicable.
+- Pure magnetic field: speed and kinetic energy must remain constant.
+
+## Sign diagnostics
+
+- Exponential drag solutions should contain $e^{-t/\tau}$, not $e^{+t/\tau}$.
+- Gravity has a fixed coordinate sign once the axis is chosen.
+- Drag reverses when velocity reverses.
+- For complex rotation, verify the exponent sign by differentiating the proposed solution and checking the original component equations.
+
+---
+
+# 10. Mistake and confusion log
+
+| Issue | Resolution |
+|---|---|
+| Why is drag “always negative” if it changes direction? | The vector law is opposite velocity. In 1D, $-bv$ or $-cv|v|$ changes sign automatically when $v$ changes sign. |
+| Is drag present at the top of an upward flight? | At the instant $v=0$, drag is zero. Gravity remains nonzero, so the object accelerates downward. |
+| Why is $1/e$ the characteristic-time scale? | Exponential relaxation has the form $e^{-t/\tau}$; setting $t=\tau$ makes the exponent $-1$. It is a natural convention, not a physical threshold. |
+| Why is $x_\infty=v_{x0}\tau$? | It is the integral of the exponentially decaying horizontal velocity over all time. |
+| Why did a two-term Taylor approximation give zero position? | The initial conditions force the constant and linear position terms to vanish. The quadratic term is the first nonzero contribution. |
+| How do I know how many Taylor terms to retain? | Continue until the first nonzero term survives the substitutions and cancellations, then check that the next neglected term is small. |
+| Why use $v\,dv/dy$? | It is the chain rule with $v=v(y)$ and removes time when the desired result is velocity versus position. |
+| Why must upward and downward quadratic-drag solutions be separated? | The scalar form of the force changes because drag reverses direction. The branches meet at the apex, not generally at $t=0$. |
+| Why are quadratic-drag components coupled? | Both contain the total speed $v=\sqrt{v_x^2+v_y^2}$. |
+| How do I choose sine or cosine? | Start with $A\cos+B\sin$ and let the initial conditions determine $A$ and $B$. |
+| What does the complex magnetic solution represent? | Its real and imaginary parts are the two real velocity components. The complex phase compactly represents planar rotation. |
+| How can acceleration be nonzero while speed is constant? | Acceleration can change the direction of velocity without changing its magnitude, as in magnetic circular motion. |
+
+---
+
+# 11. Essential derivations to reproduce
+
+## 1. Linear relaxation
+
+From
+
+$$
+m\dot v=-bv
+$$
+
+derive
+
+$$
+v=v_0e^{-t/\tau},
+\qquad
+\tau=m/b,
 $$
 
 and
 
 $$
-1-\tanh^2x
-=
-\operatorname{sech}^2x.
+x=v_0\tau(1-e^{-t/\tau}).
 $$
 
-Why is \(\tanh\) a natural function for terminal velocity?
+## 2. Linear terminal velocity
 
-> 
+From
+
+$$
+m\dot v=mg-bv
+$$
+
+derive
+
+$$
+v_{\mathrm{ter}}=mg/b
+$$
+
+and
+
+$$
+v-v_{\mathrm{ter}}
+=(v_0-v_{\mathrm{ter}})e^{-t/\tau}.
+$$
+
+## 3. Linear-drag projectile
+
+Derive $v_x(t)$, $v_y(t)$, $x(t)$, and $y(t)$; eliminate time; explain $x_\infty=v_{x0}\tau$; recover the vacuum limit.
+
+## 4. Vertical quadratic drag
+
+From
+
+$$
+m\dot v=mg-cv^2
+$$
+
+derive
+
+$$
+v_{\mathrm{ter}}=\sqrt{mg/c},
+$$
+
+$$
+v(t)=v_{\mathrm{ter}}\tanh(gt/v_{\mathrm{ter}}),
+$$
+
+and
+
+$$
+y(t)=\frac{v_{\mathrm{ter}}^2}{g}
+\ln\cosh(gt/v_{\mathrm{ter}}).
+$$
+
+## 5. Magnetic circular motion
+
+From
+
+$$
+m\dot{\mathbf v}=q\mathbf v\times\mathbf B
+$$
+
+derive the component equations, constant speed, cyclotron frequency, and radius.
+
+## 6. Complex magnetic solution
+
+Define $u=v_x+iv_y$, derive
+
+$$
+\dot u=-i\Omega u,
+$$
+
+solve
+
+$$
+u=u_0e^{-i\Omega t},
+$$
+
+and recover the real velocity components.
 
 ---
 
-## Complex numbers
-
-$$
-i^2=-1,
-$$
-
-$$
-z=x+iy,
-$$
-
-$$
-|z|=\sqrt{x^2+y^2},
-$$
-
-$$
-e^{i\theta}
-=
-\cos\theta+i\sin\theta.
-$$
-
-The important idea is not complex arithmetic for its own sake. It is that planar rotations naturally have the same algebraic structure as multiplication by a complex phase.
-
----
-
-# 6. Computational experiment
-
-The required computational work for this chapter is **Taylor Problem 2.43** in the separate problems sheet.
-
-The goal is to solve the coupled two-dimensional equations for quadratic drag numerically and compare the result with vacuum projectile motion.
-
-Suggested code location:
-
-```text
-code/problem-2-43-quadratic-drag.ipynb
-```
-
-Suggested outputs:
-
-- trajectory with quadratic drag;
-- trajectory in vacuum;
-- horizontal range comparison;
-- velocity components versus time;
-- speed versus time;
-- a short physical interpretation.
-
----
-
-# 7. Mistake and confusion log
-
-| Issue | Why I was confused | Resolution |
-|---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
-
----
-
-# 8. Connections
-
-## Connection to Chapter 1
-
-Chapter 1 emphasized
-
-$$
-m\ddot{\mathbf r}
-=
-\mathbf F(\mathbf r,\dot{\mathbf r},t).
-$$
-
-Chapter 2 now gives important examples in which the force explicitly depends on velocity:
-
-$$
-\mathbf f=-b\mathbf v,
-$$
-
-$$
-\mathbf f=-cv\mathbf v,
-$$
-
-$$
-\mathbf F_B=q\mathbf v\times\mathbf B.
-$$
-
-This makes the differential-equation viewpoint from Chapter 1 essential.
-
----
-
-## Approximation as a physics tool
-
-Chapter 1 used
-
-$$
-\sin\phi\approx\phi.
-$$
-
-Chapter 2 uses the same philosophy more systematically:
-
-```text
-exact model
-→ identify a small dimensionless quantity
-→ expand
-→ truncate
-→ solve
-→ compare with the exact/numerical result
-```
-
-This is a major recurring pattern in physics.
-
----
-
-## Coupled equations
-
-Linear drag in Cartesian coordinates gives uncoupled equations.
-
-Quadratic drag gives coupled equations because
-
-$$
-v=\sqrt{v_x^2+v_y^2}.
-$$
-
-Magnetic motion also gives coupled equations, but they have a special rotational structure that can be simplified using complex numbers.
-
-Question:
-
-> What structural feature makes the magnetic equations analytically solvable while general 2D quadratic drag usually requires numerical methods?
-
----
-
-## Future connection to linear algebra
-
-The magnetic equations can be written as
-
-$$
-\frac{d}{dt}
-\begin{pmatrix}
-v_x\\
-v_y
-\end{pmatrix}
-=
-A
-\begin{pmatrix}
-v_x\\
-v_y
-\end{pmatrix}.
-$$
-
-This will later connect naturally to:
-
-- eigenvalues;
-- matrix exponentials;
-- normal modes;
-- Hamiltonian mechanics;
-- quantum mechanics.
-
----
-
-# 9. Final chapter summary
+# 12. Final chapter summary
 
 ## Five central ideas
 
-1. 
-2. 
-3. 
-4. 
-5. 
+1. Velocity-dependent forces require careful distinction between vector direction, scalar magnitude, and signed components.
+2. Linear drag produces exponential relaxation governed by the natural time scale $\tau=m/b$.
+3. Quadratic drag reverses through $-cv|v|$ in 1D and couples components through total speed in multiple dimensions.
+4. Approximations are organized by small dimensionless parameters, and initial conditions determine the first nonzero Taylor term.
+5. A magnetic field rotates velocity without changing speed; sine, cosine, and complex exponentials are equivalent descriptions of that rotation.
 
-## Three equations I must know
+## Three equations to know
 
-1. 
-2. 
-3. 
+$$
+\tau=\frac{m}{b},
+\qquad
+v-v_{\mathrm{eq}}=(v_0-v_{\mathrm{eq}})e^{-t/\tau},
+$$
 
-## Three derivations I must reproduce
+$$
+\mathbf F_d=-cv\mathbf v,
+$$
 
-1. 
-2. 
-3. 
+$$
+\mathbf F=q(\mathbf E+\mathbf v\times\mathbf B).
+$$
 
-## Hardest idea
+These are more useful as structural templates than as isolated formulas.
 
-> 
+## Three derivations to reproduce without notes
 
-## Most useful idea
+1. Linear drag with terminal velocity and its short-time limit.
+2. Vertical quadratic drag leading to $\tanh$ and $\ln\cosh$.
+3. Magnetic circular motion using either real components or complex velocity.
 
-> 
+## Most important conceptual lesson
 
-## Most important mistake
+The form of the differential equation encodes the physics: exponential relaxation signals change proportional to deviation from equilibrium, $\tanh$ signals saturation toward a finite terminal speed, and imaginary exponential factors signal rotation rather than growth or decay.
 
-> 
+## Most important technical lesson
 
-## One problem I should repeat
+State the coordinate convention and initial conditions explicitly. Most errors in this chapter came from a sign or constant being detached from its physical meaning, not from misunderstanding the underlying mechanics.
 
-> 
+## Problem worth repeating later
 
-## One remaining question
-
-> 
+Repeat Problem 2.41 because it combines force signs, quadratic drag, terminal-speed scaling, the chain rule $\dot v=v\,dv/dy$, separation of variables, and a physical comparison with vacuum motion.
 
 ---
 
-# 10. Mastery check
+# 13. Readiness for Chapter 3
 
-I am ready to move to Chapter 3 when I can:
+I am ready to move on because I can now:
 
-- [ ] Explain linear versus quadratic drag.
-- [ ] Derive the linear-drag exponential solution.
-- [ ] Derive terminal velocity and explain \(\tau=m/b\).
-- [ ] Derive the linear-drag projectile equations.
-- [ ] Eliminate time to obtain \(y(x)\).
-- [ ] Recover the vacuum limit using a Taylor expansion.
-- [ ] Explain why quadratic drag couples \(x\) and \(y\).
-- [ ] Derive the vertical quadratic-drag solution.
-- [ ] Explain the role of \(\tanh\) and \(\ln\cosh\).
-- [ ] Set up and numerically solve the 2D quadratic-drag equations.
-- [ ] Compute \(\mathbf v\times\mathbf B\) correctly.
-- [ ] Explain why a magnetic field does no work.
-- [ ] Derive the cyclotron frequency and radius.
-- [ ] Explain circular and helical motion.
-- [ ] Use Euler's formula comfortably.
-- [ ] Solve the magnetic equations using complex notation.
-- [ ] Complete the Chapter 2 problem set.
+- [x] explain why drag reverses with velocity;
+- [x] distinguish linear and quadratic drag;
+- [x] derive linear-drag exponential relaxation;
+- [x] interpret $\tau=m/b$ as the natural clock;
+- [x] explain $x_\infty=v_{x0}\tau$;
+- [x] derive and interpret terminal velocity;
+- [x] recover vacuum motion using a Taylor expansion;
+- [x] determine how many Taylor terms are required from the first nonzero contribution;
+- [x] derive the linear-drag projectile equations and eliminate time;
+- [x] derive the vertical quadratic-drag velocity and position;
+- [x] use $\dot v=v\,dv/dy$;
+- [x] set up two-dimensional quadratic drag for numerical solution;
+- [x] compute $\mathbf v\times\mathbf B$ and derive the component equations;
+- [x] explain why magnetic fields change direction but not speed;
+- [x] derive circular and helical motion;
+- [x] use the general sine-cosine solution with initial conditions;
+- [x] combine two rotational ODEs into one complex equation;
+- [x] interpret the real and imaginary parts as physical components;
+- [x] complete and review the Chapter 2 problem set.
+
+Chapter 2 does not need to be flawless before moving forward. The remaining improvement is procedural: maintain explicit sign conventions, label velocity components consistently, and check proposed solutions against the original differential equations.
